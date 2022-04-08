@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SinpleForm</title>
+    <style>
+        .btn{
+            margin-left: 90px;
+        }
+        .aa{
+            text-align: left;
+            color: blue;
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            font-family: "Times New Roman";
+        }
+    </style>
+</head>
+<body bgcolor="#ffe4c4">
+<form>
+<h1 style="background-color: aquamarine">SỞ THÍCH CỦA BẠN</h1>
+<table border="0">
+    <tr>
+        <td class="aa">Họ và tên</td>
+        <td><input type = "text" name="yourname" size="35"/></td>
+    </tr>
+    <tr>
+        <td class="aa">Ngày sinh</td>
+        <td><input type = "date" name="birthday" size="25"/></td>
+    </tr>
+    <tr>
+        <td class="aa">Giới tính </td>
+        <td colspan="2">
+            <input type = "radio">Nam
+            <input type = "radio">Nữ
+            <input type = "radio">Khác
+        </td>
+    </tr>
+    <tr>
+        <td class="aa">Địa chỉ</td>
+        <td><textarea name="address" rows="3" cols="30"></textarea></td>
+    </tr>
+    <tr> <td class="aa">Lớp</td>
+    <td>
+        <select>
+        <option>--Chọn lớp--</option>
+        <option>A0322I1</option>
+        <option>A0322i1</option>
+    </select>
+    </td>
+    </tr>
+    <tr>
+        <td class="aa">Email</td>
+        <td><input type = "text" name="email" size="20"/></td>
+    </tr>
+    <tr>
+    <td class="aa">Số điện thoại</td>
+    <td><input type = "text" name="phoneNumber" size="20"/></td>
+</tr>
+</table>
+<input class="btn" type = "Submit" name="SubmitForm" value="Đăng ký"/>
+<input type = "reset" name="ResetForm" value="Nhập lại"/>
+</form>
+</body>
+</html>

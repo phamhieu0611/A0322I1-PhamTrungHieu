@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SinpleForm</title>
+    <style>
+        .btn{
+            margin-left: 70px;
+        }
+        .abc{
+            color: red;
+        }
+        .aa{
+            text-align: right;
+            color: blue;
+        }
+        h1{
+            text-align: center;
+        }
+        body{
+            font-family: "Times New Roman";
+        }
+    </style>
+</head>
+<body>
+<form>
+<h1 style="background-color: orangered">SỞ THÍCH CỦA BẠN</h1>
+        <table border="0">
+            <tr>
+                <td class="aa">Họ và tên</td>
+                <td><input type = "text" name="yourname" size="35"/></td>
+            </tr>
+            <tr>
+                <td class="aa">Email</td>
+                <td><input type = "text" name="email" size="25"/></td>
+            </tr>
+            <tr>
+                <td class="aa">Sở thích</td>
+                <td class="abc" colspan="3">
+                    <input type = "checkbox">Thể thao
+                    <input type = "checkbox">Âm nhạc
+                    <input type = "checkbox">Đọc sách
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="abc">
+                    <input type = "checkbox">Lướt web
+                    <input type = "checkbox">Chơi game
+                    <input type = "checkbox">Điện ảnh
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="abc"><input type = "checkbox">Du lịch</td>
+            </tr>
+        </table>
+<input class="btn" type = "button" name="SubmitForm" value="Gửi thông tin"/>
+<input type = "reset" name="ResetForm" value="Nhập lại"/>
+</form>
+</body>
+</html>

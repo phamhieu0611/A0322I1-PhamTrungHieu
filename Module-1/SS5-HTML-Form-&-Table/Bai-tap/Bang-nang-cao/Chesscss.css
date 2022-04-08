@@ -1,0 +1,45 @@
+body {
+    background-color: darkorange;
+    font-size:30px;
+    font-weight: bold;
+}
+table {
+    margin-left:auto;
+    margin-right:auto;
+    width: 100%;
+    border-collapse: collapse;
+
+}
+td {
+
+    width: 8%;
+    position: relative;
+}
+td:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+td .content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: gold;
+}
+.a td:nth-child(2n){
+    background-color: black;
+}
+.b td:nth-child(2n+1){
+    background-color: black;
+}
+.b td:nth-child(2n){
+    background-color: white;
+}
+.a td:nth-child(2n+1){
+    background-color: white;
+}
+td{
+    text-align:right;
+}

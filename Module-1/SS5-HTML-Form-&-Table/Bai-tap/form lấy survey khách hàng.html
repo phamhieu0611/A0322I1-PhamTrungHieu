@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form lấy survey khách hàng</title>
+    <style>
+    .acc{
+        font-family: "Arial Black";
+    }
+    </style>
+</head>
+<body>
+<form>
+    <table>
+<h2>Market Research Survey</h2>
+Please take a few moments to complete this satisfacion survey.
+<hr>
+        <tr>
+            <td class="acc">What is your age range?</td>
+        </tr>
+        <tr>
+            <td>
+             <select style="width: 300px">
+            <option value="18-24">18-24</option>
+            <option value="25-34">25-34</option>
+            <option value="35-50">35-50</option>
+            <option value="50+">50+</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="acc">What is your yearly income range?</td>
+        </tr>
+        <tr>
+            <td>
+                <select style="accwidth: 300px">
+            <option value="$0 - $25,000">$0 - $25,000</option>
+            <option value="$25,001 - $50,000">$25,001 - $50,000</option>
+            <option value="$50,001 - $100,000">$50,001 - $100,000</option>
+            <option value="$100,000+">$100,000+</option>
+        </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="acc">Gender Identity</td>
+        </tr>
+        <tr>
+         <td>
+        <input type="radio" value="Male" name="Gender">Male
+         </td>
+        </tr>
+        <tr>
+        <td>
+        <input type="radio" value="Female" name="Gender">Female
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <input type="radio" value="Nonbinary" name="Gender">Nonbinary
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <input type="radio" value="Other" name="Gender">Other
+        </td>
+        </tr>
+        <tr>
+         <td>
+        <input type="text"/>
+         </td>
+        </tr>
+        <tr>
+            <td class="acc">Which of the following products have your purchased in the last 2 months. Please check all that apply.</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" value="Product 1">Product 1
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" value="Product 1">Product 2
+            </td>
+        </tr>
+        <tr>
+        <td>
+            <input type="checkbox" value="Product 1">Product 3
+            </td>
+        </tr>
+        <tr>
+            <td class="acc">
+                How often would you use our new product?
+            </td>
+        </tr>
+        <tr>
+            <td>
+        <input type="radio" name="OYU" value="Daily">Daily
+            </td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="OYU" value="Weekly">Weekly</td>
+        </tr>
+        <tr>
+            <td>
+        <input type="radio" name="OYU" value="Monthly">Monthly
+            </td>
+        </tr>
+        <tr>
+            <td class="acc">What would you pay for the new product?</td>
+        </tr>
+        <tr>
+            <td>
+        <table>
+            <tr>
+                <td>$</td>
+                <td><input type="text" size="8px"></td>
+                <td> - </td>
+                <td><input type="text" size="5"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Dollars</td>
+                <td></td>
+                <td>Cents</td>
+             </tr>
+        </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="acc">What features would you like to see in the new product.</td>
+        </tr>
+        <tr>
+            <td><textarea name="Wfw" style="width: 2000px; height: 100px"></textarea></td>
+        </tr>
+        <tr>
+            <td class="acc">Please rate your level of agreement with the following statements</td>
+        </tr>
+        <tr>
+            <td>
+                <table cellpadding="10">
+                    <tr bgcolor="#ffe4c4">
+                        <th></th>
+                        <th>Strongly Disagree</th>
+                        <th>Disagree</th>
+                        <th>Agree</th>
+                        <th>Strongly Agree</th>
+                    </tr>
+                    <tr>
+                    <td>Our products are priced fairly.</td>
+                    <td>
+                        <input type="radio" name="rate">1
+                    </td>
+                        <td>
+                        <input type="radio" name="rate">2
+                    </td>
+                        <td>
+                        <input type="radio" name="rate">3
+                    </td>
+                        <td>
+                        <input type="radio" name="rate">4
+                    </td>
+                </tr>
+                    <tr bgcolor="#ffe4c4">
+                    <td>Our products are high quality.</td>
+                        <td>
+                            <input type="radio" name="rate1">1
+                        </td>
+                        <td>
+                            <input type="radio" name="rate1">2
+                        </td>
+                        <td>
+                            <input type="radio" name="rate1">3
+                        </td>
+                        <td>
+                            <input type="radio" name="rate1">4
+                        </td>
+                </tr>
+                    <tr>
+                    <td>You would recommend our product to a friend or coworker.</td>
+                        <td>
+                            <input type="radio" name="rate2">1
+                        </td>
+                        <td>
+                            <input type="radio" name="rate2">2
+                        </td>
+                        <td>
+                            <input type="radio" name="rate2">3
+                        </td>
+                        <td>
+                            <input type="radio" name="rate2">4
+                        </td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
