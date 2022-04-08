@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td> Bài 1: </td>
+        <td>
+            <button type="button" onclick="showMessage();">Click Me!</button>
+        </td>
+    </tr>
+    <tr>
+        <td> Bài 2: </td>
+        <td>
+            <div id="messageDiv"></div>
+            <button type="button" onclick="ShowMessage();">Clap Me!</button>
+        </td>
+    </tr>
+    <tr>
+        <td> Bài 3: </td>
+        <td>
+            <button type="button" onclick="showmessage();">Clap Me!</button>
+        </td>
+    </tr>
+    <tr>
+        <td> Bài 4: </td>
+        <td>
+            <button type="button" onclick="showmmessage();">Press F12, please!</button>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+
+    function showMessage(){
+        alert('Halooooooooooooooo boizzzzzzz!');
+    }
+    function ShowMessage(){
+        document.getElementById('messageDiv').innerHTML = 'Gud morning, afternoon and evening!';
+    }
+    function showmessage(){
+        document.write('Turn backkkkk!!!!');
+    }
+
+    function showmmessage(){
+        console.log('U done, how dare u?????');
+    }
+</script>

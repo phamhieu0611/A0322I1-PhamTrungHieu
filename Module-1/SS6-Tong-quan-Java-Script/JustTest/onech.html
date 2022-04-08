@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>Select type chacracter u like:</p>
+    <select id="MySelect">
+        <option value="Kind">Kind</option>
+        <option value="Bad">Bad</option>
+        <option value="Bastard">Bastard</option>
+    </select>
+<script>
+    var selectedElement = document.getElementById("MySelect");
+    selectedElement.addEventListener("change", changeFuntion);
+        function changeFuntion() {
+            var selectValue = document.getElementById("MySelect").value;
+            alert(selectValue);
+        }
+</script>
+</body>
+</html>
