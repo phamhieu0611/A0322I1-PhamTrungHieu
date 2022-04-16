@@ -5,71 +5,71 @@
     <title>Máy tính đơn giản</title>
 </head>
 <body>
-<form>
+
     <table border="5" cellpadding="10">
         <tr>
             <td colspan="4">
-            <input id="sho" type="text">
+            <input id="sho" type="text" placeholder="0">
             </td>
         </tr>
         <tr>
             <td>
-             <button onclick="so1()">1</button>
+             <button value="1" onclick="so('1')">1</button>
             </td>
             <td>
-             <button onclick="so2()">2</button>
+             <button value="2" onclick="so('2')">2</button>
             </td>
             <td>
-             <button onclick="so3()">3</button>
+             <button value="3" onclick="so('3')">3</button>
             </td>
             <td>
-             <button onclick="add()">+</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-             <button onclick="so4()">4</button>
-            </td>
-            <td>
-             <button onclick="so5()">5</button>
-            </td>
-            <td>
-             <button onclick="so6()">6</button>
-            </td>
-            <td>
-             <button onclick="sub()">-</button>
+             <button value="+" onclick="addfn('+')">+</button>
             </td>
         </tr>
         <tr>
             <td>
-             <button onclick="so7()">7</button>
+             <button value="4" onclick="so('4')">4</button>
             </td>
             <td>
-             <button onclick="so8()">8</button>
+             <button value="5" onclick="so('5')">5</button>
             </td>
             <td>
-             <button onclick="so9()">9</button>
+             <button value="6" onclick="so('6')">6</button>
             </td>
             <td>
-             <button onclick="multi">*</button>
+             <button value="-" onclick="spec('-')">-</button>
             </td>
         </tr>
         <tr>
             <td>
-             <input type="reset" value="C">
+             <button value="7" onclick="so('7')">7</button>
             </td>
             <td>
-             <button onclick="so0()">0</button>
+             <button value="8" onclick="so('8')">8</button>
             </td>
             <td>
-             <button type="submit">=</button>
+             <button value="9" onclick="so('9')">9</button>
             </td>
             <td>
-             <button onclick="divi()">/</button>
+             <button value="x" onclick="spec('x')">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <button value="C" onclick="res()">C</button>
+            </td>
+            <td>
+             <button value="0" onclick="so('0')">0</button>
+            </td>
+            <td>
+             <button value="=" onclick="equal('=')">=</button>
+            </td>
+            <td>
+             <button value="/" onclick="spec('/')">/</button>
             </td>
         </tr>
     </table>
-</form>
+
 <script src="calSim.js"></script>
 </body>
 </html>

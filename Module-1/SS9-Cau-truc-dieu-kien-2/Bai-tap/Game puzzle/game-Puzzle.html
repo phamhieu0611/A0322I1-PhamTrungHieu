@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game puzzle</title>
+    <style>
+        img{
+            width: 800px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <img src="img/funny-cat1_part1x1.jpg" onclick="sw('1')" id="meo1"><br>
+    <img src="img/funny-cat1_part2x1.jpg" onclick="sw('2')" id="meo2"><br>
+    <img src="img/funny-cat1_part3x1.jpg" onclick="sw('3')" id="meo3"><br>
+    <img src="img/funny-cat1_part4x1.jpg" onclick="sw('4')" id="meo4"><br>
+    <img src="img/funny-cat1_part5x1.jpg" onclick="sw('5')" id="meo5">
+    <script>
+        function sw(myth) {
+            let immg;
+            immg = document.getElementById("meo"+myth).src;
+            if (immg.search("funny-cat1")>1){
+                switch (myth) {
+                    case '1':
+                        document.getElementById("meo"+myth).src="img/monkey_part1x1.jpg";
+                        break;
+                    case '2':
+                        document.getElementById("meo"+myth).src="img/monkey_part2x1.jpg";
+                        break;
+                    case '3':
+                        document.getElementById("meo"+myth).src="img/monkey_part3x1.jpg";
+                        break;
+                    case '4':
+                        document.getElementById("meo"+myth).src="img/monkey_part4x1.jpg";
+                        break;
+                    case '5':
+                        document.getElementById("meo"+myth).src="img/monkey_part5x1.jpg";
+                        break
+                }
+        }
+            if (immg.search("monkey")>1){
+                switch (myth) {
+                    case '1':
+                        document.getElementById("meo"+myth).src="img/panda_swap_part1x1.jpg";
+                        break;
+                    case '2':
+                        document.getElementById("meo"+myth).src="img/panda_swap_part2x1.jpg";
+                        break;
+                    case '3':
+                        document.getElementById("meo"+myth).src="img/panda_swap_part3x1.jpg";
+                        break;
+                    case '4':
+                        document.getElementById("meo"+myth).src="img/panda_swap_part4x1.jpg";
+                        break;
+                    case '5':
+                        document.getElementById("meo"+myth).src="img/panda_swap_part5x1.jpg";
+                        break
+                }
+        }
+            if (immg.search("panda")>1){
+                switch (myth) {
+                    case '1':
+                        document.getElementById("meo"+myth).src="img/funny-cat1_part1x1.jpg";
+                        break;
+                    case '2':
+                        document.getElementById("meo"+myth).src="img/funny-cat1_part2x1.jpg";
+                        break;
+                    case '3':
+                        document.getElementById("meo"+myth).src="img/funny-cat1_part3x1.jpg";
+                        break;
+                    case '4':
+                        document.getElementById("meo"+myth).src="img/funny-cat1_part4x1.jpg";
+                        break;
+                    case '5':
+                        document.getElementById("meo"+myth).src="img/funny-cat1_part5x1.jpg";
+                        break
+                }
+        }
+        }
+        function init() {
+            let x = 1;
+            let getImg;
+            let catChuoi;
+            while (x<6){
+                getImg = document.getElementById("meo"+x).src;
+                let random = Math.floor(Math.random() *3);
+                if(getImg.search("funny-cat1")>0){
+
+                }
+                x++;
+            }
+        }
+        init();
+    </script>
+</body>
+</html>
