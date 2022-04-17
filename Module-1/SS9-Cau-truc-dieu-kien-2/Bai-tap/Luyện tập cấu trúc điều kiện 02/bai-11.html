@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<body>
+    <script>
+        let thu = parseFloat(prompt("Nhập số thu nhập cá nhân của bạn (USD): "));
+        let thue1 = thu * 15 /100;
+        let thue2 = thu * 25 /100;
+        let thue3 = thu * 35 /100;
+        let thue4 = thu * 45 /100;
+
+        if (thu <= 1000){
+            document.write("Thuế thu nhập cá nhân của bạn sẽ là: "+thue1+"$");
+        }else if(thu <= 5000){
+            document.write("Thuế thu nhập cá nhân của bạn sẽ là: "+thue2+"$");
+        }else if(thu <= 10000){
+            document.write("Thuế thu nhập cá nhân của bạn sẽ là: "+thue3+"$");
+        }else if(thu <= 50000){
+            document.write("Thuế thu nhập cá nhân của bạn sẽ là: "+thue4+"$");
+        }else{
+            document.write("có vẻ số thu bạn nhập không hợp lệ, vui lòng nhập lại.")
+        }
+    </script>
+</body>
+</html>
