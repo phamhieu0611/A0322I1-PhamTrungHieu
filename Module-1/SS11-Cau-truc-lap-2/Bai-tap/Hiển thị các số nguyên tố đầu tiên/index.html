@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let nnumber = parseInt(prompt("Nhập số lượng số nguyên tố cần in ra: "));
+        let no = 2;
+
+        for(var count = 0; count < nnumber; ){
+            var flag = true;
+            if (no < 2){
+                flag = false;
+            }
+            else{
+                for (var i = 2; i < no-1; i++)
+                {
+                    if (no % i == 0){
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (flag == true){
+                document.write(no + " là số nguyên tố <br/>");
+                count++;
+        }no++;
+    }
+    </script>
+</body>
+</html>

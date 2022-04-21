@@ -8,7 +8,7 @@
     <script>
         let von = parseFloat(prompt("Nhập tiền vay ban đầu (USD): "));
         let thang = parseInt(prompt("Nhập số tháng vay: "));
-        let lai = parseFloat(prompt("Lãi hàng tháng: "));
+        let lai = parseFloat(prompt("Lãi hàng tháng (%): "));
         lai = lai / 100;
         let laikep = von * ((1 + lai)**thang);
         document.write("Tổng vốn là: "+von+" USD");

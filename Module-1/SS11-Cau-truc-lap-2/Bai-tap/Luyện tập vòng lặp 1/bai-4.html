@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+    <script>
+        let pyb = 20;
+        let numm = 0;
+        let numm1 = 1;
+        let temp;
+
+        for(let i=1; i<= pyb; i++){
+            temp = numm + numm1;
+            numm = numm1;
+            numm1 = temp;
+            if(temp % 5 ==0){
+            document.write("</br>Dãy F chia hết cho 5 là: "+temp);
+            break;
+            }
+        }
+    </script>
+</body>
+</html>
