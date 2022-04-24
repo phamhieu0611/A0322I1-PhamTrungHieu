@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+    <script>
+        let tuden = parseInt(prompt("Đoán số bắt đầu từ số 0 đến......."));
+        let nhap = parseInt(prompt("Nhập số đoán: "));
+        let ranDom;
+        if(tuden){
+            ranDom = Math.floor(Math.random()*tuden);
+            if(ranDom == nhap){
+                alert("Đoán đúng rồi");
+            }else{
+                while (ranDom != nhap){
+                    alert("Bzzzzzzzzzzzz, sai rồi. Số đúng là: "+ranDom);
+                    nhap = parseInt(prompt("Nhập số đoán: "));
+                }
+                alert("Đúng rồi!")
+            }
+        }
+    </script>
+</body>
+</html>

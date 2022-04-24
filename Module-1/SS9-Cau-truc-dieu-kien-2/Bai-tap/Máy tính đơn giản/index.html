@@ -1,75 +1,73 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Máy tính đơn giản</title>
+    <title>Máy tính ko hề đơn giản </title>
+    <style>
+        table {
+            border: 5px solid;
+            border-spacing: 10px;
+        }
+        td {
+            width: 30px;
+            height: 30px;
+            padding: 2px;
+
+        }
+        button {
+            width: 30px;
+            height: 30px;
+
+        }
+    </style>
 </head>
 <body>
+<table>
+    <tr>
+        <th colspan="4">
+            <input type="text" id="sho" placeholder="0 ">
+        </th>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="getBtnValue('1')">1</button></td>
+        <td><button type="button" onclick="getBtnValue('2')">2</button></td>
+        <td><button type="button" onclick="getBtnValue('3')">3</button></td>
+        <td><button type="button" onclick="getBtnValue('+')">+</button></td>
 
-    <table border="5" cellpadding="10">
-        <tr>
-            <td colspan="4">
-            <input id="sho" type="text" placeholder="0">
-            </td>
-        </tr>
-        <tr>
-            <td>
-             <button value="1" onclick="so('1')">1</button>
-            </td>
-            <td>
-             <button value="2" onclick="so('2')">2</button>
-            </td>
-            <td>
-             <button value="3" onclick="so('3')">3</button>
-            </td>
-            <td>
-             <button value="+" onclick="so('+')">+</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-             <button value="4" onclick="so('4')">4</button>
-            </td>
-            <td>
-             <button value="5" onclick="so('5')">5</button>
-            </td>
-            <td>
-             <button value="6" onclick="so('6')">6</button>
-            </td>
-            <td>
-             <button value="-" onclick="so('-')">-</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-             <button value="7" onclick="so('7')">7</button>
-            </td>
-            <td>
-             <button value="8" onclick="so('8')">8</button>
-            </td>
-            <td>
-             <button value="9" onclick="so('9')">9</button>
-            </td>
-            <td>
-             <button value="x" onclick="so('x')">x</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <button value="C" onclick="so()">C</button>
-            </td>
-            <td>
-             <button value="0" onclick="so('0')">0</button>
-            </td>
-            <td>
-             <button value="=" onclick="so('=')">=</button>
-            </td>
-            <td>
-             <button value="/" onclick="so('/')">/</button>
-            </td>
-        </tr>
-    </table>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="getBtnValue('4')">4</button></td>
+        <td><button type="button" onclick="getBtnValue('5')">5</button></td>
+        <td><button type="button" onclick="getBtnValue('6')">6</button></td>
+        <td><button type="button" onclick="getBtnValue('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="getBtnValue('7')">7</button></td>
+        <td><button type="button" onclick="getBtnValue('8')">8</button></td>
+        <td><button type="button" onclick="getBtnValue('9')">9</button></td>
+        <td><button type="button" onclick="getBtnValue('*')">x</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="getBtnValue('C')">C</button></td>
+        <td><button type="button" onclick="getBtnValue('0')">0</button></td>
+        <td><button type="button" onclick="getBtnValue('=')">=</button></td>
+        <td><button type="button" onclick="getBtnValue('/')">/</button></td>
+    </tr>
+</table>
+<script>
+    let math = '' ;
+    function getBtnValue(value) {
+        if (value == "C"){
+            math = '';
+            document.getElementById("sho").value = math;
+        }else if (value == "="){
+            let result = document.getElementById("sho").value;
+            document.getElementById("sho").value = eval(result);
+        }else {
+            math += value;
+            document.getElementById("sho").value = math;
+        }
+    }
 
-<script src="calSim.js"></script>
+</script>
 </body>
 </html>

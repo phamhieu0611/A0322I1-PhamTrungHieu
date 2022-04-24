@@ -5,8 +5,20 @@
     <title>Bài 5</title>
 </head>
 <body>
-    <script>
-        
-    </script>
+<script>
+    let pyb = 22;
+    let numm = 0;
+    let numm1 = 1;
+    let temp;
+
+
+    for(let i=1; i<= pyb; i++){
+        temp = numm + numm1;
+        numm = numm1;
+        numm1 = temp;
+        temp += temp;
+    }
+    document.write("Tổng 20 số đầu tiên trong dãy F là: "+numm);
+</script>
 </body>
 </html>
