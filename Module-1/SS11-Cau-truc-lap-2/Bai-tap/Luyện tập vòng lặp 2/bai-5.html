@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        let von = parseFloat(prompt("Nhập tiền vay ban đầu (USD): "));
+        let thang = parseInt(prompt("Nhập số tháng vay: "));
+        let lai = parseFloat(prompt("Lãi hàng tháng (%): "));
+        lai = lai / 100;
+        let laikep = von * ((1 + lai)**thang);
+        document.write("Tổng vốn là: "+von+" USD");
+        document.write("</br>Thời gian vay là: "+thang+" tháng");
+        document.write("</br>tỉ số lãi là: "+lai);
+        document.write("</br>Vậy tổng lãi là: "+laikep+" USD");
+    </script>
+</body>
+</html>

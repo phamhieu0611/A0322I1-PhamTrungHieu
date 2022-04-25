@@ -6,7 +6,18 @@
 </head>
 <body>
     <script>
-        
+        let nhaap = Number(prompt("Nhập một số nguyên dương để tính giai thừa"))
+        let giaiThua = 1
+        if(nhaap == 0 || nhaap == 1){
+            giaiThua = 1;
+        }else if(nhaap<0){
+            alert("Lỗi!")
+        }else{
+            for (let i=1;i<=nhaap;i++) {
+                giaiThua = giaiThua*i
+            }
+        }
+        document.write("Giai thừa của "+nhaap+" = "+giaiThua);
     </script>
 </body>
 </html>
