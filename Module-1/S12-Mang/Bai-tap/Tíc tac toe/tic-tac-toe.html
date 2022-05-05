@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic tac toe</title>
+</head>
+<body>
+<script>
+    let caro = document.getElementById("carogame");
+    let boardArray = [];
+    let dataHTML = '';
+    let beginHTML = '';
+
+
+    for( let i = 0; i < 5;i ++){
+        boardArray[i] = new Array('.','.','.','.','.');
+    }
+
+
+
+    for(let i=0; i<5; i++){
+        dataHTML += "<br/>";
+        for (let j = 0; j < 5; j++) {
+            dataHTML += boardArray[i][j] + "&nbsp;&nbsp;";
+        }
+    }
+
+    dataHTML += "<br> <Br> <input type='button' value='First player' onclick='changeValue(1)'>"
+    dataHTML += "<br> <Br> <input type='button' value='Second player' onclick='changeValue(2)'>"
+
+    caro.innerHTML = dataHTML;
+
+    beginHTML = dataHTML;
+
+
+    function changeValue(value) {
+
+        let changeHTML = true;
+
+        dataHTML += "<hr>"
+        let x = parseInt(prompt('Nhập x ')) ;
+        let y = parseInt(prompt('Nhập y ')) ;
+        if(value == '1'){
+            boardArray[x][y] = 'x';
+        }else{
+            boardArray[x][y] = '0';
+        }
+
+        for(let i =0; i<5; i++){
+            dataHTML += "<br>"
+            for(let j =0; j<5; j ++){
+                dataHTML += boardArray[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        for(let i =0; i<5; i++){
+
+            for(let j =0;j<3; j++){
+                if(boardArray[i][j] == boardArray[i][j+1] && boardArray[i][j] == boardArray[i][j+2]){
+                    if(boardArray[i][j] == "x"){
+                        changeHTML = false;
+                        alert("First player winner");
+                    }else if(boardArray[i][j] == "0"){
+                        changeHTML = false;
+                        alert("Second player winner");
+                    }
+                }
+            }
+            for(let k =0; k<3;k++){
+                if(boardArray[k][i] == boardArray[k+1][i] && boardArray[k][i] == boardArray[k+2][i]){
+                    if(boardArray[k][i] == "x"){
+                        changeHTML = false;
+                        alert("First player winner");
+                    }else if(boardArray[k][i] == "0"){
+                        changeHTML = false;
+                        alert("Second player winner");
+                    }
+                }
+            }
+            for(let g = 0; g<3; g++){
+                if(i<3){
+                    if(boardArray[i][g] == boardArray[i+1][g+1] && boardArray[i][g] == boardArray[i+2][g+2]){
+                        if(boardArray[i][g] == "x"){
+                            changeHTML = false;
+                            alert("First player winner");
+                        }else if(boardArray[i][g] == "0"){
+                            changeHTML = false;
+                            alert("Second player winner");
+                        }
+                    }
+                }
+            }
+
+        }
+        if(changeHTML){
+            dataHTML += "<br> <Br> <input type='button' value='First player' onclick='changeValue(1)'>"
+            dataHTML += "<br> <Br> <input type='button' value='Second player' onclick='changeValue(2)'>"
+        }else{
+            dataHTML += "<br> <Br> <input type='button' value='Reset' onclick='resetValue()'>"
+        }
+        caro.innerHTML =  dataHTML;
+    }
+    function resetValue() {
+
+        for(let row = 0; row < boardArray.length; row++){
+            for(let col = 0; col < boardArray[row].length; col++){
+                if(boardArray[row][col] == 'x' || boardArray[row][col] == 'y' ){
+                    boardArray[row][col] = '.';
+                }
+            }
+        }
+
+        dataHTML = beginHTML;
+        caro.innerHTML =  dataHTML;
+    }
+</script>
+</body>
+</html>

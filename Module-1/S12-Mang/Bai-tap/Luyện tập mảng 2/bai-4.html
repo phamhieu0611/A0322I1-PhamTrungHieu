@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+
+    let stringFind = 'Halo mother father.';
+    let arrayString = stringFind.split(' ');
+    alert(arrayString);
+    let count = 0;
+
+    for(let i in arrayString){
+        if(typeof arrayString[i] == 'string'){
+            count += 1;
+        }
+    }
+    alert(arrayString.length);
+
+
+</script>
+</body>
+</html>

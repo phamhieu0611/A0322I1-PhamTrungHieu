@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea on Typing</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let stringFake = " uDump!"
+    array = stringFake.split('');
+    let output = "";
+
+
+    function fake()
+    {
+        let text = document.getElementById("txt").value;
+        let lengthInput = text.length;
+        if (lengthInput > 0)
+        {
+            for(let i = 1; i <= lengthInput; i++)
+            {
+                output = output + array[i];
+                if (i === 24)
+                {
+                    document.getElementById("txt").value= "";
+                    output = "";
+                }
+            }
+        }
+        document.getElementById("txt").value = output;
+        output = "";
+        setTimeout("fake()", 1);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let array=[];
+    let count = 0;
+    for(let dem = 0;dem < 10; dem++){
+        array.push(Math.floor(Math.random() * 51));
+    }
+    for(let dem2 = 0;dem2 < array.length; dem2++){
+        if(array[dem2] >=10){
+            count +=1 ;
+        }
+    }
+    alert('số nguyên lớn hơn hoặc bằng 10 là có '+count);
+</script>
+</body>
+</html>

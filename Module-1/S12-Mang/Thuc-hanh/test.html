@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        // let the = ["java", "C", "C#", "C++", "Beta", "Alpha", "Y", "Z"];
+        //  for (let i=0; i <= 3; i++){
+        // //     let dam = prompt("pls, enter ur ID: ");
+        // //     the.push(dam);
+        // // }
+        // the.sort();
+        // the.forEach(function (item) {
+        //     document.write(item + "</br>")
+        // });
+
+        // let points = [40, 100, 1, 5, 25, 10]
+        // // points.sort(function(a, b) {
+        // //     return a - b
+        // // });
+        // points.splice(3,3)
+        // document.write(points);
+
+        const ani = [
+            {
+                "id": 1,
+                "name": "uhhh",
+                "age": "5"
+            },
+            {
+                "id": 2,
+                "name": "ughhh",
+                "age": 2
+            }
+        ]
+        let newAni = ani.map(function (ani) {
+            if(ani.id == 1){
+            ani.age = "4";
+            }return ani;
+        })
+        console.log(newAni);
+    </script>
+</body>
+</html>
