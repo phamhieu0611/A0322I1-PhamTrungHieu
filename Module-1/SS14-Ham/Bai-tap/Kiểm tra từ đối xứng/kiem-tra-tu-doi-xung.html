@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let arrayString = [];
+
+    function convert(string){
+        array =  string.split('');
+        return array;
+    }
+    function isPalindrome(string) {
+        arrayString = convert(string);
+        if(arrayString[0] == arrayString[arrayString.length - 1]){
+            arrayString.pop();
+            arrayString.shift();
+            if(arrayString[arrayString.length] > 2){
+                arrayString.pop();
+                arrayString.shift();
+                return isPalindrome(arrayString.toString());
+            }else{
+                return true;
+            }
+        }else{
+            return false;
+        }
+    }
+    let inputS = prompt('Nhập chuỗi');
+    while(true){
+        if(inputS == ""){
+            inputS = prompt('nhập lại chuỗi khác null');
+        }
+        if(inputS.length == 1){
+            inputS = prompt('nhập lại chuỗi có 2 ký tự trở lên');
+        }
+        if(inputS.length > 1){
+            break;
+        }
+    }
+    if(isPalindrome(inputS)){
+        alert(inputS +' là chuỗi đối xứng');
+    }else{
+        alert(inputS +' là chuỗi không đối xứng');
+    }
+</script>
+</body>
+</html>
