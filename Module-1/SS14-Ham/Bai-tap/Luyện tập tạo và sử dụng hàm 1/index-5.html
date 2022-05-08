@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+    <script>
+        let Arr = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+        let Arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let starName = prompt("Nhập tên ngôi sao để tìm kiếm chòm sao: ");
+
+        function Array(star) {
+            if(Arr.indexOf(star) > -1){
+                let i = Arr.indexOf(star);
+                return Arr2[i];
+            }else{
+                return 'không tìm thấy ngôi sao nào';
+            }
+        } alert(Array(starName));
+    </script>
+</body>
+</html>

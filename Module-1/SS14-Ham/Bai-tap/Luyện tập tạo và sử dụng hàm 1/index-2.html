@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body> Tăng 1 giá trị của: <input type="number" id="input" oninput="Tinh()"/> là: <span id="result"></span>
+
+    <script>
+            function tang(number) {
+                let result = number + 1;
+                return result;
+            }
+        function Tinh() {
+            let input = parseInt(document.getElementById("input").value);
+            let result = tang(input);
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

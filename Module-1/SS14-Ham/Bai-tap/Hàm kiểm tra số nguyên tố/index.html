@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+    <script>
+        function isPrime(number){
+            if (number <= 1) {
+                return number + ' Không phải số nguyên tố!';
+            }
+            if(number > 1){
+                let uocSo = 0;
+                let dem = number;
+
+                while (dem > 0){
+                    if(number % dem == 0){
+                        uocSo = uocSo + 1;
+                    }
+                    dem = dem - 1;
+                }
+                if(uocSo == 2){
+                    return number + ' là số nguyên tố.';
+                }else {
+                    return number + ' không phải là số nguyên tố.';
+                }
+            }else {
+                return number + ' không phải số nguyên tố.'
+            }
+    }
+        alert(isPrime(parseInt(prompt("Nhập vào số nhỏ hơn 10.000 để kiểm tra xem có phải là số nguyên tố."))))
+    </script>
+</body>
+</html>

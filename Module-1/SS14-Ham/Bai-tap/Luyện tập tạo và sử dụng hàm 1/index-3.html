@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                Số thứ nhất:
+            </td>
+            <td>
+                <input type="number" id="input1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Số thứ hai:
+            </td>
+            <td>
+                <input type="number" id="input2" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" onclick="submitFunction()" value="Enter"/>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function fun(soA, soB) {
+            if (soA > soB){
+                return 'Số thứ nhất lớn hơn số thứ hai.';
+            } else {
+                return soA + soB;
+            }
+        }
+        function submitFunction(){
+            let so1 = parseFloat(document.getElementById('input1').value);
+            let so2 = parseFloat(document.getElementById('input2').value);
+            alert(fun(so1, so2));
+        }
+    </script>
+</body>
+</html>

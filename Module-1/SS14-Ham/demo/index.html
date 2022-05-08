@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    Bình phương của: <input type="number" id="input" oninput="Tinh()"/> là: <span id="result"></span>
+
+    <script>
+        function binhPhuong(number) {
+            let result = number * number;
+            return result;
+        }
+        function Tinh() {
+            let input = document.getElementById("input").value;
+            let result = binhPhuong(input);
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>

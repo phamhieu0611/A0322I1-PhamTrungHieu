@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bài 9</title>
+</head>
+<body>
+    <script>
+        let mangKiTu = ["a", "b", "c", "a", "d", "a", "f", "a", "g"];
+        let check = prompt("Nhập kí tự muốn kiểm tra: ");
+
+        function demKiTu(mang, dem) {
+            let count = 0;
+            for(let i in mang){
+                if(mang[i] == dem){
+                    count = count + 1;
+                }
+            }if(count == 0){
+                return '0 (kí tự không tồn tại trong chuỗi.)';
+            }else {
+                return count;
+            }
+        }alert("Số lần lặp lại của kí tự là: "+demKiTu(mangKiTu, check));
+    </script>
+</body>
+</html>
