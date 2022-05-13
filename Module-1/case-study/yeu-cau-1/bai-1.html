@@ -5,9 +5,18 @@
     <title>Bài 1</title>
 </head>
 <body>
-    *****<br>
-    * &nbsp&nbsp&nbsp *<br>
-    * &nbsp&nbsp&nbsp *<br>
-    *****<br>
+    <script>
+        for (let i=0;i<4;i++){
+            for (let j = 0;j<5;j++){
+                if(i == 0 || i == 3){
+                    document.write("*");
+                }else if(j == 0 || j == 4){
+                    document.write("*")
+                }else {
+                    document.write("<a style='color: #ffffff'>*</a>")
+                }
+            }document.write("<br>")
+        }
+    </script>
 </body>
 </html>

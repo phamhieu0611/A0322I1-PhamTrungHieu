@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tempurature</title>
+</head>
+<body>
+    <script>
+        class nhietDo{
+            constructor(doC) {
+                this.doC = doC;
+            }
+            getdoC(){
+                return this.doC;
+            }
+            getdoF(){
+                return this.doC*1.8+32;
+            }
+            getdoK(){
+                return this.doC+273.15;
+            }
+            setdo(cmoi){
+                this.doC = cmoi;
+            }
+            toSw(){
+                return "Do C sau khi thay doi: "+this.doC + "<br/>Do F sau khi thay doi: "+(this.doC*1.8+32) + "<br/>Do K sau khi thay doi: "+this.doC+273.15;
+            }
+        }
+
+        let Swap = new nhietDo(0);
+        let C = Swap.getdoC();
+        let F = Swap.getdoF();
+        let K = Swap.getdoK();
+        alert("Do C: "+C + " - Do F: "+F+" - Do K: "+K);
+
+        Swap.setdo(25);
+        document.write(Swap.toSw());
+    </script>
+</body>
+</html>

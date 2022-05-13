@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thực hành Class và Object</title>
+</head>
+<body>
+    <script>
+        let Student = {
+            id: 1,
+            name: "Nguyễn Văn A",
+            address: "Hà Nội",
+            getInfor: function () {
+                return "Id = " + this.id + "<br/>Name: " + this.name + "<br/>Address: " + this.address;
+            }
+        }
+        document.write(Student.name+"<br/><br/>");
+        document.write(Student.getInfor());
+    </script>
+</body>
+</html>

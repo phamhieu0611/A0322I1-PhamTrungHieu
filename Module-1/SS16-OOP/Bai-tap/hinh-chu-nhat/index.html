@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="CV" style="border: 1px solid #d3d3d3" width="1000px" height="768px"></canvas>
+    <script>
+        class chuNhat{
+            constructor(dai, rong) {
+                this.dai = dai;
+                this.rong = rong;
+            }
+            getDai(){
+                return this.dai;
+            }
+            getRong(){
+                return this.rong;
+            }
+            setCanh(rongMoi, daiMoi){
+                this.rong = rongMoi;
+                this.dai = daiMoi;
+            }
+            toEqual(){
+                return ("<br/>Chieu dai hinh chu nhat sau khi thay doi la: "+this.dai+"<br/>Chieu rong hinh chu nhat sau khi thay doi la: "+this.rong+"<br/>Chu vi hinh chu nhat la "+(this.dai+this.rong)*2)+" <br/>Dien tich hinh chu nhat la "+(this.dai * this.rong);
+            }
+        }
+
+
+
+        let Rectancle = new chuNhat(500,300);
+        let Dai = Rectancle.getDai();
+        let Rong = Rectancle.getRong();
+        alert("Canh dai: "+Dai+" Canh chieu rong: "+Rong);
+
+            Rectancle.setCanh(50,70);
+
+        document.write(Rectancle.toEqual());
+
+        function veChuNhat(){
+            let ctx = document.getElementById("CV").getContext("2d");
+                ctx.fillRect(50, 50, Dai, Rong);
+
+            // ctx.lineWidth = "3";
+            // ctx.strokeStyle = "black";
+            // ctx.strokeRect(5, 5, Dai, Rong);
+        }
+        veChuNhat();
+    </script>
+</body>
+</html>

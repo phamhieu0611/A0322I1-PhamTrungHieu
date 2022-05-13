@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body>
+    <script>
+        class NgayThangNam{
+            constructor(ngay, thang, nam) {
+                this.ngay = ngay;
+                this.thang = thang;
+                this.nam = nam;
+            }
+            getNgay(){
+                return this.ngay;
+            }
+            getThang(){
+                return this.thang;
+            }
+            getNam(){
+                return this.nam;
+            }
+            // setNgay(ngayMoi){
+            //     this.ngay = ngayMoi;
+            // }
+            // setThang(thangMoi){
+            //     this.thang = thangMoi;
+            // }
+            // setNam(namMoi){
+            //     this.nam = namMoi;
+            // }
+            setDate(ngayMoi,thangMoi,namMoi){
+                this.ngay = ngayMoi;
+                this.thang = thangMoi;
+                this.nam = namMoi;
+            }
+            toString(){
+                return this.ngay+"/"+this.thang+"/"+this.nam;
+            }
+        }
+
+        let MyDate = new NgayThangNam(6, 11, 2000);
+        let ngay = MyDate.getNgay();
+        let thang = MyDate.getThang();
+        let nam = MyDate.getNam();
+        alert("My date "+ngay+"-"+thang+"-"+nam);
+
+        //         MyDate.setNgay(22);
+        //         MyDate.setThang(2);
+        //         MyDate.setNam(1976);
+        //
+        //     ngay = MyDate.getNgay();
+        //     thang = MyDate.getThang();
+        //     nam = MyDate.getNam();
+        // alert("My new date "+ngay + "-" + thang + "-" +nam);
+
+        MyDate.setDate(11,4,1971);
+        document.write(MyDate.toString());
+    </script>
+</body>
+</html>
