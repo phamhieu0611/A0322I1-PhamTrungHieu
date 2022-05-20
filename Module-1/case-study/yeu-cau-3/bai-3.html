@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        let arr1 = [5,2,5];
+        let arr2 = [6,3,4];
+        // let rong = []
+
+        function maXele(){
+        let max = arr1[0]/arr2[0];
+        let max_index = 0;
+        for (let i = 1; i < arr1.length; i++){
+            if (max < arr1[i]/arr2[i]){
+                max = arr1[i]/arr2[i]
+                max_index = i;
+            }
+        }
+        document.write(max+" là phân số lớn nhất, có chỉ số là "+max_index);
+        }
+        maXele();
+
+        // for (let i = 0; i < arr1.length; i++){
+            // max = arr1[i]/arr2[i];
+            // rong.push(max);
+        // }
+        // function maxelement() {
+        //     let max = rong[0];
+        //     let max_index = 0;
+        //
+        //     for (let j =0; j < rong.length; j++){
+        //         if (max < rong[j]){
+        //             max = rong[j];
+        //             max_index = j ;
+        //         }
+        //     } document.write(max+" là phân số lớn nhất, có chỉ số là "+max_index);
+        // }
+        // maxelement();
+    </script>
+</body>
+</html>

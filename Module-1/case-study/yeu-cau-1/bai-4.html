@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bai 4</title>
 </head>
 <body>
     <script>
@@ -12,7 +12,11 @@
                 document.write("<a style='color: #ffffff'> *</a>");
             }
             for (let j = 1; j <= i*2-1; j++){
-                document.write(" *");
+                if (i == 1 || i == h || j == 1 || j == i*2-1){
+                    document.write(" *")
+                }else {
+                    document.write("<a style='color: #ffffff'> *</a>");
+                }
             }
             document.write("<br/>");
         }

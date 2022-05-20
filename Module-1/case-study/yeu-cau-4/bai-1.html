@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+</head>
+<body>
+<script>
+    let string = prompt("Nhập vào chuỗi tại đây: ");
+
+    function titleCase() {
+        let tach = string.split(" ");
+        for(let i = 0; i< tach.length; i++){
+            if (tach[i] != " "){
+            tach[i] = tach[i][0].toUpperCase() + tach[i].slice(1);
+            }
+        }
+        document.write(tach.join(" "));
+    }
+    titleCase();
+</script>
+</body>
+</html>

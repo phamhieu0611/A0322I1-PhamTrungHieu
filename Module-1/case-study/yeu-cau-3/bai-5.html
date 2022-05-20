@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 5</title>
+</head>
+<body>
+    <script>
+        let menu = ['Cafe', 'Cam vắt', 'Nước ép cà rốt', 'Nước ép cà chua', 'Nước lọc', 'Nước dừa'];
+        let stt = [1,2,3,4,5,6];
+        let giaSP = [10000, 20000, 30000, 40000, 50000, 60000, 70000];
+        let menustt = [];
+
+        for (let i = 0; i < menu.length; i++){
+            tmp = '<br/>'+stt[i]+'-'+menu[i];
+            menustt.push(tmp)
+        }
+        document.write(menustt+"<br/><br/><br/><br/>");
+        let order = '';
+        function orderSP(){
+             order = parseInt(prompt("Nhập sản phẩm bạn muốn order (nhập STT trước sản phẩm): "));
+             if (order == 7){
+                 return true;
+             }
+            let soluong = parseInt(prompt("Nhập số lượng sản phẩm bạn muốn order: "));
+
+            sanpham = menu[stt.indexOf(order)];
+            tien = giaSP[menu.indexOf(sanpham)];
+            bill = tien * soluong;
+
+            document.write("Bạn đã order "+sanpham+" với tổng cộng là "+soluong+" sản phẩm. <br/>Tổng Hóa đơn của bạn là: "+bill+"VNĐ");
+        }
+        function orderS() {
+            do {
+                orderSP();
+            }while (order!=7);
+        }
+
+    </script>
+    <p></p>
+    <input type="button" value="Order" onclick="orderS()">
+</body>
+</html>

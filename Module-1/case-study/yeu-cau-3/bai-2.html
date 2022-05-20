@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+    <script>
+
+        let arr1 = [7,2,5,3,5,3];
+        let arr2 = [7,2,5,4,6,3,5,3];
+        // let difference = arr2.filter(x => !arr1.includes(x));
+        // document.write(difference);
+
+        function difference() {
+            let result = [];
+            for (let i = 0; i < arr1.length; i++){
+                if (arr1.indexOf(arr2[i]) === -1){
+                    result.push(arr2[i]);
+
+                }
+            }document.write(result)
+        }
+        difference();
+    </script>
+</body>
+</html>
