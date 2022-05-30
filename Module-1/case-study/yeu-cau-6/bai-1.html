@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 1</title>
+    <style>
+        input{
+            width: 50px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <p h1>Vé Số CODEGYM</p>
+        <button onclick="menu()">Mua Vé Số</button>
+        <button onclick="ketQua()">Xem kết quả</button>
+    </div>
+    <p id="result"></p>
+</div>
+    <script>
+        class XoSo{
+            constructor(so1, so2, so3, so4, so5, so6, grade ="") {
+                this.so1 = so1;
+                this.so2 = so2;
+                this.so3 = so3;
+                this.so4 = so4;
+                this.so5 = so5;
+                this.so6 = so6;
+                this.grade = grade;
+            }
+            setNumber1(num1){
+                this.so1 = num1;
+            }
+            getNumber1(){
+                return this.so1;
+            }
+            setNumber2(num2){
+                this.so2 = num2;
+            }
+            getNumber2(){
+                return this.so2;
+            }
+            setNumber3(num3){
+                this.so3 = num3;
+            }
+            getNumber3(){
+                return this.so3;
+            }
+            setNumber4(num4){
+                this.so4 = num4;
+            }
+            getNumber4(){
+                return this.so4;
+            }
+            setNumber5(num5){
+                this.so5 = num5;
+            }
+            getNumber5(){
+                return this.so5;
+            }
+            setNumber6(num6){
+                this.so6 = num6;
+            }
+            getNumber6(){
+                return this.so6;
+            }
+            setGrade(grade){
+                this.grade = grade;
+            }
+            getGrade(){
+                return this.grade;
+            }
+            getNumber(){
+                return [this.so1, this.so2, this.so3, this.so4, this.so5, this.so6];
+            }
+            getRandomNum(){
+                this.setNumber1(Math.floor(Math.random()*99));
+                this.setNumber2(Math.floor(Math.random()*99));
+                this.setNumber3(Math.floor(Math.random()*99));
+                this.setNumber4(Math.floor(Math.random()*99));
+                this.setNumber5(Math.floor(Math.random()*99));
+                this.setNumber6(Math.floor(Math.random()*99));
+            }
+            getInfo(){
+                return "Vé số " + this.getNumber().join(" ")+this.getGrade()
+            }
+        }
+        let arrVeSo = [];
+        function menu() {
+            let chon;
+            if (arrVeSo.length < 4){
+                 chon = parseInt(prompt("Bạn có 2 lựa chọn: \n" +
+                    "1: Bạn tự chọn số. \n" +
+                    "2: Hệ thống tự chon Random."));
+                if (chon === 1){
+                    nhapXoSo();
+                }
+                else if (chon === 2){
+                    randomNumber();
+                }
+            }else {
+                alert("Mỗi khách hàng chỉ được mua tối đa 4 vé, bạn đã đạt lượt mua tối đa.")
+            }
+        }
+        function drawLotte(arr) {
+             let str = "";
+            for(let i =0; i < arr.length; i++){
+                str += "<input value=' " + arr[i].getNumber1() + " '>" +
+                       "<input value=' " + arr[i].getNumber2() + " '>" +
+                       "<input value=' " + arr[i].getNumber3() + " '>" +
+                       "<input value=' " + arr[i].getNumber4() + " '>" +
+                       "<input value=' " + arr[i].getNumber5() + " '>" +
+                       "<input value=' " + arr[i].getNumber6() + " '>" + "<br/>"
+            }
+            document.getElementById('result').innerHTML = str;
+        }
+        function randomNumber() {
+            let lottery = new XoSo();
+            lottery.getRandomNum();
+            arrVeSo.push(lottery);
+            drawLotte(arrVeSo);
+        }
+        function nhapXoSo() {
+            let arrNum = [];
+            for (let i =0; i <6; i++){
+                arrNum[i] = parseInt(prompt("Nhập vào số thứ " + (i+1) + " của vé số."));
+            }
+            let lottery = new XoSo(arrNum[0], arrNum[1], arrNum[2], arrNum[3], arrNum[4], arrNum[5]);
+            arrVeSo.push(lottery);
+            drawLotte(arrVeSo);
+        }
+            function kiemTra(lottery) {
+            let count = 0;
+            let arr = [11,22,33,44,55,66];
+            for(let i = 0; i < arr.length; i++){
+                if(arr[i] === lottery.getNumber()[i]){
+                    count++;
+                }else {
+                    break;
+                }
+            }
+            switch (count) {
+                case 6:
+                    lottery.setGrade(1);
+                    break;
+                case 5:
+                    lottery.setGrade(2);
+                    break;
+                case 4:
+                case 3:
+                    lottery.setGrade(3);
+                    break;
+                default:
+                    lottery.setGrade(4);
+            }
+        }
+        function ketQua() {
+            let result = "";
+            for (let i =0; i < arrVeSo.length; i++){
+                kiemTra(arrVeSo[i]);
+                switch (arrVeSo[i].getGrade()) {
+                    case 1:
+                        result += " Giải nhất.";
+                        break;
+                    case 2:
+                        result += " Giải nhì.";
+                        break;
+                    case 3:
+                        result += " Giải ba.";
+                        break;
+                }
+            }
+            if (result === ""){
+                alert("Chức bạn may mắn lần sau.");
+            }else {
+                alert("Chúc mừng bạn đã trúng" + result);
+            }
+        }
+    </script>
+</body>
+</html>

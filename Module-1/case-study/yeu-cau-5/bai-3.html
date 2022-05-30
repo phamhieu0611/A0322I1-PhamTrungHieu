@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        let row = parseInt(prompt("Nhập vào số hàng: "));
+        let col = parseInt(prompt("Nhập vào số cột: "));
+        let matrix = [];
+
+        for(let i = 0; i < row; i++){
+            let input = []
+            for(let j = 0; j < col; j++){
+                input[j] = parseInt(prompt("Nhập vào giá trị: "));
+            }
+            matrix[i]=input;
+        }
+
+        // function findMinMax(matrix) {
+        //     let max = matrix[0][0];
+        //     let min = matrix[0][0];
+        //
+        //     for (let i = 0; i < matrix.length; i++){
+        //         for (let j =0; j < matrix[i].length; j++){
+        //             if (max < matrix[i][j]){
+        //                 max = matrix[i][j];
+        //             }
+        //             if (min > matrix[i][j]){
+        //                 min = matrix[i][j];
+        //             }
+        //         }
+        //     }
+        //     return "Phần tử lớn nhất là: " + max + "\n Phần tử bé nhất là: " + min;
+        // }
+
+        function findMax(matrix){
+           let max = matrix[0][0];
+           for (let i= 0; i < matrix.length; i++){
+               for (let j = 0; j < matrix[i].length; j++){
+                   if (max < matrix[i][j]){
+                       max = matrix[i][j];
+                   }
+               }
+           }return max;
+        }
+
+        function findMin(matrix){
+            let min = matrix[0][0];
+            for (let i= 0; i < matrix.length; i++){
+                for (let j = 0; j < matrix[i].length; j++){
+                    if (min > matrix[i][j]){
+                        min = matrix[i][j];
+                    }
+                }
+            }return min;
+        }
+        console.table(matrix);
+        document.write("Số lớn nhất là: "+findMax(matrix)+"<br/>");
+        document.write("Số bé nhất là: "+findMin(matrix));
+        // document.write(findMinMax(matrix));
+    </script>
+</body>
+</html>

@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bai 2</title>
 </head>
 <body>
+    <script>
+    //     let str = prompt("Nhập vào chuỗi: ");
+    //
+    //     function stringDiff(str) {
+    //         let str1 = str.split("");
+    //         for (let i = 0; i < str1.length; i++){
+    //             for (let j = 0; j < i; j++){
+    //                 if (str1[j] == str1[i]){
+    //                     str1.splice(j, 1);
+    //                 }
+    //             }
+    //     }return str1;
+    // }document.write(stringDiff(str));
 
+        let input = prompt("Nhập chuỗi bất kì: ");
+
+        let count = 1;
+        let temp = -1;
+
+        if (input == 0){
+            alert("Mảng không hợp lệ: ");
+        }else {
+            function diff(string) {
+                for (let i = 0; i < string.length; i++){
+                    for (let j =0; j < i; j++){
+                        if (string[j] == string[i]){
+                            temp = 1;
+
+                            break;
+                        }else {
+                            temp = 0;
+                        }
+                    }if (temp == 0){
+                        count++;
+                    }
+                }return "Có "+count+" ký tự khác nhau.";
+            }document.write(diff(input));
+        }
+    </script>
 </body>
 </html>

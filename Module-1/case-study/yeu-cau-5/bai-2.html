@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 2</title>
+</head>
+<body>
+    <script>
+        let row = parseInt(prompt("Nhập vào số hàng: "));
+        let col = parseInt(prompt("Nhập vào số cột: "));
+        let matrix = [];
+        let primeArr = [];
+
+        for(let i = 0; i < row; i++){
+            let input = []
+            for(let j = 0; j < col; j++){
+                input[j] = parseInt(prompt("Nhập vào giá trị: "));
+            }
+            matrix[i]=input;
+        }
+
+        function prime(number) {
+            if (number < 2){
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(number); i++){
+                    if (number % i === 0){
+                        return false;
+                    }
+            }
+            return true;
+        }
+        for (let i = 0; i < matrix.length; i++){
+            for (let j = 0; j < matrix[i].length; j++){
+                if (prime(matrix[i][j])){
+                    primeArr.push(matrix[i][j])
+                }
+            }
+        }
+        console.table(matrix);
+        document.write("Có các số nguyên tố là: "+primeArr;
+    </script>
+</body>
+</html>

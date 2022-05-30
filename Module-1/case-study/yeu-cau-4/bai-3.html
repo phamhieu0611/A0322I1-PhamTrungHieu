@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        let s1 = prompt("Nhap vao chuoi 1: ");
+        let s2 = prompt("Nhap vao chuoi 2: ");
+
+        function commonCharacterCount(s1, s2) {
+            var count = 0;
+            for(var i=0; i<s1.length ; i++){
+                if(s2.indexOf(s1[i])>-1){
+                    count++;
+                    s2=s2.replace(s1[i],'');
+                }
+            }
+            return s1;
+            // return "Co "+count+" ky tu giong nhau" ;
+        }
+        document.write(commonCharacterCount(s1,s2));
+    </script>
+</body>
+</html>
