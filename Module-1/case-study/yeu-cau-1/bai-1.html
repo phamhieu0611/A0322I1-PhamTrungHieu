@@ -17,6 +17,26 @@
                 }
             }document.write("<br>")
         }
+
+        document.write("<br/><br/><br/><br/><br/>")
+
+        let width = parseInt(prompt("Input width: "));
+        let height = parseInt(prompt("Input height: "));
+        let shape = "";
+
+        for (let i = 0; i < height; i++){
+            for (let j = 0; j < width; j++){
+                if (i === 0 || i === height-1){
+                    shape += "*";
+                }else if (j === 0 || j === width-1){
+                    shape += "*";
+                }else {
+                    shape += "&ensp;"
+                }
+            }
+            shape += "<br/>";
+        }
+        document.write(shape);
     </script>
 </body>
 </html>

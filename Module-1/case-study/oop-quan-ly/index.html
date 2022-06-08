@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Ứng dụng quản lý sản phẩm</h2>
+Add product: <input type="text"  id="product"/> Add type: <input type="text"  id="type"/>
+<input type="submit" value="Add" onclick="addProduct()" /><br><br><br>
+<table id="output" border = '1px solid black' style="font-size:20px"></table><br>
+
+
+<script>
+
+    let dataHTML ="";
+
+    let arrayProduct = [];
+
+    class Product {
+        constructor(name,type){
+            this.name = name;
+            this.type = type;
+        }
+        getName(){
+            return this.name;
+        }
+        getType() {
+            return this.type;
+        }
+        setName(nameNew){
+            this.name = nameNew;
+        }
+        setType(typeNew){
+            this.type = typeNew;
+        }
+    }
+
+    function addProduct() {
+        let inputName = document.getElementById('product').value;
+        let inputType = document.getElementById('type').value;
+        let newProduct = new Product(inputName,inputType)
+        if(inputName != "" && inputType!= ""){
+            arrayProduct.push(newProduct);
+        }
+        showTable();
+    }
+
+    function showTable() {
+        dataHTML = "";
+        dataHTML += '<tr>';
+        dataHTML += '<th colspan="2">ProductName</th>';
+        dataHTML += '<th colspan="2">'+arrayProduct.length+' products</th>';
+        dataHTML += '</tr>';
+        dataHTML += '<tr>';
+        dataHTML += '<th>STT</th>';
+        dataHTML += '<th>Type</th>';
+        dataHTML += '<th>Product</th>';
+        dataHTML += '<th>Edit</th>';
+        dataHTML += '</tr>';
+        for (let index in arrayProduct){
+            dataHTML += '<tr>';
+            dataHTML += '<td>'+(parseInt(index) + 1)+'</td>';
+            dataHTML += '<td>'+arrayProduct[index].getType()+'</td>';
+            dataHTML += '<td>'+arrayProduct[index].getName()+'</td>';
+            dataHTML += "<td>" +
+                "<input type='submit' value='Sửa' onclick='editFunction("+index+")' />" +
+                "<input type='submit' value='Xóa' onclick='deleteFunction("+index+")' />" +
+                "</td>";
+            dataHTML += '</tr>';
+        }
+        document.getElementById('output').innerHTML = dataHTML;
+    }
+    function deleteFunction(index){
+        arrayProduct.splice(index,1);
+        showTable();
+    }
+    function editFunction(index){
+        let choice = prompt("Where do u want to Edit ? \n " +
+            "Enter 1: Edit Name \n " +
+            "Enter 2: Edit Type \n " +
+            "Enter anything else: Bỏ qua");
+        switch(choice){
+            case "1":
+                let newName = prompt('Edit name product \n Pls enter new Name:');
+                arrayProduct[index].setName(newName);
+                showTable();
+                break;
+            case '2':
+                let newType = prompt('Edit type product \n Pls enter new Type:');
+                arrayProduct[index].setType(newType);
+                showTable();
+                break;
+            default:
+                showTable();
+                alert('Ok, no Edit today !')
+        }
+    }
+</script>
+</body>
+</html>

@@ -6,15 +6,19 @@
 </head>
 <body>
     <script>
-        let arr1 = [1,2,3,4];
+        let arr1 = [];
         let arr2 = [];
+        let size = parseInt(prompt("Nhập vào độ dài mảng a: "));
         let sum = 0;
 
+        for (let i = 0; i < size; i++){
+            arr1.push(parseInt(prompt("Nhập vào các phần tử trong mảng.")))
+        }
         for (let i =0; i < arr1.length; i++){
             sum += arr1[i];
             arr2.push(sum);
         }
-        document.write(arr2);
+        alert("Mảng a là: " + arr1 + "\n" + "Kết quả prefixSums(a): " + arr2);
     </script>
 </body>
 </html>

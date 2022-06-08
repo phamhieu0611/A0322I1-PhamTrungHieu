@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            Số thứ nhất:
+        </td>
+        <td>
+            <input type="number" id="input1" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Số thứ hai:
+        </td>
+        <td>
+            <input type="number" id="input2" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" onclick="checkFunction()" value="Check"/>
+        </td>
+    </tr>
+</table>
+    <script>
+        let sum1 = 0;
+        let sum2 = 0;
+
+        function uocSO(soA, soB) {
+            if (soA > 0){
+                for (let i = 1; i < soA; i++){
+                    if (soA % i === 0){
+                        sum1 += i;
+                    }
+                }
+            }
+            if (soB > 0){
+                for (let i = 1; i < soB; i++){
+                    if (soB % i === 0){
+                        sum2 += i;
+                    }
+                }
+            }
+            if(soA == sum2 && soB == sum1){
+            return "Tổng các ước số thứ nhất là: "+sum1+"\n Tổng các ước số thứ hai là: "+sum2 +"\n"+true;
+            }else {
+                return "Tổng các ước số thứ nhất là: "+sum1+"\n Tổng các ước số thứ hai là: "+sum2 +"\n"+false;
+            }
+        }
+        function checkFunction(){
+            let so1 = parseFloat(document.getElementById('input1').value);
+            let so2 = parseFloat(document.getElementById('input2').value);
+                alert(uocSO(so1,so2))
+        }
+
+    </script>
+</body>
+</html>

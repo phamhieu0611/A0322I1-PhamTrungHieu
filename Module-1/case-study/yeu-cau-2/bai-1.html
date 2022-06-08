@@ -6,18 +6,19 @@
 </head>
 <body>
     <script>
-        let sal = parseInt(prompt("NHập lương nhân viên để tính thuế thu nhập (VNĐ): "));
-        let thue1 = sal * 20 / 100;
-        let thue2 = sal * 10 / 100;
-        let thue3 = sal * 5 / 100;
+        let input = parseInt(prompt("NHập lương nhân viên để tính thuế thu nhập (VNĐ): "));
+        let tax = 0;
+        let netSalary = 0;
 
-        if (sal >= 15000000){
-            document.write("Thu Nhập của bạn là: "+sal+" và thuế thu nhập của bạn là (20%):"+thue1+"VNĐ");
-        } else if (sal >= 7000000){
-            document.write("Thu Nhập của bạn là: "+sal+" và thuế thu nhập của bạn là (10%):"+thue2+"VNĐ");
+        if (input >= 150000000){
+            tax = 20;
+        }else if (input >= 70000000){
+            tax = 10;
         }else {
-            document.write("Thu Nhập của bạn là: "+sal+" và thuế thu nhập của bạn là (5%):"+thue3+"VNĐ");
+            tax = 5;
         }
+        netSalary = input - input*tax/100;
+        alert("Với mức thu nhập: "+input+"\nThuế là: "+tax+"%"+"\nNet salary: "+netSalary);
     </script>
 </body>
 </html>

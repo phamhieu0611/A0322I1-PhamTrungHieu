@@ -6,9 +6,18 @@
 </head>
 <body>
     <script>
-        let arr1 = [5,2,5];
-        let arr2 = [6,3,4];
+        let arr1 = [];
+        let arr2 = [];
         // let rong = []
+
+        let size1 = parseInt(prompt("Nhập chiều dài mảng A: "));
+        for (let i= 0; i < size1; i++){
+            arr1.push(parseInt(prompt("Nhập vào phần tử của mảng A: ")));
+        }
+        let size2= parseInt(prompt("Nhập chiều dài mảng B: "));
+        for (let i= 0; i < size2; i++){
+            arr2.push(parseInt(prompt("Nhập vào phần tử của mảng B: ")));
+        }console.log(arr1, arr2);
 
         function maXele(){
         let max = arr1[0]/arr2[0];

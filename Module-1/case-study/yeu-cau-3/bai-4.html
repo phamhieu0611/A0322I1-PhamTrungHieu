@@ -5,22 +5,30 @@
     <title>Bai 4</title>
 </head>
 <body>
-    <input type="text" id="nhapso"/>
-    <input type="submit" value="Doi" onclick="doifunction()"/>
+<!--    <input type="text" id="nhapso"/>-->
+<!--    <input type="submit" value="Doi" onclick="doifunction()"/>-->
 
-    <script>
-    let so = ['1', '2', '3', '4', '5', '6', '7',"1234"];
-    let chu = ['mot', 'hai', 'ba', 'bon', 'nam', 'sau', 'bay', 'mot hai ba bon'];
+<!--    <script>-->
+<!--    let so = ['1', '2', '3', '4', '5', '6', '7',"1234"];-->
+<!--    let chu = ['mot', 'hai', 'ba', 'bon', 'nam', 'sau', 'bay', 'mot hai ba bon'];-->
 
-    function doifunction(){
-        let input = document.getElementById('nhapso').value;
+<!--    function doifunction(){-->
+<!--        let input = document.getElementById('nhapso').value;-->
 
-        if (so.indexOf(input) > -1){
-            alert("So " + input  + " nghia la "+ chu[so.indexOf(input)]);
-        }else {
-            alert("Khong co trong mang.")
-        }
-    }
-    </script>
+<!--        if (so.indexOf(input) > -1){-->
+<!--            alert("So " + input  + " nghia la "+ chu[so.indexOf(input)]);-->
+<!--        }else {-->
+<!--            alert("Khong co trong mang.")-->
+<!--        }-->
+<!--    }-->
+<!--    </script>-->
+<script>
+    let arrStrNum = ["không", "một", "ha", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín"];
+    let inputNum = prompt("Nhập vào số muốn chuyển thành chữ.");
+    let result = [];
+    for (let i = 0; i < inputNum.length; i++){
+        result += arrStrNum[inputNum[i]];
+    }alert("Số nhập vào là: "+inputNum+"\n"+"Chữ được chuyển thành là: "+result);
+</script>
 </body>
 </html>

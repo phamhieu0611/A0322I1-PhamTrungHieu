@@ -6,9 +6,10 @@
 </head>
 <body>
     <script>
-        for (let i = 0; i < 6; i++) {
-            for (let j = 0; j <= i; j++) {
-                if(j== 0 || j == i || i == 5){
+        let height = parseInt(prompt("Input height: "));
+        for (let i = 0; i < height; i++) {
+            for (let j = 0; j < height; j++) {
+                if(j== 0 || j == i || i == height - 1){
                     document.write(" *");
                 }
                 else {

@@ -6,22 +6,41 @@
 </head>
 <body>
     <script>
+        let arr1 = [];
+        let arr2 = [];
+        let result = [];
 
-        let arr1 = [7,2,5,3,5,3];
-        let arr2 = [7,2,5,4,6,3,5,3];
+        let size1 = parseInt(prompt("Nhập vào độ dài mảng A: "));
+        for (let i = 0; i < size1; i++){
+            arr1.push(parseInt(prompt("Nhập vào phần tử trong mảng A: ")));
+        }
+
+        let size2 = parseInt(prompt("Nhập vào độ dài mảng B: "));
+        for (let i =0; i < size2; i++){
+            arr2.push(parseInt(prompt("Nhập vào phần tử trong mảng B: ")));
+        }
+
+        for (let i =0; i < arr1.length; i++){
+            if (arr1.indexOf(arr2[i])===-1){
+                result.push(arr2[i]);
+            }
+        }result.sort();
+        alert("Mảng A là: "+arr1 +"\n" + "Mảng B là: "+arr2+"\n"+"Các số nguyên xuất hiện trong mảng B nhưng không xuất hiện trong mảng A là: "+result);
         // let difference = arr2.filter(x => !arr1.includes(x));
         // document.write(difference);
 
-        function difference() {
-            let result = [];
-            for (let i = 0; i < arr1.length; i++){
-                if (arr1.indexOf(arr2[i]) === -1){
-                    result.push(arr2[i]);
+        // function difference() {
+        //     let result = [];
+        //     for (let i = 0; i < arr1.length; i++){
+        //         if (arr1.indexOf(arr2[i]) === -1){
+        //             result.push(arr2[i]);
+        //
+        //         }
+        //     }document.write(result)
+        // }
+        // difference();
 
-                }
-            }document.write(result)
-        }
-        difference();
+
     </script>
 </body>
 </html>

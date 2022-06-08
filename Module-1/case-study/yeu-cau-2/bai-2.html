@@ -7,13 +7,25 @@
 <body>
     <script>
     let inp = prompt("Nhập ký tự để kiểm tra có phải nguyên âm: ");
-    let arr = ["u", "e", "o", "a", "i"];
-
-            if (arr.indexOf(inp.toLowerCase()) !== -1){
-                document.write(inp+" là nguyên âm!");
-            }else {
-                document.write(inp+" không phải nguyên âm.");
-            }
+    // let arr = ["u", "e", "o", "a", "i"];
+    //
+    //         if (arr.indexOf(inp.toLowerCase()) !== -1){
+    //             document.write(inp+" là nguyên âm!");
+    //         }else {
+    //             document.write(inp+" không phải nguyên âm.");
+    //         }
+    inp = inp.toLowerCase();
+    switch (inp) {
+    case 'u':
+    case 'e':
+    case 'o':
+    case 'a':
+    case 'i':
+        alert("Đây là nguyên âm!");
+        break;
+    default:
+        alert("Đây là phụ âm!");
+    }
     </script>
 </body>
 </html>

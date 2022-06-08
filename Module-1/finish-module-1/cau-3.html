@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+Thêm mã số: <input type="number"  id="maSo"/>
+Thêm tên sách: <input type="text"  id="name"/>
+Thêm Năm xuất bản: <input type="number" id="time"/>
+Thêm Số quyển: <input type="number" id="soLuong"/>
+
+<input type="submit" value="Add" onclick="addProduct()" /><br><br><br>
+<table id="output" border = '1px solid black' style="font-size:20px"></table><br>
+    <script>
+        class Book{
+            constructor(maSo, tenSach, xuatBan, soQuyen) {
+                this.maSo = maSo;
+                this.tenSach = tenSach;
+                this.xuatBan = xuatBan;
+                this.soQuyen = soQuyen;
+            }
+            getMaSo(){
+               return this.maSo;
+            }
+            setMaso(newId){
+                this.maSo = newId;
+            }
+            getTenSach(){
+                return this.tenSach();
+            }
+            setTenSach(newName){
+                this.tenSach = newName;
+            }
+            getXuatBan(){
+                    return this.xuatBan;
+            }
+            setXuatBan(newTime){
+                this.xuatBan = newTime;
+            }
+            getSoQuyen(){
+                return this.soQuyen;
+            }
+            setSoQuyen(newSL){
+                this.soQuyen = newSL;
+            }
+            status(){
+                if (this.soQuyen > 0){
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+            decrese(){
+                if(this.soQuyen > 0){
+                    this.soQuyen--;
+                }
+            }
+        }
+
+        function addProduct() {
+            let inputID = document.getElementById('maSo').value;
+            let inputName = document.getElementById('name').value;
+            let inputTGXB = document.getElementById('time').value;
+            let inputSoLuong = document.getElementById('soLuong').value;
+            let newBook = new Book(inputName,input)
+            if(inputID != "" && inputName != "" && inputTGXB <= 9999 && inputSoLuong > ){
+                arrayProduct.push(newProduct);
+            }
+
+        let book = new Book(1, "Halo: Infinit", 1996, 10);
+        let nameBook = book.tenSach;
+        let maSoSach = book.maSo;
+        let xuatBan = book.xuatBan;
+        let soLuong = book.soQuyen;
+        document.write("Mã số sách: "+maSoSach+" - Tên Sách: "+nameBook+" - Năm Xuất Bản"+xuatBan+" - Số lượng: "+soLuong);
+    </script>
+</body>
+</html>
