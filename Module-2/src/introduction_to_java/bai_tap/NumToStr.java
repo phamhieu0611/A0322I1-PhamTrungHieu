@@ -12,6 +12,7 @@ public class NumToStr {
             System.out.printf("Nhập vào số muốn đọc (tối đa có 3 chữ số): ");
             numinput = scanner.nextInt();
         }while (numinput > 999);
+        System.out.printf("Đã nhâp đúng định dạng, bắt đầu đọc số: ");
         int tram = numinput / 100;
         int chuc = numinput / 10 % 10;
         int donvi = numinput % 10;
