@@ -4,36 +4,19 @@ import java.util.Scanner;
 
 public class FindMin {
     public static void main(String[] args) {
-        int size;
-        int[] array;
-        Scanner scanner = new Scanner(System.in);
-        do {
-            System.out.print("Nhập vào độ dài mảng: ");
-            size = scanner.nextInt();
-            if (size > 20){
-                System.out.println("Độ dài mảng không được lớn hơn 20!");
-            }
-        }while (size>20);
-        array = new int[size];
-        int i = 0;
-        while (i < array.length){
-            System.out.print("Nhập vào giá trị " + (i+1) + " : ");
-            array[i] = scanner.nextInt();
-            i++;
-        }
-        System.out.print("Danh sách các giá trị: ");
-        for (int j = 0; j <array.length; j++){
-            System.out.print(array[j]+"\t");
-        }
-        int min = array[0];
-        int index = 1;
-        for (int j = 0; j < array.length; j++){
-            if (array[j] < min){
-                min = array[j];
-                index = j + 1;
+        int[] arr = {4, 12, 7, 8, 1, 6, 9};
+        int index = minValue(arr);
+        System.out.println("Số nhỏ nhất trong mảng là: " + arr[index]);
+    }
+
+    public static int minValue(int[] array) {
+        int index = 0;
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < array[index]) {
+                index = i;
             }
         }
-        System.out.println("\nSố bé nhất trong danh sách có giá trị là " + min + ", tại vị trí "+index);
+        return index;
     }
 }
 
