@@ -29,7 +29,7 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "Shape{" +
+        return "Test{" +
                 "color='" + color + '\'' +
                 ", filled=" + filled +
                 '}';
