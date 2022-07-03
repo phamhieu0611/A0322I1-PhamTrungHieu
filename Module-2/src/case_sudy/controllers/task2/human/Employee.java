@@ -39,4 +39,13 @@ public class Employee extends Person{
     public Employee(int id, String name, String birthDay, String gender, int idCard, int phoneNumber, String email) {
         super(id, name, birthDay, gender, idCard, phoneNumber, email);
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "level='" + getLevel() + '\'' +
+                ", workLocation='" + getWorkLocation() + '\'' +
+                ", salary=" + getSalary() +
+                '}';
+    }
 }

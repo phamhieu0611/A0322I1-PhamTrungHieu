@@ -74,4 +74,17 @@ public class Booking {
     public void setTypeService(String typeService) {
         this.typeService = typeService;
     }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "idBooking=" + getIdBooking() +
+                ", dayStart='" + getDayStart() + '\'' +
+                ", dayEnd='" + getDayEnd() + '\'' +
+                ", deposit=" + getDeposit() +
+                ", idCustomer='" + getIdCustomer() + '\'' +
+                ", nameService='" + getNameService() + '\'' +
+                ", typeService='" + getTypeService() + '\'' +
+                '}';
+    }
 }

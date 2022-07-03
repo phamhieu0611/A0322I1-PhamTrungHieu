@@ -59,4 +59,14 @@ public class Villa extends Facility {
                 "\nPrice Room = "+getPrice()+"$"+
                 "\nTotal = "+totalPriceVilla+"$");
     }
+
+    @Override
+    public String toString() {
+        return "Villa{" +
+                "roomStandard='" + getRoomStandard() + '\'' +
+                ", areaPool=" + getAreaPool() +
+                ", floor=" + getFloor() +
+                ", pricePerVilla=" + getPricePerVilla() +
+                '}';
+    }
 }

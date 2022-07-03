@@ -38,4 +38,12 @@ public class Room extends Facility {
         System.out.println("\nPrice Room = "+getPrice()+"$"+
                 "\nTotal = "+totalPrice+"$");
     }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "priceFerRoom=" + getPriceFerRoom() +
+                ", freeService='" + getFreeService() + '\'' +
+                '}';
+    }
 }

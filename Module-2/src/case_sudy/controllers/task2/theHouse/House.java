@@ -52,4 +52,13 @@ public class House extends Facility {
                 "\nPrice Room = "+getPrice()+"$"+
                 "\nTotal = "+totalPriceHouse+"$");
     }
+
+    @Override
+    public String toString() {
+        return "House{" +
+                "roomStandard='" + getRoomStandard() + '\'' +
+                ", pricePerHouse=" + getPricePerHouse() +
+                ", floor=" + getFloor() +
+                '}';
+    }
 }
