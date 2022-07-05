@@ -6,7 +6,6 @@ public class ReverseArrayStack {
     public static void main(String[] args) {
         Stack<Integer> wStack = new Stack();
         Stack<Integer> wReverseArrayStack = new Stack();
-        int temp;
 
         wStack.push(1);
         wStack.push(2);
@@ -17,8 +16,7 @@ public class ReverseArrayStack {
         int lengh = wStack.size();
 
         for (int i = 0; i < lengh; i++){
-            temp = wStack.pop();
-            wReverseArrayStack.push(temp);
+            wReverseArrayStack.push(wStack.pop());
         }
         System.out.println("Array stack after reverse: "+wReverseArrayStack);
     }
