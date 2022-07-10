@@ -80,7 +80,7 @@ public class ProductManager{
     }
 
     public void removeProduct(int id){
-        int index = 0;
+        int index = -1;
         for (Product product1 : this.linkedList){
             if (product1.getIdProduct() == id){
                 index+=1;
