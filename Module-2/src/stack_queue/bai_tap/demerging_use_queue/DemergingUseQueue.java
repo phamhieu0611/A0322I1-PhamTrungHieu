@@ -5,6 +5,7 @@ import java.util.*;
 public class DemergingUseQueue {
     public static void main(String[] args) {
         StudentList stdL[] = new StudentList[5];
+        List<StudentList> studentLists = new ArrayList<>();
         Queue<StudentList> queueNu= new LinkedList<>();
         Queue<StudentList> queueNam= new LinkedList<>();
 

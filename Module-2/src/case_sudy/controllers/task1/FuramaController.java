@@ -2,8 +2,11 @@ package case_sudy.controllers.task1;
 
 import java.util.Scanner;
 
+import static case_sudy.controllers.task2.controller.CustomerController.displayCustomer;
+import static case_sudy.controllers.task2.controller.EmployeeController.displayEmployee;
+
 public class FuramaController {
-    static void displayMainMenu(){
+    public static void displayMainMenu(){
         int choice;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Menu");
@@ -37,38 +40,6 @@ public class FuramaController {
                     System.exit(0);
             }
         }while (choice > 0 || choice < 6);
-    }
-    static void displayEmployee(){
-        System.out.println("1. Display list employee.");
-        System.out.println("2. Add new employee.");
-        System.out.println("3. Edit employee.");
-        System.out.println("4. Return main menu.");
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-        choice = scanner.nextInt();
-        do {
-            switch (choice){
-                case 4:
-                    displayMainMenu();
-                    break;
-            }
-        }while (choice != 4);
-    }
-    static void displayCustomer(){
-        System.out.println("1. Display list customer.");
-        System.out.println("2. Add new customer.");
-        System.out.println("3. Edit customer.");
-        System.out.println("4. Return main menu.");
-        Scanner scanner = new Scanner(System.in);
-        int choice;
-        choice = scanner.nextInt();
-        do {
-            switch (choice){
-                case 4:
-                    displayMainMenu();
-                    break;
-            }
-        }while (choice != 4);
     }
     static void displayFacility(){
         System.out.println("1. Display list facility.");
