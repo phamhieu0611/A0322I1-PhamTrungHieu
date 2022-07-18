@@ -1,20 +1,19 @@
-package case_sudy.controller;
+package newCaseStudy.controller;
 
-import case_sudy.controller.mainController.FuramaController;
-import case_sudy.models.facility.Facility;
-import case_sudy.models.facility.House;
-import case_sudy.models.facility.Room;
-import case_sudy.models.facility.Villa;
-import case_sudy.service.FacilityService;
-import case_sudy.service.serviceImpl.FacilityServiceImpl;
+import newCaseStudy.model.facility.Facility;
+import newCaseStudy.model.facility.House;
+import newCaseStudy.model.facility.Room;
+import newCaseStudy.model.facility.Villa;
+import newCaseStudy.service.FacilityService;
+import newCaseStudy.service.serviceImpl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
 public class FacilityController {
-    static Scanner scanner = new Scanner(System.in);
-    static FacilityService facilityService = new FacilityServiceImpl();
-    public static void displayFacility(){
-        int choice;
+    private static Scanner scanner = new Scanner(System.in);
+    private static FacilityService facilityService = new FacilityServiceImpl();
+    public static void controllerFacility() {
+        int select = 0;
         do {
             System.out.println("-----------------Facility Management-----------------");
             System.out.println("1. Display list facility.");
@@ -22,12 +21,12 @@ public class FacilityController {
             System.out.println("3. Edit facility.");
             System.out.println("4. Return main menu.");
             System.out.print("\nEnter your choice: ");
-            choice = Integer.parseInt(scanner.nextLine());
-            switch (choice){
+            select = Integer.parseInt(scanner.nextLine());
+            switch (select) {
                 case 1:
                     System.out.println("-----------------Display list facility-----------------");
                     facilityService.displayFacility();
-                    System.out.println("\n");
+                    System.out.println("/n");
                     break;
                 case 2:
                     System.out.println("-----------------Add new facility-----------------");
@@ -50,7 +49,6 @@ public class FacilityController {
                                 System.out.println("-----------------Add new Room-----------------");
                                 FacilityController.addRoomFacility();
                                 System.out.println("\n");
-
                                 break;
                             case 3:
                                 System.out.println("-----------------Add new Villa-----------------");
@@ -59,43 +57,19 @@ public class FacilityController {
                                 break;
                             case 4:
                                 System.out.println("\n");
-                                displayFacility();
+                                controllerFacility();
                                 break;
                         }
                     }while (choiceformAdd != 4);
                     break;
                 case 3:
+                    System.out.println("-----------------Edit Facility-----------------");
                     editFacilityService(facilityService);
                     break;
                 case 4:
-                    FuramaController.displayMainMenu();
-                    System.out.println("\n");
                     break;
             }
         }while (true);
-
-    }
-    private static void addHouseFacility() {
-        System.out.print("Input nameService: ");
-        String nameService = scanner.nextLine();
-        System.out.print("Type rent: ");
-        String typeRent = scanner.nextLine();
-        System.out.print("Input area: ");
-        double area = Double.parseDouble(scanner.nextLine());
-        System.out.print("Input MaxPerson: ");
-        int maxPerson = Integer.parseInt(scanner.nextLine());
-        System.out.print("Input rent price: ");
-        double price = Double.parseDouble(scanner.nextLine());
-        System.out.print("Input roomStandard: ");
-        String roomStandard = scanner.nextLine();
-        System.out.print("Input price per house: ");
-        double pricePerHouse = Double.parseDouble(scanner.nextLine());
-        System.out.print("Input floor in House: ");
-        int floor = Integer.parseInt(scanner.nextLine());
-        facilityService.addFacility(new House(nameService, typeRent, area, maxPerson, price, roomStandard, pricePerHouse, floor));
-        System.out.println();
-        System.out.println("Added complete!");
-        System.out.println("\n");
     }
 
     private static void addRoomFacility() {
@@ -113,7 +87,30 @@ public class FacilityController {
         double pricePerRoom = Double.parseDouble(scanner.nextLine());
         System.out.print("Input Free service in House: ");
         String freeService = scanner.nextLine();
-        facilityService.addFacility(new Room(nameService, typeRent, area, maxPerson, price, pricePerRoom, freeService));
+        facilityService.addFacility(new Room(nameService, typeRent, price, area, maxPerson, freeService));
+        System.out.println();
+        System.out.println("Added complete!");
+        System.out.println("\n");
+    }
+
+    private static void addHouseFacility() {
+        System.out.print("Input nameService: ");
+        String nameService = scanner.nextLine();
+        System.out.print("Type rent: ");
+        String typeRent = scanner.nextLine();
+        System.out.print("Input area: ");
+        double area = Double.parseDouble(scanner.nextLine());
+        System.out.print("Input MaxPerson: ");
+        int maxPerson = Integer.parseInt(scanner.nextLine());
+        System.out.print("Input rent price: ");
+        double price = Double.parseDouble(scanner.nextLine());
+        System.out.print("Input roomStandard: ");
+        String roomStandard = scanner.nextLine();
+        System.out.print("Input price per house: ");
+        double pricePerHouse = Double.parseDouble(scanner.nextLine());
+        System.out.print("Input floor in House: ");
+        int floor = Integer.parseInt(scanner.nextLine());
+        facilityService.addFacility(new House(nameService, typeRent, price, area, maxPerson, roomStandard, floor));
         System.out.println();
         System.out.println("Added complete!");
         System.out.println("\n");
@@ -138,7 +135,7 @@ public class FacilityController {
         int floor = Integer.parseInt(scanner.nextLine());
         System.out.print("Input price per Villa: ");
         double pricePerHouse = Double.parseDouble(scanner.nextLine());
-        facilityService.addFacility(new Villa(nameService, typeRent, area, maxPerson, price, roomStandard, areaPool, floor, pricePerHouse));
+        facilityService.addFacility(new Villa(nameService, typeRent, price, area, maxPerson, roomStandard, areaPool, floor));
         System.out.println();
         System.out.println("Added complete!");
         System.out.println("\n");
@@ -160,113 +157,6 @@ public class FacilityController {
         return choseID;
     }
 
-//    public static void editFacility(FacilityService facilityService){
-//        facilityService.displayFacility();
-//        int choiceID = getChoiceID(facilityService);
-//        Facility facility = facilityService.getFacility(choiceID);
-//        if (facility instanceof House){
-//            House houseEdit = (House) facility;
-//            houseEdit(houseEdit);
-//        }else if(facility instanceof Room){
-//            Room roomEdit = (Room) facility;
-//            roomEdit(roomEdit);
-//        }else if(facility instanceof Villa){
-//            Villa villaEdit = (Villa) facility;
-//            villaEdit(villaEdit);
-//        }
-//    }
-//    public static void houseEdit(House houseEdit){
-//        System.out.println("\n");
-//        System.out.print("Input nameService: ");
-//        String nameServiceNew = scanner.nextLine();
-//        houseEdit.setNameService(nameServiceNew);
-//        System.out.print("Type rent: ");
-//        String typeRentNew = scanner.nextLine();
-//        houseEdit.setTypeRent(typeRentNew);
-//        System.out.print("Input area: ");
-//        double areaNew = Double.parseDouble(scanner.nextLine());
-//        houseEdit.setArea(areaNew);
-//        System.out.print("Input new MaxPerson: ");
-//        int maxPersonNew = Integer.parseInt(scanner.nextLine());
-//        houseEdit.setMaxPerson(maxPersonNew);
-//        System.out.print("Input new rent price: ");
-//        double priceNew = Double.parseDouble(scanner.nextLine());
-//        houseEdit.setPrice(priceNew);
-//        System.out.print("Input new roomStandard: ");
-//        String roomStandardNew = scanner.nextLine();
-//        houseEdit.setRoomStandard(roomStandardNew);
-//        System.out.print("Input new price per house: ");
-//        double pricePerHouseNew = Double.parseDouble(scanner.nextLine());
-//        houseEdit.setPricePerHouse(pricePerHouseNew);
-//        System.out.print("Input new floor in House: ");
-//        int floorNew = Integer.parseInt(scanner.nextLine());
-//        houseEdit.setFloor(floorNew);
-//        System.out.println();
-//        System.out.println("Edited complete!");
-//        System.out.println("\n");
-//    }
-//    public static void roomEdit(Room roomEdit){
-//        System.out.println("\n");
-//        System.out.print("Input new nameService: ");
-//        String nameServiceNew = scanner.nextLine();
-//        roomEdit.setNameService(nameServiceNew);
-//        System.out.print("Input new type rent: ");
-//        String typeRentNew = scanner.nextLine();
-//        roomEdit.setTypeRent(typeRentNew);
-//        System.out.print("Input new area: ");
-//        double areaNew = Double.parseDouble(scanner.nextLine());
-//        roomEdit.setArea(areaNew);
-//        System.out.print("Input new MaxPerson: ");
-//        int maxPersonNew = Integer.parseInt(scanner.nextLine());
-//        roomEdit.setMaxPerson(maxPersonNew);
-//        System.out.print("Input new rent price: ");
-//        double priceNew = Double.parseDouble(scanner.nextLine());
-//        roomEdit.setPrice(priceNew);
-//        System.out.print("Input new price per room: ");
-//        double pricePerRoomNew = Double.parseDouble(scanner.nextLine());
-//        roomEdit.setPriceFerRoom(pricePerRoomNew);
-//        System.out.print("Input new Free service in House: ");
-//        String freeServiceNew = scanner.nextLine();
-//        roomEdit.setFreeService(freeServiceNew);
-//        System.out.println();
-//        System.out.println("Edited complete!");
-//        System.out.println("\n");
-//    }
-//    public static void villaEdit(Villa villaEdit){
-//        System.out.println("\n");
-//        System.out.print("Input new nameService: ");
-//        String nameServiceNew = scanner.nextLine();
-//        villaEdit.setNameService(nameServiceNew);
-//        System.out.print("Input new type rent: ");
-//        String typeRentNew = scanner.nextLine();
-//        villaEdit.setTypeRent(typeRentNew);
-//        System.out.print("Input new area: ");
-//        double areaNew = Double.parseDouble(scanner.nextLine());
-//        villaEdit.setArea(areaNew);
-//        System.out.print("Input new MaxPerson: ");
-//        int maxPersonNew = Integer.parseInt(scanner.nextLine());
-//        villaEdit.setMaxPerson(maxPersonNew);
-//        System.out.print("Input new rent price: ");
-//        double priceNew = Double.parseDouble(scanner.nextLine());
-//        villaEdit.setPrice(priceNew);
-//        System.out.print("Input new roomStandard: ");
-//        String roomStandardNew = scanner.nextLine();
-//        villaEdit.setRoomStandard(roomStandardNew);
-//        System.out.print("Input new areapool of villa: ");
-//        double areaPoolNew = Double.parseDouble(scanner.nextLine());
-//        villaEdit.setAreaPool(areaPoolNew);
-//        System.out.print("Input new floor in Villa: ");
-//        int floorNew = Integer.parseInt(scanner.nextLine());
-//        villaEdit.setFloor(floorNew);
-//        System.out.print("Input new price per Villa: ");
-//        double pricePerVillaNew = Double.parseDouble(scanner.nextLine());
-//        villaEdit.setPricePerVilla(pricePerVillaNew);
-//        System.out.println();
-//        System.out.println("Edited complete!");
-//        System.out.println("\n");
-//    }
-
-
     public static int getChoseIDEditFacility(FacilityService facilityService) {
         int choseID = 0;
         do{
@@ -282,42 +172,43 @@ public class FacilityController {
         }while (choseID == facilityService.sizeFacility());
         return choseID;
     }
+
     public static void editFacilityService(FacilityService facilityService) {
         facilityService.displayFacility();
         int choseID = getChoseIDEditFacility(facilityService);
         Facility facility = facilityService.getFacility(choseID);
         if(facility instanceof House){
-            House houseEdit = (House) facility;
+            House editHouse = (House) facility;
             int choseMenuEditHouse = 0;
             do{
-                choseMenuEditHouse = getChoseMenuEditHouse(choseID, houseEdit);
-                chosePropertiesEditHouse(houseEdit, choseMenuEditHouse);
+                choseMenuEditHouse = getChoseMenuEditHouse(choseID, editHouse);
+                chosePropertiesEditHouse(editHouse, choseMenuEditHouse);
             }while (choseMenuEditHouse != 7);
         }else if(facility instanceof Room){
-            Room roomEdit = (Room) facility;
+            Room editRoom = (Room) facility;
             int choseMenuEditRoom = 0;
             do{
-                choseMenuEditRoom = getChoseMenuEditRoom(choseID, roomEdit);
-                chosePropertiesEditRoom(roomEdit, choseMenuEditRoom);
+                choseMenuEditRoom = getChoseMenuEditRoom(choseID, editRoom);
+                chosePropertiesEditRoom(editRoom, choseMenuEditRoom);
             }while (choseMenuEditRoom != 6);
         }else if(facility instanceof Villa){
-            Villa villaEdit = (Villa) facility;
+            Villa editVilla = (Villa) facility;
             int choseMenuEditVilla = 0;
             do{
-                choseMenuEditVilla = getChoseMenuEditVilla(choseID, villaEdit);
-                chosePropertiesEditVilla(villaEdit, choseMenuEditVilla);
+                choseMenuEditVilla = getChoseMenuEditVilla(choseID, editVilla);
+                chosePropertiesEditVilla(editVilla, choseMenuEditVilla);
             }while (choseMenuEditVilla != 8);
         }
     }
-    public static int getChoseMenuEditHouse(int choseID, House houseEdit) {
+    public static int getChoseMenuEditHouse(int choseID, House editHouse) {
         int choseMenuEditHouse;
         System.out.println("Chose on Menu Edit House "+choseID+": ");
-        System.out.println("1\tEdit Name Service ("+houseEdit.getNameService()+")");
-        System.out.println("2\tEdit Area Use ("+houseEdit.getArea()+")");
-        System.out.println("3\tEdit floors ("+houseEdit.getFloor()+")");
-        System.out.println("4\tEdit Maximum People ("+houseEdit.getMaxPerson()+")");
-        System.out.println("5\tEdit Standard Room ("+houseEdit.getRoomStandard()+")");
-        System.out.println("6\tEdit Rental Cost ("+houseEdit.getPrice()+")");
+        System.out.println("1\tEdit Name Service ("+editHouse.getNameService()+")");
+        System.out.println("2\tEdit Area Use ("+editHouse.getArea()+")");
+        System.out.println("3\tEdit floors ("+editHouse.getFloor()+")");
+        System.out.println("4\tEdit Maximum People ("+editHouse.getMaxPerson()+")");
+        System.out.println("5\tEdit Standard Room ("+editHouse.getRoomStandard()+")");
+        System.out.println("6\tEdit Rental Cost ("+editHouse.getPrice()+")");
         System.out.println("7\tReturn main menu");
         choseMenuEditHouse = Integer.parseInt(scanner.nextLine());
         return choseMenuEditHouse;
@@ -356,99 +247,99 @@ public class FacilityController {
                 break;
         }
     }
-    public static void chosePropertiesEditVilla(Villa villaEdit, int choseMenuEditVilla) {
+    public static void chosePropertiesEditVilla(Villa editVilla, int choseMenuEditVilla) {
         switch (choseMenuEditVilla){
             case 1:
                 System.out.println("Enter Name Service for new Villa: ");
                 String nameService = scanner.nextLine();
-                villaEdit.setNameService(nameService);
+                editVilla.setNameService(nameService);
                 break;
             case 2:
                 System.out.println("Enter Area Use for new Villa: ");
                 double areaUse = Double.parseDouble(scanner.nextLine());
-                villaEdit.setArea(areaUse);
+                editVilla.setArea(areaUse);
                 break;
             case 3:
                 System.out.println("Enter floors for new Villa: ");
                 int floors =Integer.parseInt(scanner.nextLine());
-                villaEdit.setFloor(floors);
+                editVilla.setFloor(floors);
                 break;
             case 4:
                 System.out.println("Enter Maximum People for new Villa : ");
                 int maximumPeople = Integer.parseInt(scanner.nextLine());
-                villaEdit.setMaxPerson(maximumPeople);
+                editVilla.setMaxPerson(maximumPeople);
                 break;
             case 5:
                 System.out.println("Enter Standard Room for new Villa: ");
                 String sRoom = scanner.nextLine();
-                villaEdit.setRoomStandard(sRoom);
+                editVilla.setRoomStandard(sRoom);
                 break;
             case 6:
                 System.out.println("Enter Rental Cost for new Villa : ");
                 double rentalCost = Double.parseDouble(scanner.nextLine());
-                villaEdit.setPrice(rentalCost);
+                editVilla.setPrice(rentalCost);
                 break;
             case 7:
                 System.out.println("Enter pool Area for new Villa : ");
                 double poolArea = Double.parseDouble(scanner.nextLine());
-                villaEdit.setAreaPool(poolArea);
+                editVilla.setAreaPool(poolArea);
                 break;
         }
     }
 
-    public static int getChoseMenuEditVilla(int choseID, Villa villaEdit) {
+    public static int getChoseMenuEditVilla(int choseID, Villa editVilla) {
         int choseMenuEditVilla;
         System.out.println("Chose on Menu Edit Villa "+choseID+": ");
-        System.out.println("1\tEdit Name Service ("+villaEdit.getNameService()+")");
-        System.out.println("2\tEdit Area Use ("+villaEdit.getArea()+")");
-        System.out.println("3\tEdit floors ("+villaEdit.getFloor()+")");
-        System.out.println("4\tEdit Maximum People ("+villaEdit.getMaxPerson()+")");
-        System.out.println("5\tEdit Standard Room ("+villaEdit.getRoomStandard()+")");
-        System.out.println("6\tEdit Rental Cost ("+villaEdit.getPrice()+")");
-        System.out.println("7\tEdit Pool Area ("+villaEdit.getAreaPool()+")");
+        System.out.println("1\tEdit Name Service ("+editVilla.getNameService()+")");
+        System.out.println("2\tEdit Area Use ("+editVilla.getArea()+")");
+        System.out.println("3\tEdit floors ("+editVilla.getFloor()+")");
+        System.out.println("4\tEdit Maximum People ("+editVilla.getMaxPerson()+")");
+        System.out.println("5\tEdit Standard Room ("+editVilla.getRoomStandard()+")");
+        System.out.println("6\tEdit Rental Cost ("+editVilla.getPrice()+")");
+        System.out.println("7\tEdit Pool Area ("+editVilla.getAreaPool()+")");
         System.out.println("8\tReturn main menu");
         choseMenuEditVilla = Integer.parseInt(scanner.nextLine());
         return choseMenuEditVilla;
     }
 
-    public static void chosePropertiesEditRoom(Room roomEdit, int choseMenuEditRoom) {
+    public static void chosePropertiesEditRoom(Room editRoom, int choseMenuEditRoom) {
         switch (choseMenuEditRoom){
             case 1:
                 System.out.println("Enter Name Service for new Room: ");
                 String nameService = scanner.nextLine();
-                roomEdit.setNameService(nameService);
+                editRoom.setNameService(nameService);
                 break;
             case 2:
                 System.out.println("Enter Area Use for new Room: ");
                 double areaUse = Double.parseDouble(scanner.nextLine());
-                roomEdit.setArea(areaUse);
+                editRoom.setArea(areaUse);
                 break;
             case 3:
                 System.out.println("Enter Free Service for new Room: ");
                 String freeService = scanner.nextLine();
-                roomEdit.setFreeService(freeService);
+                editRoom.setFreeService(freeService);
                 break;
             case 4:
                 System.out.println("Enter Maximum People for new Room : ");
                 int maximumPeople = Integer.parseInt(scanner.nextLine());
-                roomEdit.setMaxPerson(maximumPeople);
+                editRoom.setMaxPerson(maximumPeople);
                 break;
             case 5:
                 System.out.println("Enter Rental Cost for new Room : ");
                 double rentalCost = Double.parseDouble(scanner.nextLine());
-                roomEdit.setPrice(rentalCost);
+                editRoom.setPrice(rentalCost);
                 break;
         }
     }
 
-    public static int getChoseMenuEditRoom(int choseID, Room roomEdit) {
+    public static int getChoseMenuEditRoom(int choseID, Room editRoom) {
         int choseMenuEditRoom;
         System.out.println("Chose on Menu Edit Room "+choseID+": ");
-        System.out.println("1\tEdit Name Service ("+roomEdit.getNameService()+")");
-        System.out.println("2\tEdit Area Use ("+roomEdit.getArea()+")");
-        System.out.println("3\tEdit free Service ("+roomEdit.getFreeService()+")");
-        System.out.println("4\tEdit Maximum People ("+roomEdit.getMaxPerson()+")");
-        System.out.println("5\tEdit Rental Cost ("+roomEdit.getPrice()+")");
+        System.out.println("1\tEdit Name Service ("+editRoom.getNameService()+")");
+        System.out.println("2\tEdit Area Use ("+editRoom.getArea()+")");
+        System.out.println("3\tEdit free Service ("+editRoom.getFreeService()+")");
+        System.out.println("4\tEdit Maximum People ("+editRoom.getMaxPerson()+")");
+        System.out.println("5\tEdit Rental Cost ("+editRoom.getPrice()+")");
         System.out.println("6\tReturn main menu");
         choseMenuEditRoom = Integer.parseInt(scanner.nextLine());
         return choseMenuEditRoom;

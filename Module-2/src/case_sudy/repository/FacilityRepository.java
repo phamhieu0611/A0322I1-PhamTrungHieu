@@ -1,6 +1,6 @@
 package case_sudy.repository;
 
-import case_sudy.models.Facility;
+import case_sudy.models.facility.Facility;
 
 public interface FacilityRepository{
     void addFacility(Facility facility);

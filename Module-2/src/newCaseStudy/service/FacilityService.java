@@ -1,6 +1,7 @@
-package case_sudy.service;
+package newCaseStudy.service;
 
-import case_sudy.models.facility.Facility;
+
+import newCaseStudy.model.facility.Facility;
 
 public interface FacilityService extends Service{
     void addFacility(Facility facility);

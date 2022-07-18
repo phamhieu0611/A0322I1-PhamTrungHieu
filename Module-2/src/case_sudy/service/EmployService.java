@@ -1,6 +1,6 @@
 package case_sudy.service;
 
-import case_sudy.models.Employee;
+import case_sudy.models.person.Employee;
 
 import java.util.List;
 

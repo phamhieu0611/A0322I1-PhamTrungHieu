@@ -1,6 +1,6 @@
 package case_sudy.repository;
 
-import case_sudy.models.Customer;
+import case_sudy.models.person.Customer;
 
 import java.util.List;
 

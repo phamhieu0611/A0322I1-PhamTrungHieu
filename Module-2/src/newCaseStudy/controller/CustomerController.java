@@ -1,34 +1,36 @@
-package case_sudy.controller;
+package newCaseStudy.controller;
 
-import case_sudy.controller.mainController.FuramaController;
-import case_sudy.service.CustomerService;
-import case_sudy.models.person.Customer;
-import case_sudy.repository.repositoryImpl.CustomerRepositoryIplm;
-import case_sudy.service.serviceImpl.CustomerServiceImpl;
+import newCaseStudy.controller.mainController.FuramaController;
+import newCaseStudy.model.person.Customer;
+import newCaseStudy.reponsitory.reponsitoryImpl.CustomerReponsitoryImpl;
+import newCaseStudy.service.CustomerService;
+import newCaseStudy.service.serviceImpl.CustomerServiceImpl;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerController {
-    private static List<Customer> customerList = new CustomerRepositoryIplm().getCustomerList();
+    private static List<Customer> customerList = new CustomerReponsitoryImpl().displayAll();
     private CustomerService customerService = new CustomerServiceImpl();
-    static Scanner scanner = new Scanner(System.in);
-    static CustomerController customerController = new CustomerController();
+    private static Scanner scanner = new Scanner(System.in);
+    private static CustomerController customerController = new CustomerController();
 
     public void displayAllCustomer(){
-        for (Customer customer : customerService.findAll()){
+        for (Customer customer : customerService.displayAll()){
             System.out.println(customer);
         }
     }
+
     public void addNewCustomer(Customer customer){
         customerService.addCustomer(customer);
     }
-    public void updateNewCustomer(int id,Customer customer){
-        customerService.updateCustomer(id, customer);
+
+    public void editCustomer(int id, Customer customer){
+        customerService.editCustomer(id, customer);
     }
 
-    public static void displayCustomer(){
+    public static void controllerCustomer(){
         int select = 0;
         do {
             System.out.println("-----------------Customer Management-----------------");
@@ -65,7 +67,7 @@ public class CustomerController {
                     String typeCustomer = scanner.nextLine();
                     System.out.print("Input address:");
                     String address = scanner.nextLine();
-                    customerController.addNewCustomer(new Customer(id, name, birthday, gender, idCard, phoneNumber, email, typeCustomer, address));
+                    customerController.addNewCustomer(new Customer(id, idCard, phoneNumber, name, birthday, gender, email, typeCustomer, address));
                     System.out.println();
                     System.out.println("Added complete!");
                     System.out.println("\n");
@@ -74,9 +76,9 @@ public class CustomerController {
                     System.out.println("-----------------Edit Customer-----------------");
                     System.out.print("Input id Employee wanna Edit: ");
                     int idEdit = Integer.parseInt(scanner.nextLine());
-                    Iterator<Customer> customerItrt = customerList.iterator();
-                    while (customerItrt.hasNext()){
-                        Customer customer = customerItrt.next();
+                    Iterator<Customer> customerIterator = customerList.iterator();
+                    while (customerIterator.hasNext()){
+                        Customer customer = customerIterator.next();
                         if (customer.getId() == idEdit){
                             System.out.print("Input new ID: ");
                             int idNew = Integer.parseInt(scanner.nextLine());
@@ -96,16 +98,14 @@ public class CustomerController {
                             String typeCustomerNew = scanner.nextLine();
                             System.out.print("Input new address:");
                             String addressNew = scanner.nextLine();
-                            customerController.updateNewCustomer(idEdit, new Customer(idNew, nameNew, birthdayNew, genderNew, idCardNew, phoneNumberNew, emailNew, typeCustomerNew, addressNew));
+                            customerController.editCustomer(idEdit, new Customer(idNew, idCardNew, phoneNumberNew, nameNew, birthdayNew, genderNew, emailNew, typeCustomerNew, addressNew));
                             System.out.println();
                             System.out.println("Update complete!");
                         }
-                    }
-                    System.out.println("Your ID input not found, do it again!");
+                    }System.out.println("Your ID input not found, do it again!");
                     System.out.println("\n");
                     break;
                 case 4:
-                    FuramaController.displayMainMenu();
                     break;
             }
         }while (true);

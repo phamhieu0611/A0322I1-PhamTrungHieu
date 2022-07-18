@@ -1,9 +1,10 @@
-package case_sudy.controller;
+package newCaseStudy.controller;
 
-import case_sudy.service.EmployService;
-import case_sudy.models.person.Employee;
-import case_sudy.repository.repositoryImpl.EmployeeRepositoryIplm;
-import case_sudy.service.serviceImpl.EmployServiceImpl;
+import newCaseStudy.controller.mainController.FuramaController;
+import newCaseStudy.model.person.Employee;
+import newCaseStudy.reponsitory.reponsitoryImpl.EmployeeReponsitoryImpl;
+import newCaseStudy.service.EmployeeService;
+import newCaseStudy.service.serviceImpl.EmployeeServiceImpl;
 
 import java.util.Iterator;
 import java.util.List;
@@ -12,23 +13,26 @@ import java.util.Scanner;
 import static case_sudy.controller.mainController.FuramaController.displayMainMenu;
 
 public class EmployeeController {
-    private EmployService employService = new EmployServiceImpl();
-    private static List<Employee> employeeList= new EmployeeRepositoryIplm().getEmployeeList();
-    public void displayAllEmployee(){
-        for (Employee employee: employService.findAll()){
+    private EmployeeService employeeService = new EmployeeServiceImpl();
+    private static List<Employee> employeeList = new EmployeeReponsitoryImpl().displayAll();
+    private static Scanner scanner = new Scanner(System.in);
+
+    public void displayAllListEmployee() {
+        for (Employee employee : employeeService.displayAll()) {
             System.out.println(employee);
         }
     }
-    public void addNewEmployee(Employee employee){
-        employService.addEmployee(employee);
-    }
-    public void updateEmployee(int id, Employee employee){
-        employService.updateEmpoyee(id, employee);
+
+    public void addNewEmployee(Employee employee) {
+        employeeService.addEmployee(employee);
     }
 
-    public static void displayEmployee(){
+    public void editEmployee(int id, Employee employee) {
+        employeeService.editEmployee(id, employee);
+    }
+
+    public static void employeeController() {
         EmployeeController employeeController = new EmployeeController();
-        Scanner scanner = new Scanner(System.in);
         int select = 0;
         do {
             System.out.println("-----------------Employee Management-----------------");
@@ -39,10 +43,10 @@ public class EmployeeController {
             System.out.print("\nEnter your choice: ");
             select = Integer.parseInt(scanner.nextLine());
 
-            switch (select){
+            switch (select) {
                 case 1:
                     System.out.println("-----------------Display list employee-----------------");
-                    employeeController.displayAllEmployee();
+                    employeeController.displayAllListEmployee();
                     System.out.println("\n");
                     break;
                 case 2:
@@ -67,7 +71,7 @@ public class EmployeeController {
                     String workLocation = scanner.nextLine();
                     System.out.print("Input salary:");
                     double salary = Double.parseDouble(scanner.nextLine());
-                    employeeController.addNewEmployee(new Employee(id, name, birthday, gender, idCard, phoneNumber, email, level, workLocation, salary));
+                    employeeController.addNewEmployee(new Employee(id, idCard, phoneNumber, name,birthday,gender,email,level,workLocation,salary));
                     System.out.println();
                     System.out.println("Added complete!");
                     System.out.println("\n");
@@ -76,9 +80,9 @@ public class EmployeeController {
                     System.out.println("-----------------Edit employee-----------------");
                     System.out.print("Input id Employee wanna Edit: ");
                     int idEdit = Integer.parseInt(scanner.nextLine());
-                    Iterator<Employee> employeeItrt = employeeList.iterator();
-                    while (employeeItrt.hasNext()){
-                        Employee employee = employeeItrt.next();
+                    Iterator<Employee> employeeIterator = employeeList.iterator();
+                    while (employeeIterator.hasNext()){
+                        Employee employee = employeeIterator.next();
                         if (employee.getId() == idEdit){
                             System.out.print("Input new ID: ");
                             int idNew = Integer.parseInt(scanner.nextLine());
@@ -100,18 +104,15 @@ public class EmployeeController {
                             String workLocationNew = scanner.nextLine();
                             System.out.print("Input new salary:");
                             double salaryNew = Double.parseDouble(scanner.nextLine());
-                            employeeController.updateEmployee(idEdit, new Employee(idNew, nameNew, birthdayNew, genderNew, idCardNew, phoneNumberNew, emailNew, levelNew, workLocationNew, salaryNew));
-                            System.out.println();
-                            System.out.println("Update complete!");
+                            employeeController.editEmployee(idEdit, new Employee(idNew, idCardNew, phoneNumberNew, nameNew, birthdayNew, genderNew, emailNew, levelNew, workLocationNew, salaryNew));
                         }
-                    }
-                    System.out.println("Your ID input not found, do it again!");
+                    } System.out.println("Your ID input not found, do it again!");
                     System.out.println("\n");
                     break;
                 case 4:
-                    displayMainMenu();
+
                     break;
             }
-        }while (true);
+        } while (true);
     }
 }
