@@ -64,7 +64,7 @@ public class ReadCountry {
 
     private static void printCountry(List<String> country){
         System.out.println(
-                "country [id = "
+                "country [id = "+country.get(0)
                 +", code = "+country.get(1)
                 +" , name = "+country.get(2)
                 +"]");

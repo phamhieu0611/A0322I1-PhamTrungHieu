@@ -15,6 +15,7 @@ public class CopyText {
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = "";
             while ((line = reader.readLine()) != null){
+                System.out.println(line);
                 string.add(line);
             }
         }  catch (Exception e) {
@@ -46,7 +47,6 @@ public class CopyText {
 
     public static void main(String[] args) {
         CopyText copyText = new CopyText();
-        copyText.readFile("C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\iO_textFile\\bai_tap\\copyTextFile\\source.txt");
         copyText.copyByte("C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\iO_textFile\\bai_tap\\copyTextFile\\target.txt", "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\iO_textFile\\bai_tap\\copyTextFile\\source.txt");
     }
 }
