@@ -58,12 +58,12 @@ public class FacilityController {
         }
     }
 
-    public void displayAllList() {
-        List<Room> roomList = readRoomFile(FILE_ROOM_CSV);
-        for (Room rooms : roomList) {
-            System.out.println(rooms);
-        }
-    }
+//    public void displayAllList() {
+//        List<Room> roomList = readRoomFile(FILE_ROOM_CSV);
+//        for (Room rooms : roomList) {
+//            System.out.println(rooms);
+//        }
+//    }
 
     public static void addNewHouse(House house){
         try {
