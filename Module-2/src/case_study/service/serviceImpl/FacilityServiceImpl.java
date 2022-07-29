@@ -10,15 +10,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class FacilityServiceImpl implements FacilityService {
-    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private static Map<Facility, Integer>   facilityIntegerMap = new LinkedHashMap<>();
     public static Room room;
     public static House house;
     public static Villa villa;
-    static {
-        room = new Room("Rent room", "Month", 150.75, 22.5, 4, "Free wifi");
-        house = new House("Rent House", "year", 225.50, 64.1, 7, "Gold", 2);
-        villa = new Villa("Rent Vilaa", "Week", 775.50, 172.25, 14, "Diamond", 40.05, 4);
-    }
     public FacilityServiceImpl(Map<Facility, Integer> facilityIntegerMap){
         this.facilityIntegerMap = facilityIntegerMap;
     }

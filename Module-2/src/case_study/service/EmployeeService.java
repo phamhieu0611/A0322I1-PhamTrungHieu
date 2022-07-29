@@ -2,10 +2,12 @@ package case_study.service;
 
 import case_study.models.person.Employee;
 
-import java.util.List;
-
 public interface EmployeeService extends Service{
-    List<Employee> displayAll();
+    Employee getEmployee(int index);
+    void employeeShow();
+    int sizeListEmployee();
+    void displayAll();
     void addEmployee(Employee employee);
-    void editEmployee(int id, Employee employee);
+    void editEmployee(int index, Employee employee);
+    void editEmployee(int id, int idCard, int phoneNumber, String name, String birthDay, String gender, String email, String level, String workLocation, double salary);
 }

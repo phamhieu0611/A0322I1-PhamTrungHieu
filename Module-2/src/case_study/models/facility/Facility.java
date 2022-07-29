@@ -1,10 +1,11 @@
 package case_study.models.facility;
 
 public abstract class Facility {
-    private static int id = 1000;
     private String facilityID;
-    private String nameService, typeRent;
-    private double price, area;
+    private String nameService;
+    private String typeRent;
+    private double price;
+    private double area;
     private int maxPerson;
 
     public Facility(String nameService, String typeRent, double price, double area, int maxPerson) {
@@ -13,14 +14,6 @@ public abstract class Facility {
         this.price = price;
         this.area = area;
         this.maxPerson = maxPerson;
-        String maHoa = "SV";
-        if (nameService.equalsIgnoreCase("Villa"))
-            maHoa+="VL";
-        if (nameService.equalsIgnoreCase("House"))
-            maHoa+= "HO";
-        if (nameService.equalsIgnoreCase("Room"))
-            maHoa+="RO";
-        facilityID = maHoa+"_"+(++id);
     }
 
     public Facility(String facilityID, String nameService, String typeRent, double price, double area, int maxPerson) {
@@ -33,14 +26,6 @@ public abstract class Facility {
     }
 
     public Facility() {
-    }
-
-    public static int getId() {
-        return id;
-    }
-
-    public static void setId(int id) {
-        Facility.id = id;
     }
 
     public String getFacilityID() {

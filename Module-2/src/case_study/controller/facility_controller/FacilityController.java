@@ -1,15 +1,14 @@
 package case_study.controller.facility_controller;
 
+import case_study.controller.FuramaController;
 import case_study.models.facility.Facility;
 import case_study.models.facility.House;
 import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
-import case_study.models.person.Employee;
 import case_study.service.FacilityService;
 import case_study.service.serviceImpl.FacilityServiceImpl;
 
 import java.io.*;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -42,9 +41,6 @@ public class FacilityController {
                 room = new Room(faciliryID, nameService, typeRent, price, area, maxPerson, freeService);
                 int value = Integer.parseInt(temp[8]);
                 map.put(room, value);
-                if (Facility.getId()<id){
-                    Facility.setId(id);
-                }
             }
         } catch (Exception e) {
             System.err.println("File not found or ERROR!");
@@ -70,7 +66,7 @@ public class FacilityController {
             FileWriter fileWriter = new FileWriter(FILE_HOUSE_CSV, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.newLine();
-            bufferedWriter.write(house.getFacilityID()+","+house.getNameService()+","+house.getTypeRent()+","+house.getPrice()+","+house.getMaxPerson()+","+house.getRoomStandard()+","+house.getFloor());
+            bufferedWriter.write(house.getFacilityID()+","+house.getNameService()+","+house.getTypeRent()+","+house.getArea()+","+house.getPrice()+","+house.getMaxPerson()+","+house.getRoomStandard()+","+house.getFloor());
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -82,7 +78,7 @@ public class FacilityController {
             FileWriter fileWriter = new FileWriter(FILE_ROOM_CSV, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.newLine();
-            bufferedWriter.write(room.getFacilityID()+","+room.getNameService()+","+room.getTypeRent()+","+room.getPrice()+","+room.getMaxPerson()+","+room.getFreeService());
+            bufferedWriter.write(room.getFacilityID()+","+room.getNameService()+","+room.getTypeRent()+","+room.getArea()+","+room.getPrice()+","+room.getMaxPerson()+","+room.getFreeService());
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -94,7 +90,7 @@ public class FacilityController {
             FileWriter fileWriter = new FileWriter(FILE_VILLA_CSV, true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.newLine();
-            bufferedWriter.write(villa.getFacilityID()+","+villa.getNameService()+","+villa.getTypeRent()+","+villa.getPrice()+","+villa.getMaxPerson()+","+villa.getRoomStandard()+","+villa.getFloor());
+            bufferedWriter.write(villa.getFacilityID()+","+villa.getNameService()+","+villa.getTypeRent()+","+villa.getArea()+","+villa.getPrice()+","+villa.getMaxPerson()+","+villa.getRoomStandard()+","+villa.getFloor());
             bufferedWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -124,9 +120,6 @@ public class FacilityController {
                 house = new House(faciliryID, nameService, typeRent, price, area, maxPerson, roomStandart, floor);
                 int value = Integer.parseInt(temp[9]);
                 map.put(house, value);
-                if (Facility.getId()<id){
-                    Facility.setId(id);
-                }
             }
         } catch (Exception e) {
             System.err.println("File not found or ERROR!");
@@ -164,9 +157,6 @@ public class FacilityController {
                 villa = new Villa(faciliryID, nameService, typeRent, price, area, maxPerson, roomStandart, areaPool, floor);
                 int value = Integer.parseInt(temp[10]);
                 map.put(villa, value);
-                if (Facility.getId()<id){
-                    Facility.setId(id);
-                }
             }
         } catch (Exception e) {
             System.err.println("File not found or ERROR!");
@@ -493,6 +483,7 @@ public class FacilityController {
                     editFacilityService(facilityService);
                     break;
                 case 4:
+                    FuramaController.furamaController();
                     break;
             }
         }while (true);
