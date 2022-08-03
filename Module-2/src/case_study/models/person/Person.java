@@ -74,14 +74,12 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "id=" + id +
-                ", idCard=" + idCard +
-                ", phoneNumber=" + phoneNumber +
-                ", name='" + name + '\'' +
-                ", birthDay='" + birthDay + '\'' +
-                ", gender='" + gender + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return  "id=" + id +
+                " , idCard=" + idCard +
+                " , phoneNumber=" + phoneNumber +
+                " , name='" + name + '\'' +
+                " , birthDay='" + birthDay + '\'' +
+                " , gender='" + gender + '\'' +
+                " , email='" + email + '\'';
     }
 }

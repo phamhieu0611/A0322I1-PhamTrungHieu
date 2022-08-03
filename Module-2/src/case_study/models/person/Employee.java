@@ -11,6 +11,9 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
+    public Employee() {
+    }
+
     public String getLevel() {
         return level;
     }
@@ -37,10 +40,9 @@ public class Employee extends Person{
 
     @Override
     public String toString() {
-        return "Employee{" +super.toString()+'\''+
-                "level='" + level + '\'' +
+        return "Employee:" +super.toString()+'\''+
+                " , level='" + level + '\'' +
                 ", workLocation='" + workLocation + '\'' +
-                ", salary=" + salary +
-                '}';
+                ", salary=" + salary;
     }
 }

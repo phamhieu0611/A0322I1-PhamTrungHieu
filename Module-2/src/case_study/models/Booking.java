@@ -1,25 +1,24 @@
 package case_study.models;
 
-import java.util.Date;
+import case_study.models.facility.Facility;
+import case_study.models.person.Customer;
 
-public class Booking implements Comparable<Booking> {
+public class Booking {
     private int bookingID;
-    private Date firstDate;
-    private Date LastDate;
-    private int CustomerID;
-    private String facilityName;
-    private String facilityType;
+    private String firstDate;
+    private String LastDate;
+    private Customer customer;
+    private Facility facility;
 
     public Booking() {
     }
 
-    public Booking(int bookingID, Date firstDate, Date lastDate, int customerID, String facilityName, String facilityType) {
+    public Booking(int bookingID, String firstDate, String lastDate, Customer customer, Facility facility) {
         this.bookingID = bookingID;
         this.firstDate = firstDate;
-        LastDate = lastDate;
-        CustomerID = customerID;
-        this.facilityName = facilityName;
-        this.facilityType = facilityType;
+        this.LastDate = lastDate;
+        this.customer = customer;
+        this.facility = facility;
     }
 
     public int getBookingID() {
@@ -30,60 +29,45 @@ public class Booking implements Comparable<Booking> {
         this.bookingID = bookingID;
     }
 
-    public Date getFirstDate() {
+    public String getFirstDate() {
         return firstDate;
     }
 
-    public void setFirstDate(Date firstDate) {
+    public void setFirstDate(String firstDate) {
         this.firstDate = firstDate;
     }
 
-    public Date getLastDate() {
+    public String getLastDate() {
         return LastDate;
     }
 
-    public void setLastDate(Date lastDate) {
+    public void setLastDate(String lastDate) {
         LastDate = lastDate;
     }
 
-    public int getCustomerID() {
-        return CustomerID;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerID(int customerID) {
-        CustomerID = customerID;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
-    public String getFacilityName() {
-        return facilityName;
+    public Facility getFacility() {
+        return facility;
     }
 
-    public void setFacilityName(String facilityName) {
-        this.facilityName = facilityName;
-    }
-
-    public String getFacilityType() {
-        return facilityType;
-    }
-
-    public void setFacilityType(String facilityType) {
-        this.facilityType = facilityType;
+    public void setFaacility(Facility facility) {
+        this.facility = facility;
     }
 
     @Override
     public String toString() {
-        return "Booking{" +
+        return
                 "bookingID=" + bookingID +
-                ", firstDate=" + firstDate +
-                ", LastDate=" + LastDate +
-                ", CustomerID=" + CustomerID +
-                ", facilityName='" + facilityName + '\'' +
-                ", facilityType='" + facilityType + '\'' +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Booking o) {
-        return this.getFirstDate().compareTo(o.getFirstDate());
+                ", firstDate='" + firstDate + '\'' +
+                ", LastDate='" + LastDate + '\'' +
+                ", customer=" + customer +
+                ", faacility=" + facility;
     }
 }

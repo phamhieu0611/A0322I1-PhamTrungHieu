@@ -1,5 +1,6 @@
 package case_study.controller;
 
+import case_study.controller.booking_contract_controller.BookingContractController;
 import case_study.controller.person_controller.CustomerController;
 import case_study.controller.person_controller.EmployeeController;
 import case_study.controller.facility_controller.FacilityController;
@@ -34,6 +35,7 @@ public class FuramaController {
                             FacilityController.controllerFacility();
                             break;
                         case 4:
+                            BookingContractController.controllerBooking();
                             break;
                         case 5:
                             break;

@@ -8,14 +8,6 @@ public abstract class Facility {
     private double area;
     private int maxPerson;
 
-    public Facility(String nameService, String typeRent, double price, double area, int maxPerson) {
-        this.nameService = nameService;
-        this.typeRent = typeRent;
-        this.price = price;
-        this.area = area;
-        this.maxPerson = maxPerson;
-    }
-
     public Facility(String facilityID, String nameService, String typeRent, double price, double area, int maxPerson) {
         this.facilityID = facilityID;
         this.nameService = nameService;
@@ -76,4 +68,13 @@ public abstract class Facility {
         this.maxPerson = maxPerson;
     }
 
+    @Override
+    public String toString() {
+        return "facilityID='" + facilityID + '\'' +
+                ", nameService='" + nameService + '\'' +
+                ", typeRent='" + typeRent + '\'' +
+                ", price=" + price +
+                ", area=" + area +
+                ", maxPerson=" + maxPerson;
+    }
 }

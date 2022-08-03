@@ -1,16 +1,18 @@
 package case_study.models;
 
-public class Contract implements Comparable<Contract>{
+import case_study.models.person.Customer;
+
+public class Contract{
     private int contractID;
-    private int bookingID;
+    private Booking bookingID;
     private double deposit;
     private double paymnet;
-    private int customerID;
+    private Customer customerID;
 
     public Contract() {
     }
 
-    public Contract(int contractID, int bookingID, double deposit, double paymnet, int customerID) {
+    public Contract(int contractID, Booking bookingID, double deposit, double paymnet, Customer customerID) {
         this.contractID = contractID;
         this.bookingID = bookingID;
         this.deposit = deposit;
@@ -26,11 +28,11 @@ public class Contract implements Comparable<Contract>{
         this.contractID = contractID;
     }
 
-    public int getBookingID() {
+    public Booking getBookingID() {
         return bookingID;
     }
 
-    public void setBookingID(int bookingID) {
+    public void setBookingID(Booking bookingID) {
         this.bookingID = bookingID;
     }
 
@@ -50,28 +52,21 @@ public class Contract implements Comparable<Contract>{
         this.paymnet = paymnet;
     }
 
-    public int getCustomerID() {
+    public Customer getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(int customerID) {
+    public void setCustomerID(Customer customerID) {
         this.customerID = customerID;
     }
 
     @Override
     public String toString() {
-        return "Contract{" +
+        return
                 "contractID=" + contractID +
                 ", bookingID=" + bookingID +
                 ", deposit=" + deposit +
                 ", paymnet=" + paymnet +
-                ", customerID=" + customerID +
-                '}';
-    }
-
-    @Override
-    public int compareTo(Contract o) {
-        int getBook = o.getBookingID();
-        return 0;
+                ", customerID=" + customerID;
     }
 }

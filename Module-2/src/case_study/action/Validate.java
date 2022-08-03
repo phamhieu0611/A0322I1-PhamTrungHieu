@@ -7,8 +7,8 @@ public class Validate {
     private static Pattern pattern;
     private static Matcher matcher;
     public static final String ID_SERVICE_REGEX = "SV.[VL | HO | RO].-*[0-9]{4}";
-    public static final String NAME_FACILITY_REGEX = "[A-Z]{1}[a-z]{1,50}";
-    public static final String ROOM_STANDART = "[A-Z]{1}[a-z]{1,50}";
+    public static final String NAME_FACILITY_REGEX = "[A-Z]{1}[a-z\\s\\W|_]{1,50}";
+    public static final String ROOM_STANDART = "[A-Z]{1}[a-z\\s\\W|_]{1,50}";
     public static final String EMAIL_REGEX = "^\\w+@\\w+(\\.+\\w+){1,2}$";
     public static final String ID_REGEX = "[1-9][0-9]{3}";
     public static final String ONE_REGEX = "[1-9]";
@@ -16,7 +16,6 @@ public class Validate {
     public static final String PHONE_NUMBER_REGEX = "(09|03)[0-9]{8}";
     public static final String DATE_REGEX = "^([0-2][0-9]|(3)[0-1])(\\/)(((0)[0-9])|((1)[0-2]))(\\/)\\d{4}$";
     public static final String NAME_REGEX = "^[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂẾưăạảấầẩẫậắằẳẵặẹẻẽềềểếỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ\\s\\W|_]+$";
-
 
     public static boolean checkMaxPerson(int thePeoples){
         if (thePeoples > 0 && thePeoples < 20){

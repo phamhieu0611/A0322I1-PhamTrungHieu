@@ -9,6 +9,9 @@ public class Customer extends Person{
         this.address = address;
     }
 
+    public Customer() {
+    }
+
     public String getTypeCustomer() {
         return typeCustomer;
     }
@@ -27,9 +30,8 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return "Customer{" +super.toString()+'\''+
+        return "Customer: " +super.toString()+'\''+
                 "typeCustomer='" + typeCustomer + '\'' +
-                ", address='" + address + '\'' +
-                '}';
+                ", address='" + address+ '\'';
     }
 }
