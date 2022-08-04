@@ -1,4 +1,4 @@
-package case_study.controller.booking_contract_controller;
+package case_study.controller.booking_contract_promotion;
 
 import case_study.controller.FuramaController;
 import case_study.service.serviceImpl.BookingServiceImpl;
@@ -39,6 +39,7 @@ public class BookingContractController {
                         contractService.displayContract();
                         break;
                     case 5:
+                        contractService.editContract();
                         break;
                     case 6:
                         FuramaController.furamaController();

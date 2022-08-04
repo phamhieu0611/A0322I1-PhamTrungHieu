@@ -67,7 +67,6 @@ public class EmployeeServiceImpl implements EmployeeService {
             {
                 System.out.println(employeeList.get(index).toString());
                 System.out.println("Edit information:");
-                scanner.nextLine();
 
                 String idCrd;
                 while (true)
@@ -178,7 +177,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                     }
                 });
                 WriteFile.editNewEmployee(employeeList);
-                System.out.println("Update successful!");
+                System.out.println("Update complete: "+employeeList.get(index).toString());
             }
             else
             {
@@ -311,6 +310,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                     System.out.print("Salary: ");
                     double salary = Double.parseDouble(scanner.nextLine());
                     return new Employee(id, idCard, phoneNumber, name,birthday,gender,email,level,workLocation,salary);
+                }if (checkID == 1){
+                    System.out.println("Employee id already exists.");
                 }
             }catch (Exception e){
                 System.err.println("Exception "+e.toString());

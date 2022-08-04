@@ -1,9 +1,11 @@
 package case_study.controller;
 
-import case_study.controller.booking_contract_controller.BookingContractController;
+import case_study.controller.booking_contract_promotion.BookingContractController;
+import case_study.controller.booking_contract_promotion.PromotionConTroller;
 import case_study.controller.person_controller.CustomerController;
 import case_study.controller.person_controller.EmployeeController;
 import case_study.controller.facility_controller.FacilityController;
+import case_study.service.serviceImpl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -38,11 +40,12 @@ public class FuramaController {
                             BookingContractController.controllerBooking();
                             break;
                         case 5:
+                            PromotionConTroller.promotionController();
                             break;
                         case 6:
                             System.exit(0);
                     }
-                }while (select > 0 || select <6);
+                }while (select > 0 || select <7);
             }catch (Exception e){
                 System.err.println("Exception "+e.toString());
             }

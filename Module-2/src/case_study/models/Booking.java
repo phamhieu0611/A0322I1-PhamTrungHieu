@@ -1,19 +1,16 @@
 package case_study.models;
 
-import case_study.models.facility.Facility;
-import case_study.models.person.Customer;
-
 public class Booking {
     private int bookingID;
     private String firstDate;
     private String LastDate;
-    private Customer customer;
-    private Facility facility;
+    private int customer;
+    private String facility;
 
     public Booking() {
     }
 
-    public Booking(int bookingID, String firstDate, String lastDate, Customer customer, Facility facility) {
+    public Booking(int bookingID, String firstDate, String lastDate, int customer, String facility) {
         this.bookingID = bookingID;
         this.firstDate = firstDate;
         this.LastDate = lastDate;
@@ -45,19 +42,19 @@ public class Booking {
         LastDate = lastDate;
     }
 
-    public Customer getCustomer() {
+    public int getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(int customer) {
         this.customer = customer;
     }
 
-    public Facility getFacility() {
+    public String getFacility() {
         return facility;
     }
 
-    public void setFaacility(Facility facility) {
+    public void setFaacility(String facility) {
         this.facility = facility;
     }
 
@@ -67,7 +64,7 @@ public class Booking {
                 "bookingID=" + bookingID +
                 ", firstDate='" + firstDate + '\'' +
                 ", LastDate='" + LastDate + '\'' +
-                ", customer=" + customer +
-                ", faacility=" + facility;
+                ", customer ID=" + customer +
+                ", faacility ID=" + facility;
     }
 }

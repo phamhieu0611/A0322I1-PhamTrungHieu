@@ -74,6 +74,62 @@ public class FacilityController {
                     break;
                 case 3:
                     System.out.println("-----------------Display list facility maintenance-----------------");
+                    int selectFacilityMaintenance = 0;
+                    do {
+                        System.out.println("1. Display list facility maintenance ");
+                        System.out.println("2. Add new facility maintenance ");
+                        System.out.println("3. Return Facility menu");
+                        System.out.print("\nEnter your choice: ");
+                        selectFacilityMaintenance = Integer.parseInt(scanner.nextLine());
+                        switch (selectFacilityMaintenance){
+                            case 1:
+                                facilityServiceImpl.abc();
+                                break;
+                            case 2:
+                                System.out.println("-----------------Add new facility maintenance-----------------");
+                                int choiceAdd = 0;
+                                do {
+                                    System.out.println("Chose form facility want add: ");
+                                    System.out.println("1. Add new House ");
+                                    System.out.println("2. Add new Room ");
+                                    System.out.println("3. Add new Villa ");
+                                    System.out.println("4. Return Facility menu");
+                                    System.out.print("\nEnter your choice: ");
+                                    choiceAdd = Integer.parseInt(scanner.nextLine());
+                                    switch (choiceAdd){
+                                        case 1:
+                                            System.out.println("-----------------Add new House maintenance-----------------");
+                                            House house = facilityServiceImpl.addRegexHouse();
+                                            WriteFile.addNewHouseMaintenance(house);
+                                            System.out.println();
+                                            System.out.println("Added complete!");
+                                            break;
+                                        case 2:
+                                            System.out.println("-----------------Add new Room maintenance-----------------");
+                                            Room room = facilityServiceImpl.addRegexRoom();
+                                            WriteFile.addNewRoomMaintenance(room);
+                                            System.out.println();
+                                            System.out.println("Added complete!");
+                                            break;
+                                        case 3:
+                                            System.out.println("-----------------Add new Villa maintenance-----------------");
+                                            Villa villa = facilityServiceImpl.addRegexVilla();
+                                            WriteFile.addNeewVillaMaintenance(villa);
+                                            System.out.println();
+                                            System.out.println("Added complete!");
+                                            break;
+                                        case 4:
+                                            System.out.println("\n");
+                                            controllerFacility();
+                                            break;
+                                    }
+                                }while (choiceAdd != 4);
+                                break;
+                            case 3:
+                                controllerFacility();
+                                break;
+                        }
+                    }while (selectFacilityMaintenance != 3);
                     break;
                 case 4:
                     FuramaController.furamaController();

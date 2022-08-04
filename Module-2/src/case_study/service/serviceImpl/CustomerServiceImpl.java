@@ -25,6 +25,11 @@ public class CustomerServiceImpl implements CustomerService {
         return customerList;
     }
 
+    public static int getSize()
+    {
+        return customerList.size();
+    }
+
     @Override
     public void displayAll() {
         List<Customer> customerList = readCustomerFile(FILE_CUSTOMER_CSV);
@@ -48,7 +53,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void editCustomer() {
-        while (true) {
             try {
                 Scanner scanner=new Scanner(System.in);
                 if(customerList.size()==0)
@@ -64,7 +68,6 @@ public class CustomerServiceImpl implements CustomerService {
                 {
                     System.out.println(customerList.get(index).toString());
                     System.out.println("Edit information:");
-                    scanner.nextLine();
 
                     String idCrd;
                     while (true)
@@ -149,6 +152,7 @@ public class CustomerServiceImpl implements CustomerService {
                     }
                 });
                     WriteFile.editNewCustomer(customerList);
+                    System.out.println("Edit complete: "+customerList.get(index).toString());
                 }else {
                     System.out.println("Customer ID not found!");
                 }
@@ -156,7 +160,7 @@ public class CustomerServiceImpl implements CustomerService {
                 System.err.println("Exception " + e.toString());
             }
     }
-}
+
 
     private int indexCustomer(int id)
     {
@@ -170,6 +174,16 @@ public class CustomerServiceImpl implements CustomerService {
             }
         }
         return index;
+    }
+
+    public Customer getCustomer(int id)
+    {
+        int index=indexCustomer(id);
+        if(index!=-1)
+        {
+            return customerList.get(index);
+        }
+        return null;
     }
 
     public Customer addRegexCustomer(){
@@ -189,7 +203,6 @@ public class CustomerServiceImpl implements CustomerService {
                 int id=Integer.parseInt(idStr);
                 int checkID = indexCustomer(id);
                 if (checkID == -1){
-
                     String idCrd;
                     while (true)
                     {
@@ -274,6 +287,8 @@ public class CustomerServiceImpl implements CustomerService {
                     System.out.print("Address: ");
                     String address = scanner.nextLine();
                     return new Customer(id, idCard, phoneNumber, name, birthday, gender, email, typeCustomer, address);
+                }if (checkID == 1){
+                    System.out.println("customer id already exists.");
                 }
             }catch (Exception e){
         System.err.println("Exception "+e.toString());
@@ -281,4 +296,24 @@ public class CustomerServiceImpl implements CustomerService {
 }
     }
 
+    public void addNew(Customer customer) {
+        if(customer!=null)
+        {
+            customerList.add(customer);
+            VoucherService.addToVoucher(customer.getId());
+            Collections.sort(customerList, new Comparator<Customer>() {
+                @Override
+                public int compare(Customer o1, Customer o2) {
+                    return o1.getId() - o2.getId();
+                }
+            });
+            WriteFile.writeCustomer(FILE_CUSTOMER_CSV,customer);
+            System.out.println("More success!");
+        }
+        else
+        {
+            System.out.println("Unsuccessful!");
+        }
+
+    }
 }

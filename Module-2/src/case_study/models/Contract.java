@@ -1,23 +1,27 @@
 package case_study.models;
 
-import case_study.models.person.Customer;
-
 public class Contract{
     private int contractID;
-    private Booking bookingID;
+    private int bookingID;
+    private int customerID;
+    private String facilityID;
+    private String startDate;
+    private String endDate;
     private double deposit;
     private double paymnet;
-    private Customer customerID;
 
     public Contract() {
     }
 
-    public Contract(int contractID, Booking bookingID, double deposit, double paymnet, Customer customerID) {
+    public Contract(int contractID, int bookingID, int customerID, String facilityID, String startDate, String endDate, double deposit, double paymnet) {
         this.contractID = contractID;
         this.bookingID = bookingID;
+        this.customerID = customerID;
+        this.facilityID = facilityID;
+        this.startDate = startDate;
+        this.endDate = endDate;
         this.deposit = deposit;
         this.paymnet = paymnet;
-        this.customerID = customerID;
     }
 
     public int getContractID() {
@@ -28,12 +32,28 @@ public class Contract{
         this.contractID = contractID;
     }
 
-    public Booking getBookingID() {
+    public int getBookingID() {
         return bookingID;
     }
 
-    public void setBookingID(Booking bookingID) {
+    public void setBookingID(int bookingID) {
         this.bookingID = bookingID;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
     }
 
     public double getDeposit() {
@@ -52,12 +72,20 @@ public class Contract{
         this.paymnet = paymnet;
     }
 
-    public Customer getCustomerID() {
+    public int getCustomerID() {
         return customerID;
     }
 
-    public void setCustomerID(Customer customerID) {
+    public void setCustomerID(int customerID) {
         this.customerID = customerID;
+    }
+
+    public String getFacilityID() {
+        return facilityID;
+    }
+
+    public void setFacilityID(String facilityID) {
+        this.facilityID = facilityID;
     }
 
     @Override
@@ -65,8 +93,11 @@ public class Contract{
         return
                 "contractID=" + contractID +
                 ", bookingID=" + bookingID +
+                ", customerID=" + customerID +
+                ", facilityID='" + facilityID + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
                 ", deposit=" + deposit +
-                ", paymnet=" + paymnet +
-                ", customerID=" + customerID;
+                ", paymnet=" + paymnet;
     }
 }
