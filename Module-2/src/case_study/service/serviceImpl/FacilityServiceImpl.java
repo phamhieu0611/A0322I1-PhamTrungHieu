@@ -1,6 +1,7 @@
 package case_study.service.serviceImpl;
 
 import case_study.action.Validate;
+import case_study.action.WriteFile;
 import case_study.models.Booking;
 import case_study.models.facility.Facility;
 import case_study.models.facility.House;
@@ -20,6 +21,7 @@ public class FacilityServiceImpl implements FacilityService {
     private static Set<Booking> bookingSet = new BookingServiceImpl().sendData();
     private static List<String> arrayList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
+    private static List<String> addFacilityMaintenance = new ArrayList<>();
     private static final String[] arrayType={"Hour","Day","Week","Month","Year","Age?"};
     private static final String FILE_BOOKING_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\booking.csv";
     private static final String FILE_ROOM_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\room.csv";
@@ -28,6 +30,8 @@ public class FacilityServiceImpl implements FacilityService {
 
     static {
         readBookingFile(FILE_BOOKING_CSV, bookingSet);
+
+        readHouseFile(FILE_HOUSE_CSV, houseIntegerMap);
         facilityIntegerMap.putAll(houseIntegerMap);
         readRoomFile(FILE_ROOM_CSV, roomIntegerMap);
         facilityIntegerMap.putAll(roomIntegerMap);
@@ -35,10 +39,30 @@ public class FacilityServiceImpl implements FacilityService {
         facilityIntegerMap.putAll(villaIntegerMap);
     }
 
+    public static void checkFacilityMaintenance(){
+        try {
+            System.out.print("Input Faicility to add to Facility maintenance: ");
+            String facilityIdInput = scanner.nextLine();
+            for (Booking booking: bookingSet){
+                if (facilityIdInput.equals(booking.getFacility())){
+                    addFacilityMaintenance.add(booking.getFacility());
+                }
+
+            }
+            if (addFacilityMaintenance.size() != 0){
+                for (String facilityIn: addFacilityMaintenance){
+                    Facility facility = searchFacility(facilityIn);
+                    System.out.println(facility);
+                }
+            }
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
+        }
+    }
+
     @Override
     public void displayFacility() {
         try {
-            readHouseFile(FILE_HOUSE_CSV, houseIntegerMap);
             for (Map.Entry<Facility, Integer> entry: facilityIntegerMap.entrySet()){
                 System.out.println("Facility: " + entry.getKey() + "\nUsed: " + entry.getValue());
             }

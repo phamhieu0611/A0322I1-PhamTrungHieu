@@ -8,7 +8,6 @@ import case_study.models.facility.Room;
 import case_study.models.facility.Villa;
 import case_study.models.person.Customer;
 import case_study.models.person.Employee;
-import case_study.models.person.Person;
 import case_study.service.serviceImpl.BookingServiceImpl;
 
 import java.io.BufferedWriter;
@@ -27,10 +26,9 @@ public class WriteFile {
     private static final String FILE_ROOM_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\room.csv";
     private static final String FILE_HOUSE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\house.csv";
     private static final String FILE_VILLA_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\villa.csv";
-    private static final String FILE_ROOM_MAINTENANCE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\facility\\maintenance\\room.csv";
-    private static final String FILE_HOUSE_MAINTENANCE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\facility\\maintenance\\house.csv";
-    private static final String FILE_VILLA_MAINTENANCE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\facility\\maintenance\\villa.csv";
-
+    private static final String FILE_ROOM_MAINTENANCE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\maintenance\\room.csv";
+    private static final String FILE_HOUSE_MAINTENANCE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\maintenance\\house.csv";
+    private static final String FILE_VILLA_MAINTENANCE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\maintenance\\villa.csv";
 
     public static void editNewEmployee(ArrayList<Employee> employeeList) {
         try {
@@ -117,43 +115,6 @@ public class WriteFile {
         }
     }
 
-
-    public static void addNewHouseMaintenance(House house){
-        try {
-            FileWriter fileWriter = new FileWriter(FILE_HOUSE_MAINTENANCE_CSV, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(house.getFacilityID()+","+house.getNameService()+","+house.getTypeRent()+","+house.getArea()+","+house.getPrice()+","+house.getMaxPerson()+","+house.getRoomStandard()+","+house.getFloor());
-            bufferedWriter.newLine();
-            bufferedWriter.close();
-        } catch (Exception e) {
-            System.err.println("Exception "+e.toString());
-        }
-    }
-
-    public static void addNewRoomMaintenance(Room room){
-        try {
-            FileWriter fileWriter = new FileWriter(FILE_ROOM_MAINTENANCE_CSV, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(room.getFacilityID()+","+room.getNameService()+","+room.getTypeRent()+","+room.getArea()+","+room.getPrice()+","+room.getMaxPerson()+","+room.getFreeService());
-            bufferedWriter.newLine();
-            bufferedWriter.close();
-        } catch (Exception e) {
-            System.err.println("Exception "+e.toString());;
-        }
-    }
-
-    public static void addNeewVillaMaintenance(Villa villa){
-        try {
-            FileWriter fileWriter = new FileWriter(FILE_VILLA_MAINTENANCE_CSV, true);
-            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
-            bufferedWriter.write(villa.getFacilityID()+","+villa.getNameService()+","+villa.getTypeRent()+","+villa.getArea()+","+villa.getPrice()+","+villa.getMaxPerson()+","+villa.getRoomStandard()+","+villa.getAreaPool()+","+villa.getFloor());
-            bufferedWriter.newLine();
-            bufferedWriter.close();
-        } catch (Exception e) {
-            System.err.println("Exception "+e.toString());
-        }
-    }
-
     public static void addNewBooking(Booking booking){
         try {
             FileWriter fileWriter = new FileWriter(FILE_BOOKING_CSV, true);
@@ -175,21 +136,6 @@ public class WriteFile {
             bufferedWriter.close();
         } catch (Exception e) {
             System.err.println("Exception "+e.toString());
-        }
-    }
-
-    public static void writeToFileFacility(String path, Map<? extends Facility,Integer> listObject) {
-        try {
-            FileWriter fr = new FileWriter(path);
-            BufferedWriter br = new BufferedWriter(fr);
-            for (Map.Entry<? extends Facility,Integer> entry:listObject.entrySet()) {
-                br.write(entry.getKey().toString()+","+entry.getValue());
-                br.newLine();
-            }
-            br.close();
-            fr.close();
-        } catch (IOException e) {
-            System.err.println("IOException "+e.toString());
         }
     }
 
@@ -218,4 +164,19 @@ public class WriteFile {
             System.out.println("File recording failed!");
         }
     }
+
+//    public static void writeToFileFacility(String path, Facility key) {
+//        try {
+//            FileWriter fr = new FileWriter(path);
+//            BufferedWriter br = new BufferedWriter(fr);
+//            for (Map.Entry<? extends Facility,Integer> entry:listObject.entrySet()) {
+//                br.write(entry.getKey().toString()+","+entry.getValue());
+//                br.newLine();
+//            }
+//            br.close();
+//            fr.close();
+//        } catch (IOException e) {
+//            System.err.println("IOException "+e.toString());
+//        }
+//    }
 }
