@@ -9,10 +9,8 @@ import java.util.Map;
 
 public class VoucherService {
     private static String FILE_VOUCHER = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\voucher.csv";
-    private static final int AMOUNT_VOUCHER_50=10;
-    private static final int AMOUNT_VOUCHER_20=20;
-    private static final int VOUCHER_50=50;
-    private static final int VOUCHER_20=20;
+    private static final int VOUCHER_50=10;
+    private static final int VOUCHER_20=10;
     private static CustomerServiceImpl customerService=new CustomerServiceImpl();
     private static Map<Integer,Integer> mapVoucher=new LinkedHashMap<>();
 
@@ -43,13 +41,13 @@ public class VoucherService {
     public static void addToVoucher(int customerId)
     {
         Integer voucher;
-        if(CustomerServiceImpl.getSize()<=AMOUNT_VOUCHER_50)
+        if(CustomerServiceImpl.getSize()<=VOUCHER_50)
         {
             mapVoucher.put(customerId,VOUCHER_50);
             voucher=VOUCHER_50;
         }
         else
-        if(CustomerServiceImpl.getSize()<=(AMOUNT_VOUCHER_20+AMOUNT_VOUCHER_50))
+        if(CustomerServiceImpl.getSize()<=(VOUCHER_20+VOUCHER_50))
         {
             mapVoucher.put(customerId,VOUCHER_20);
             voucher=VOUCHER_20;

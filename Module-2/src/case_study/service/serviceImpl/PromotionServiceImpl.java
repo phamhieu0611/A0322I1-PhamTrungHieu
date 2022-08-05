@@ -12,24 +12,19 @@ import static case_study.action.ReadFile.readBookingFile;
 public class PromotionServiceImpl implements PromotionService {
     private static final String FILE_BOOKING_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\booking.csv";
     private static Set<Booking> bookingSet = new BookingServiceImpl().sendData();
-    private TreeSet<Integer> customerUseService = new TreeSet<>();
-    private BookingServiceImpl bookingService = new BookingServiceImpl();
-    private CustomerServiceImpl customerService = new CustomerServiceImpl();
+    private static TreeSet<Integer> customerUseService = new TreeSet<>();
+    private static CustomerServiceImpl customerService = new CustomerServiceImpl();
 
     static {
         readBookingFile(FILE_BOOKING_CSV, bookingSet);
     }
 
-    private void useArrayService()
-    {
-        for (Booking booking : bookingSet) {
-            customerUseService.add(booking.getCustomer());
-        }
-    }
     @Override
     public void displayUserService() {
         System.out.println("List customer use Serice: ");
-        useArrayService();
+        for (Booking booking : bookingSet) {
+            customerUseService.add(booking.getCustomer());
+        }
         if(customerUseService.size()==0)
         {
             System.out.println("Empty list!");

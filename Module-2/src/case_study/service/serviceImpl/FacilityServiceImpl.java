@@ -1,7 +1,6 @@
 package case_study.service.serviceImpl;
 
 import case_study.action.Validate;
-import case_study.action.WriteFile;
 import case_study.models.Booking;
 import case_study.models.facility.Facility;
 import case_study.models.facility.House;
@@ -18,108 +17,89 @@ public class FacilityServiceImpl implements FacilityService {
     private static Map<Room, Integer> roomIntegerMap = new LinkedHashMap<>();
     private static Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();
     private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private static Set<Booking> bookingSet = new BookingServiceImpl().sendData();
+    private static List<String> arrayList = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
     private static final String[] arrayType={"Hour","Day","Week","Month","Year","Age?"};
+    private static final String FILE_BOOKING_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\booking.csv";
     private static final String FILE_ROOM_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\room.csv";
     private static final String FILE_HOUSE_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\house.csv";
-    private static Set<Booking> bookingSet = new BookingServiceImpl().sendData();
     private static final String FILE_VILLA_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\villa.csv";
-    private static ArrayList<String> maintenanceService;
 
-    public FacilityServiceImpl(){
-    }
-
-    public static void abc(){
-        System.out.println(maintenanceService);
-    }
-
-    @Override
-    public void addFacility(Facility facility) {
-        int value = 0;
-        if (facility != null){
-            if (facility instanceof Villa){
-                villaIntegerMap.put((Villa) facility, value);
-                WriteFile.writeToFileFacility(FILE_VILLA_CSV, villaIntegerMap);
-            }if (facility instanceof House){
-                houseIntegerMap.put((House) facility, value);
-                WriteFile.writeToFileFacility(FILE_HOUSE_CSV, houseIntegerMap);
-            }if (facility instanceof Room){
-                roomIntegerMap.put((Room) facility, value);
-                WriteFile.writeToFileFacility(FILE_ROOM_CSV, roomIntegerMap);
-            }
-        }
-    }
-
-    @Override
-    public Facility getFacility(int index) {
-        try {
-            int id = 0;
-            for (Facility key: facilityIntegerMap.keySet()){
-                if (index == id){
-                    return key;
-                }id++;
-            }
-        }catch (Exception e){
-            System.err.println("Exception "+e.toString());
-        }
-        return null;
+    static {
+        readBookingFile(FILE_BOOKING_CSV, bookingSet);
+        facilityIntegerMap.putAll(houseIntegerMap);
+        readRoomFile(FILE_ROOM_CSV, roomIntegerMap);
+        facilityIntegerMap.putAll(roomIntegerMap);
+        readVillaFile(FILE_VILLA_CSV, villaIntegerMap);
+        facilityIntegerMap.putAll(villaIntegerMap);
     }
 
     @Override
     public void displayFacility() {
-        readBookingFile(BookingServiceImpl.FILE_CUSTOMER_CSV, bookingSet);
-        readRoomFile(FILE_ROOM_CSV, roomIntegerMap);
-        readVillaFile(FILE_VILLA_CSV, villaIntegerMap);
-        readHouseFile(FILE_HOUSE_CSV, houseIntegerMap);
-        for (Booking booking: bookingSet) {
-            for (Map.Entry<House, Integer> entry : houseIntegerMap.entrySet()) {
-                    System.out.println("Facility: " + entry.getKey() + "\nUsed: " + entry.getValue());
-                    if (booking.getFacility().equals(entry.getKey().getFacilityID())){
-                        maintenanceService.add(String.valueOf(entry.getKey()));
-                    }
-            }
-            for (Map.Entry<Room, Integer> entryRoom : roomIntegerMap.entrySet()) {
-                System.out.println("Facility: " + entryRoom.getKey() + "\nUsed: " + entryRoom.getValue());
-                if (booking.getFacility().equals(entryRoom.getKey().getFacilityID())){
-                    maintenanceService.add(String.valueOf(entryRoom.getKey()));
-                }
-            }
-            for (Map.Entry<Villa, Integer> entryVilla : villaIntegerMap.entrySet()) {
-                System.out.println("Facility: " + entryVilla.getKey() + "\nUsed: " + entryVilla.getValue());
-                if (booking.getFacility().equals(entryVilla.getKey().getFacilityID())){
-                    maintenanceService.add(String.valueOf(entryVilla.getKey()));
-                }
-            }
-        }
-    }
-
-    @Override
-    public int sizeFacility() {
-        return facilityIntegerMap.size();
-    }
-
-    @Override
-    public void displayListFacilityMain() {
-        boolean check = false;
         try {
-            int id = 0;
-            for (Facility key : facilityIntegerMap.keySet()){
-                if (facilityIntegerMap.get(key) > 4){
-                    check = true;
-                    break;
-                }
-            }if (check){
-                for (Facility key : facilityIntegerMap.keySet()) {
-                    if (facilityIntegerMap.get(key)>4) {
-                        System.out.println("ID Facility: " + (id ++) + " Facility: " + key + " USED: " + facilityIntegerMap.get(key));
-                    }
-                }
-            }else {
-                System.out.println("All facility are fine");
+            readHouseFile(FILE_HOUSE_CSV, houseIntegerMap);
+            for (Map.Entry<Facility, Integer> entry: facilityIntegerMap.entrySet()){
+                System.out.println("Facility: " + entry.getKey() + "\nUsed: " + entry.getValue());
             }
         }catch (Exception e){
             System.err.println("Exception "+e.toString());
         }
+    }
+
+    @Override
+    public void facilityMaintenance() {
+        System.out.println("List facility maintenance: ");
+        for (Booking booking: bookingSet){
+            arrayList.add(booking.getFacility());
+        }if (arrayList.size() == 0){
+            System.out.println("List facility maintenance is empty!");
+        }if (arrayList.size() != 0){
+            for (String s: arrayList){
+                Facility facility = searchFacility(s);
+                System.out.println(facility.toString());
+            }
+        }
+    }
+
+    public static Facility searchFacility(String id)
+    {
+        String maID=id.substring(0,4);
+
+        if(maID.equalsIgnoreCase("SVVL"))
+        {
+            for (Map.Entry<Villa,Integer> villaIntegerEntry:villaIntegerMap.entrySet())
+            {
+                if(villaIntegerEntry.getKey().getFacilityID().equalsIgnoreCase(id))
+                {
+                    return villaIntegerEntry.getKey();
+                }
+            }
+        }
+
+        if(maID.equalsIgnoreCase("SVHO"))
+        {
+            for (Map.Entry<House,Integer> houseIntegerEntry:houseIntegerMap.entrySet())
+            {
+                if(houseIntegerEntry.getKey().getFacilityID().equalsIgnoreCase(id))
+                {
+                    return houseIntegerEntry.getKey();
+                }
+            }
+        }
+
+        if(maID.equalsIgnoreCase("SVRO"))
+        {
+            for (Map.Entry<Room,Integer> roomIntegerEntry:roomIntegerMap.entrySet())
+            {
+                if(roomIntegerEntry.getKey().getFacilityID().equalsIgnoreCase(id))
+                {
+                    return roomIntegerEntry.getKey();
+                }
+            }
+        }
+
+        return null;
     }
 
     public House addRegexHouse(){

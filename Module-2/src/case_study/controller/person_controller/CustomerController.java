@@ -14,10 +14,10 @@ public class CustomerController {
 
     public static void controllerCustomer(){
         CustomerServiceImpl customerServiceImpl=new CustomerServiceImpl();
-        while (true){
             try {
                 FuramaController furamaController = new FuramaController();
                 int select = 0;
+                while (true){
                     System.out.println("-----------------Customer Management-----------------");
                     System.out.println("1. Display list customer.");
                     System.out.println("2. Add new customer.");
@@ -48,9 +48,9 @@ public class CustomerController {
                             furamaController.furamaController();
                             break;
                     }
+                }
             }catch (Exception e){
                 System.err.println("Exception "+e.toString());
             }
-        }
     }
 }

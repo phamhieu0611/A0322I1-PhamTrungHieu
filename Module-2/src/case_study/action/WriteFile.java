@@ -9,16 +9,17 @@ import case_study.models.facility.Villa;
 import case_study.models.person.Customer;
 import case_study.models.person.Employee;
 import case_study.models.person.Person;
+import case_study.service.serviceImpl.BookingServiceImpl;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.*;
+
+import static case_study.action.ReadFile.readBookingFile;
 
 public class WriteFile {
+    private static Set<Booking> bookingSet = new BookingServiceImpl().sendData();
     private static final String FILE_CONTRACT_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\contract.csv";
     private static final String FILE_BOOKING_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\booking.csv";
     public static final String FILE_CUSTOMER_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\customer.csv";
@@ -83,6 +84,8 @@ public class WriteFile {
             bufferedWriter.close();
         } catch (Exception e) {
             System.err.println("Exception "+e.toString());
+        }finally {
+            readBookingFile(FILE_BOOKING_CSV, bookingSet);
         }
     }
 
@@ -95,6 +98,8 @@ public class WriteFile {
             bufferedWriter.close();
         } catch (Exception e) {
             System.err.println("Exception "+e.toString());;
+        }finally {
+            readBookingFile(FILE_BOOKING_CSV, bookingSet);
         }
     }
 
@@ -107,6 +112,8 @@ public class WriteFile {
             bufferedWriter.close();
         } catch (Exception e) {
             System.err.println("Exception "+e.toString());
+        }finally {
+            readBookingFile(FILE_BOOKING_CSV, bookingSet);
         }
     }
 

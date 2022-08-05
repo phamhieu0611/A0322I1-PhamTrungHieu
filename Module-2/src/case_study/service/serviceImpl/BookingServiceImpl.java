@@ -23,29 +23,29 @@ public class BookingServiceImpl implements BookingService {
     private static final String FILE_VILLA_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\villa.csv";
     private static Map<House, Integer> houseIntegerMap = new LinkedHashMap<>();
     private static Map<Room, Integer> roomIntegerMap = new LinkedHashMap<>();
-    private static Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();public static final String FILE_CUSTOMER_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\customer.csv";
+    private static Map<Villa, Integer> villaIntegerMap = new LinkedHashMap<>();
+    private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
+    private static final String[] arrayType={"Hour","Day","Week","Month","Year","Age?"};
+    public static final String FILE_CUSTOMER_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\case_study\\data\\customer.csv";
     private static Set<Booking> bookingSet = new TreeSet<>(new BookingComparator());
     private static ArrayList<Customer> customerList;
     private static Scanner scanner = new Scanner(System.in);
     private static List<Booking> setArrayList = new ArrayList<>();
+    private static FacilityServiceImpl facilityService = new FacilityServiceImpl();
 
     static {
         customerList = (ArrayList<Customer>) readCustomerFile(FILE_CUSTOMER_CSV);
+        readHouseFile(FILE_HOUSE_CSV, houseIntegerMap);
+        facilityIntegerMap.putAll(houseIntegerMap);
+        readRoomFile(FILE_ROOM_CSV, roomIntegerMap);
+        facilityIntegerMap.putAll(roomIntegerMap);
+        readVillaFile(FILE_VILLA_CSV, villaIntegerMap);
+        facilityIntegerMap.putAll(villaIntegerMap);
+
     }
 
     public static void display(){
-        readHouseFile(FILE_HOUSE_CSV, houseIntegerMap);
-        for (Map.Entry<House, Integer> entry : houseIntegerMap.entrySet()){
-            System.out.println("Facility: "+entry.getKey()+"\nUsed: "+entry.getValue());
-        }
-        readRoomFile(FILE_ROOM_CSV, roomIntegerMap);
-        for (Map.Entry<Room, Integer> entry : roomIntegerMap.entrySet()){
-            System.out.println("Facility: "+entry.getKey()+"\nUsed: "+entry.getValue());
-        }
-        readVillaFile(FILE_VILLA_CSV, villaIntegerMap);
-        for (Map.Entry<Villa, Integer> entry : villaIntegerMap.entrySet()){
-            System.out.println("Facility: "+entry.getKey()+"\nUsed: "+entry.getValue());
-        }
+        facilityService.displayFacility();
     }
 
     public Set<Booking> sendData(){
@@ -67,6 +67,37 @@ public class BookingServiceImpl implements BookingService {
         return index;
     }
 
+//    public static double useVoucher(Booking booking){
+//        int customerID =booking.getCustomer();
+//        String facilityID = booking.getFacility();
+//        Facility facility = FacilityServiceImpl.searchFacility(facilityID);
+//        double useVoucher =VoucherService.getVoucher(customerID)*0.1;
+//        double day =countDay(booking.getFirstDate(), booking.getLastDate());
+//        double paymnet = rentType(facility);
+//        double total =day*paymnet*(1-useVoucher);
+//        return total;
+//    }
+
+    public static double rentType(Facility facility){
+        double renCost = 0;
+        String rentType = facility.getTypeRent();
+        double rentPrice =facility.getPrice();
+        if (rentType.equalsIgnoreCase(arrayType[0])){
+            renCost = rentPrice/24;
+        }if (rentType.equalsIgnoreCase(arrayType[1])){
+            renCost = rentPrice;
+        }if (rentType.equalsIgnoreCase(arrayType[2])){
+            renCost = rentPrice*7;
+        }if (rentType.equalsIgnoreCase(arrayType[3])){
+            renCost = rentPrice*30;
+        }if (rentType.equalsIgnoreCase(arrayType[4])){
+            renCost = rentPrice*365;
+        }if (rentType.equalsIgnoreCase(arrayType[4])){
+            return renCost;
+        }
+        return renCost;
+    }
+
     @Override
     public void addBooking() {
             displayBooking();
@@ -82,7 +113,6 @@ public class BookingServiceImpl implements BookingService {
                 int id = Integer.parseInt(idInput);
                 int checkID = indexBooking(id);
                 if (checkID == -1) {
-
                     int customer = chooseCustomer();
                     String facility = chooseFacility();
                     String inputDayStart;
@@ -171,20 +201,10 @@ public class BookingServiceImpl implements BookingService {
             boolean check = true;
             String id = idInputFacility;
             while (check){
-                for (Map.Entry<House, Integer> entry : houseIntegerMap.entrySet()){
+                for (Map.Entry<Facility, Integer> entry: facilityIntegerMap.entrySet()) {
                     if (id.equals(entry.getKey().getFacilityID())){
                         check = false;
                         return entry.getKey().getFacilityID();
-                    }
-                }for (Map.Entry<Room, Integer> entryRoom : roomIntegerMap.entrySet()) {
-                    if (id.equals(entryRoom.getKey().getFacilityID())) {
-                        check = false;
-                        return entryRoom.getKey().getFacilityID();
-                    }
-                }for (Map.Entry<Villa, Integer> entryVilla : villaIntegerMap.entrySet()){
-                    if (id.equals(entryVilla.getKey().getFacilityID())){
-                        check = false;
-                        return entryVilla.getKey().getFacilityID();
                     }
                 } if (check) {
                     System.out.print("ID nout found, try again: ");

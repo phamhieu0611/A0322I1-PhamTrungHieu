@@ -5,7 +5,6 @@ import case_study.controller.booking_contract_promotion.PromotionConTroller;
 import case_study.controller.person_controller.CustomerController;
 import case_study.controller.person_controller.EmployeeController;
 import case_study.controller.facility_controller.FacilityController;
-import case_study.service.serviceImpl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -23,7 +22,6 @@ public class FuramaController {
                 System.out.println("4. Booking Management.");
                 System.out.println("5. Promotion Management.");
                 System.out.println("6. Exit.");
-                do {
                     System.out.print("Enter your choice: ");
                     select = Integer.parseInt(scanner.nextLine());
                     switch (select){
@@ -45,7 +43,6 @@ public class FuramaController {
                         case 6:
                             System.exit(0);
                     }
-                }while (select > 0 || select <7);
             }catch (Exception e){
                 System.err.println("Exception "+e.toString());
             }

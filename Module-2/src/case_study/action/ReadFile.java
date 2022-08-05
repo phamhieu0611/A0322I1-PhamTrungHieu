@@ -91,8 +91,7 @@ public class ReadFile {
         }return customers;
     }
 
-    public static void readHouseFile(String filePath, Map<House, Integer> map){
-        Map<House, Integer> houseIntegerMap = new LinkedHashMap<>();
+    public static void readHouseFile(String filePath, Map<House, Integer> houseIntegerMap){
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
         try {
@@ -112,7 +111,7 @@ public class ReadFile {
                 String roomStandart = temp[6];
                 int floor = Integer.parseInt(temp[7]);
                 house = new House(faciliryID, nameService, typeRent, price, area, maxPerson, roomStandart, floor);
-                map.put(house, 0);
+                houseIntegerMap.put(house, 0);
             }
         } catch (Exception e) {
             System.err.println("Exception "+e.toString());

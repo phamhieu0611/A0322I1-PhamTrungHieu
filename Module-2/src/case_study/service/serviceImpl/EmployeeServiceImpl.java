@@ -34,11 +34,13 @@ public class EmployeeServiceImpl implements EmployeeService {
         try {
             FileWriter fileWriter = new FileWriter(FILE_EMPLOYEE_CSV, true);
             BufferedWriter buffWrite = new BufferedWriter(fileWriter);
-            buffWrite.newLine();
             buffWrite.write(employee.getId()+","+employee.getIdCard()+","+employee.getPhoneNumber()+","+employee.getName()+","+employee.getBirthDay()+","+employee.getGender()+","+employee.getEmail()+","+employee.getLevel()+","+employee.getWorkLocation()+","+employee.getSalary());
+            buffWrite.newLine();
             buffWrite.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            employeeList = (ArrayList<Employee>) readEmployeeFile(FILE_EMPLOYEE_CSV);
         }
     }
 

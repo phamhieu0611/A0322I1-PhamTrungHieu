@@ -43,11 +43,13 @@ public class CustomerServiceImpl implements CustomerService {
         try {
             FileWriter fileWriter = new FileWriter(FILE_CUSTOMER_CSV, true);
             BufferedWriter buffWrite = new BufferedWriter(fileWriter);
-            buffWrite.newLine();
             buffWrite.write(customer.getId()+","+customer.getIdCard()+","+customer.getPhoneNumber()+","+customer.getName()+","+customer.getBirthDay()+","+customer.getGender()+","+customer.getEmail()+","+customer.getTypeCustomer()+","+customer.getAddress());
+            buffWrite.newLine();
             buffWrite.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            customerList = (ArrayList<Customer>) readCustomerFile(FILE_CUSTOMER_CSV);
         }
     }
 

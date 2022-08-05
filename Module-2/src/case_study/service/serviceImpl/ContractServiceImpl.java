@@ -25,6 +25,7 @@ public class ContractServiceImpl implements ContractService {
         contractArrayList = (ArrayList<Contract>) readContractFile(FILE_CONTRACT_CSV);
         readBookingFile(FILE_BOOKING_CSV, bookingSet);
     }
+
     @Override
     public void makeNewContract() {
         for (Booking booking : bookingSet) {
@@ -81,6 +82,9 @@ public class ContractServiceImpl implements ContractService {
             }
         }catch (Exception e){
             System.err.println("Exception "+e.toString());
+        }finally {
+            contractArrayList = (ArrayList<Contract>) readContractFile(FILE_CONTRACT_CSV);
+            readBookingFile(FILE_BOOKING_CSV, bookingSet);
         }
     }
 
