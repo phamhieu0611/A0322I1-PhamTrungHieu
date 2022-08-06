@@ -1,6 +1,7 @@
 package fake_final_exam.controller;
 
 import fake_final_exam.models.Emobile;
+import fake_final_exam.models.Motor;
 import fake_final_exam.models.Truck;
 import fake_final_exam.service.impl.EmobileImpl;
 import fake_final_exam.service.impl.MotorImpl;
@@ -13,6 +14,9 @@ public class Maincontroller {
     private static TruckImpl truck = new TruckImpl();
     private static MotorImpl motor = new MotorImpl();
     private static EmobileImpl emobile = new EmobileImpl();
+    private static Truck truckService = new Truck();
+    private static Motor motorService = new Motor();
+    private static Emobile emobileService = new Emobile();
 
     public static void mainController(){
         while (true){
@@ -38,13 +42,13 @@ public class Maincontroller {
                         choose = Integer.parseInt(scanner.nextLine());
                         switch (choose){
                             case 1:
-                                truck.add();
+                                truckService.add();
                                 break;
                             case 2:
-                                motor.add();
+                                motorService.add();
                                 break;
                             case 3:
-                                emobile.add();
+                                emobileService.add();
                                 break;
                             case 4:
                                 mainController();
@@ -76,8 +80,28 @@ public class Maincontroller {
                         }
                         break;
                     case 3:
-                        Truck trucks = new Truck();
-                        trucks.find();
+                        int nhap = 0;
+                        System.out.println("--------------------------Menu--------------------------");
+                        System.out.println("1. Delete Truck.");
+                        System.out.println("2. Delete Motor.");
+                        System.out.println("3. Delete E-mobile.");
+                        System.out.println("4. back to menu.");
+                        System.out.print("Enter your choice: ");
+                        nhap = Integer.parseInt(scanner.nextLine());
+                        switch (nhap){
+                            case 1:
+                                truck.delete();
+                                break;
+                            case 2:
+                                motor.delete();
+                                break;
+                            case 3:
+                                emobile.delete();
+                                break;
+                            case 4:
+                                mainController();
+                                break;
+                        }
                         break;
                     case 4:
                         int input = 0;

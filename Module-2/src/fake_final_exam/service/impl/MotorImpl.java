@@ -1,12 +1,10 @@
 package fake_final_exam.service.impl;
 
+import fake_final_exam.controller.Maincontroller;
 import fake_final_exam.models.Motor;
 import fake_final_exam.service.Vehicle;
+import fake_final_exam.utils.ReadWrite;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -18,13 +16,16 @@ public class MotorImpl implements Vehicle {
     public static List<Motor> motorList = new ArrayList<>();
 
     static {
-        motorList = readMotorFile(MOTOR_CSV);
 
         hangSanXuat.add("cac hang san xuat:");
         hangSanXuat.add("1-Kawasaki-Japan");
         hangSanXuat.add("2-Honda-Japan");
         hangSanXuat.add("3-Ducati-Italian");
         hangSanXuat.add("4-Yamaha-Japan");
+    }
+
+    public static List<String> sendData(){
+        return hangSanXuat;
     }
 
     public static void displaySomething(){
@@ -34,77 +35,50 @@ public class MotorImpl implements Vehicle {
     }
 
     @Override
-    public void add() {
-        try {
-            System.out.println("nhap vao bien kiem soat: ");
-            String bks = scanner.nextLine();
-            System.out.println("nhap vao so tuong ung voi hang: ");
-            displaySomething();
-            int so = Integer.parseInt(scanner.nextLine());
-            String hang = null;
-            if (so > 0 || so < hangSanXuat.size()){
-                hang = hangSanXuat.get(so);
-            }
-            System.out.println("nhap vao nam san xuat: ");
-            String namSX = scanner.nextLine();
-            System.out.println("nhap vao chu so huu: ");
-            String chu = scanner.nextLine();
-            System.out.println("nhap vao cong suat: ");
-            double congSuat = Double.parseDouble(scanner.nextLine());
-            Motor motor = new Motor(bks, hang, namSX, chu, congSuat);
-            motor.some(motor);
-        }catch (Exception e){
-            System.err.println("Exception "+e.toString());
-        }
-    }
-
-    public static List<Motor> readMotorFile(String filePath){
-        FileReader fileReader = null;
-        BufferedReader bufferedReader = null;
-        try {
-            fileReader = new FileReader(filePath);
-            bufferedReader = new BufferedReader(fileReader);
-            String line;
-            String temp[];
-            Motor motor;
-            while ((line = bufferedReader.readLine()) != null){
-                temp = line.split(",");
-                String bks = temp[0];
-                String hang = temp[1];
-                String namSX = temp[2];
-                String chu = temp[3];
-                double congSuat = Double.parseDouble(temp[4]);
-                motor = new Motor(bks, hang, namSX, chu, congSuat);
-                motorList.add(motor);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }return motorList;
-    }
-
-    @Override
     public void display() {
-        motorList = readMotorFile(MOTOR_CSV);
-        for (Motor motor: motorList){
-            System.out.println(motor.toString());
+        motorList = ReadWrite.readMotorFile(MOTOR_CSV);
+        if (motorList.size() != 0){
+            for (Motor motor: motorList){
+                System.out.println(motor.toString());
+            }
+        }if (motorList.size() == 0){
+            System.out.println("The list Empty.");
         }
     }
 
     @Override
     public void delete() {
-
+        try {
+            display();
+            System.out.println("Nhap vao bien so muon xoa: ");
+            String bienSo = scanner.nextLine();
+            for (Motor motor: motorList){
+                if (bienSo.equalsIgnoreCase(motor.getBienKiemSoat())){
+                    int select = 0;
+                    System.out.println("Ban co chac chan muon xoa "+motor.toString()+" hay khong?");
+                    System.out.println("1. co");
+                    System.out.println("2. khong");
+                    select = Integer.parseInt(scanner.nextLine());
+                    switch (select){
+                        case 1:
+                            motorList.remove(motor);
+                            ReadWrite.writeAfterDeleteMotor(motorList);
+                            System.out.println("Done!");
+                            break;
+                        case 2:
+                            Maincontroller.mainController();
+                            break;
+                    }
+                }
+            }
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
+        }
     }
 
     @Override
     public void find() {
+        if (motorList.size() != 0){
         System.out.println("Nhap vao bien so muon tim kiem: ");
         String bienSo = scanner.nextLine();
         try {
@@ -115,6 +89,7 @@ public class MotorImpl implements Vehicle {
             }
         }catch (Exception e){
             System.err.println("Exception "+e.toString());
+        }
         }
     }
 }

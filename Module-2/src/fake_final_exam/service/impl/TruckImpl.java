@@ -1,12 +1,10 @@
 package fake_final_exam.service.impl;
 
+import fake_final_exam.controller.Maincontroller;
 import fake_final_exam.models.Truck;
 import fake_final_exam.service.Vehicle;
+import fake_final_exam.utils.ReadWrite;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,17 +12,19 @@ import java.util.Scanner;
 public class TruckImpl implements Vehicle {
     private static final String TRUCK_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\fake_final_exam\\data\\truck.csv";
     private static Scanner scanner = new Scanner(System.in);
-    private static List<Truck> truckList = new ArrayList<>();
+    public static List<Truck> truckList;
     private static List<String> hangSanXuat = new ArrayList<>();
 
     static {
-        truckList = readTruckFile(TRUCK_CSV);
-
         hangSanXuat.add("cac hang san xuat:");
         hangSanXuat.add("1-Mercedes-German");
         hangSanXuat.add("2-Toyota-Japan");
         hangSanXuat.add("3-Huyndai-Japan");
         hangSanXuat.add("4-Vinfast-VietNam");
+    }
+
+    public static List<String> sendData(){
+        return hangSanXuat;
     }
 
     public static void displaySomething(){
@@ -34,74 +34,45 @@ public class TruckImpl implements Vehicle {
     }
 
     @Override
-    public void add() {
-            try {
-                System.out.println("nhap vao bien kiem soat: ");
-                String bks = scanner.nextLine();
-                System.out.println("nhap vao so tuong ung voi hang: ");
-                displaySomething();
-                    String hang = null;
-                    int so = Integer.parseInt(scanner.nextLine());
-                    if (so > 0 || so < hangSanXuat.size()){
-                        hang = hangSanXuat.get(so);
-                    }
-                System.out.println("nhap vao nam san xuat: ");
-                String namSX = scanner.nextLine();
-                System.out.println("nhap vao chu so huu: ");
-                String chu = scanner.nextLine();
-                System.out.println("nhap vao tai trong: ");
-                double taiTrong = Double.parseDouble(scanner.nextLine());
-                Truck truck = new Truck(bks, hang, namSX, chu, taiTrong);
-                truck.some(truck);
-            }catch (Exception e){
-                System.err.println("Exception "+e.toString());
-            }
-    }
-
-    public static List<Truck> readTruckFile(String filePath){
-        FileReader fileReader = null;
-        BufferedReader bufferedReader = null;
-        try {
-            fileReader = new FileReader(filePath);
-            bufferedReader = new BufferedReader(fileReader);
-            String line;
-            String temp[];
-            Truck truck;
-            while ((line = bufferedReader.readLine()) != null){
-                temp = line.split(",");
-                String bks = temp[0];
-                String hang = temp[1];
-                String namSX = temp[2];
-                String chu = temp[3];
-                double taiTrong = Double.parseDouble(temp[4]);
-                truck = new Truck(bks, hang, namSX, chu, taiTrong);
-                truckList.add(truck);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                bufferedReader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }return truckList;
-    }
-
-
-    @Override
     public void display() {
-        truckList = readTruckFile(TRUCK_CSV);
-        for (Truck truck: truckList){
-            System.out.println(truck.toString());
+        truckList = ReadWrite.readTruckFile(TRUCK_CSV);
+        if (truckList.size() != 0){
+            for (Truck truck: truckList){
+                System.out.println(truck.toString());
+            }
+        }if (truckList.size() == 0){
+            System.out.println("The list Empty.");
         }
     }
 
     @Override
     public void delete() {
-
+        display();
+        System.out.println("Nhap vao bien so muon xoa: ");
+        String bienSo = scanner.nextLine();
+        try {
+            for (Truck truck: truckList){
+                if (bienSo.equalsIgnoreCase(truck.getBienKiemSoat())){
+                    int select = 0;
+                    System.out.println("Ban co chac chan muon xoa hay khong? ");
+                    System.out.println("1. co");
+                    System.out.println("2. khong");
+                    select = Integer.parseInt(scanner.nextLine());
+                    switch (select){
+                        case 1:
+                            truckList.remove(truck);
+                            System.out.println("Done!");
+                            ReadWrite.writeAfterDeleteTruck(truckList);
+                            break;
+                        case 2:
+                            Maincontroller.mainController();
+                            break;
+                    }
+                }
+            }
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
+        }
     }
 
     @Override

@@ -1,11 +1,15 @@
 package fake_final_exam.models;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import fake_final_exam.service.impl.MotorImpl;
+import fake_final_exam.utils.ReadWrite;
+
+import java.util.List;
+import java.util.Scanner;
 
 public class Motor extends Vehicle{
-    private static final String MOTOR_CSV = "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\fake_final_exam\\data\\motor.csv";
+    private static Scanner scanner = new Scanner(System.in);
+    private static MotorImpl motorServicec = new MotorImpl();
+    private static List<String> hangSanXuat = new MotorImpl().sendData();
     private double congSuat;
 
     public Motor() {
@@ -30,26 +34,28 @@ public class Motor extends Vehicle{
                 "congSuat=" + congSuat;
     }
 
-    public static void some(Motor motor){
+    @Override
+    public void add() {
         try {
-            FileWriter fileWriter = new FileWriter(MOTOR_CSV, true);
-            BufferedWriter buffWrite = new BufferedWriter(fileWriter);
-            buffWrite.write(motor.getBienKiemSoat()+","+motor.getHangSanXuat()+","+motor.getNamSanXuat()+","+motor.getChuSoHuu()+","+motor.getCongSuat());
-            buffWrite.newLine();
-            buffWrite.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
+            System.out.println("nhap vao bien kiem soat: ");
+            String bks = scanner.nextLine();
+            System.out.println("nhap vao so tuong ung voi hang: ");
+            motorServicec.displaySomething();
+            int so = Integer.parseInt(scanner.nextLine());
+            String hang = null;
+            if (so > 0 || so < hangSanXuat.size()){
+                hang = hangSanXuat.get(so);
+            }
+            System.out.println("nhap vao nam san xuat: ");
+            String namSX = scanner.nextLine();
+            System.out.println("nhap vao chu so huu: ");
+            String chu = scanner.nextLine();
+            System.out.println("nhap vao cong suat: ");
+            double congSuat = Double.parseDouble(scanner.nextLine());
+            Motor motor = new Motor(bks, hang, namSX, chu, congSuat);
+            ReadWrite.addMotor(motor);
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
         }
-    }
-
-    @Override
-    void delete() {
-
-    }
-
-    @Override
-    void find() {
-
     }
 }

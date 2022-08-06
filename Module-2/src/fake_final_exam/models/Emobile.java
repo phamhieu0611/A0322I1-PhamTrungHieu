@@ -1,11 +1,16 @@
 package fake_final_exam.models;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import fake_final_exam.service.impl.EmobileImpl;
+import fake_final_exam.utils.ReadWrite;
+
+import java.util.List;
+import java.util.Scanner;
 
 public class Emobile extends Vehicle{
-    private static final String EMOBILE_CSV= "C:\\Users\\User\\OneDrive\\Desktop\\Codegym\\A0322I1-PhamTrungHieu\\Module-2\\src\\fake_final_exam\\data\\emobile.csv";
+    private static Scanner scanner = new Scanner(System.in);
+    private static EmobileImpl emobileService = new EmobileImpl();
+    private static List<String> hangSanXuat = new EmobileImpl().sendData();
+
     private String kieuXe;
     private int soChoNgoi;
 
@@ -41,26 +46,30 @@ public class Emobile extends Vehicle{
                 ", soChoNgoi=" + soChoNgoi;
     }
 
-    public static void some(Emobile emobile){
+    @Override
+    public void add() {
         try {
-            FileWriter fileWriter = new FileWriter(EMOBILE_CSV, true);
-            BufferedWriter buffWrite = new BufferedWriter(fileWriter);
-            buffWrite.write(emobile.getBienKiemSoat()+","+emobile.getHangSanXuat()+","+emobile.getNamSanXuat()+","+emobile.getChuSoHuu()+","+emobile.getKieuXe()+","+emobile.getSoChoNgoi());
-            buffWrite.newLine();
-            buffWrite.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally {
+            System.out.println("nhap vao bien kiem soat: ");
+            String bks = scanner.nextLine();
+            System.out.println("nhap vao so tuong ung voi hang: ");
+            emobileService.displaySomething();
+            int so = Integer.parseInt(scanner.nextLine());
+            String hang = null;
+            if (so > 0 || so < hangSanXuat.size()){
+                hang = hangSanXuat.get(so);
+            }
+            System.out.println("nhap vao nam san xuat: ");
+            String namSX = scanner.nextLine();
+            System.out.println("nhap vao chu so huu: ");
+            String chu = scanner.nextLine();
+            System.out.println("nhap vao kieu xe: ");
+            String kieuXe = scanner.nextLine();
+            System.out.println("nhap vao so cho ngoi: ");
+            int choNgoi = Integer.parseInt(scanner.nextLine());
+            Emobile emobile = new Emobile(bks, hang, namSX, chu, kieuXe, choNgoi);
+            ReadWrite.addEmobile(emobile);
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
         }
-    }
-
-    @Override
-    void delete() {
-
-    }
-
-    @Override
-    void find() {
-
     }
 }

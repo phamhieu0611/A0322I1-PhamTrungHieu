@@ -16,8 +16,7 @@ public abstract class Vehicle {
         this.chuSoHuu = chuSoHuu;
     }
 
-    abstract void delete();
-    abstract void find();
+    public abstract void add();
 
     public String getBienKiemSoat() {
         return bienKiemSoat;
