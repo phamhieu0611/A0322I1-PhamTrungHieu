@@ -78,6 +78,7 @@ public class MotorImpl implements Vehicle {
 
     @Override
     public void find() {
+        motorList = ReadWrite.readMotorFile(MOTOR_CSV);
         if (motorList.size() != 0){
         System.out.println("Nhap vao bien so muon tim kiem: ");
         String bienSo = scanner.nextLine();

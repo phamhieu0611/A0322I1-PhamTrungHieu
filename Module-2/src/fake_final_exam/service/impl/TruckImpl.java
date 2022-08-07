@@ -77,6 +77,7 @@ public class TruckImpl implements Vehicle {
 
     @Override
     public void find() {
+        truckList = ReadWrite.readTruckFile(TRUCK_CSV);
         System.out.println("Nhap vao bien so muon tim kiem: ");
         String bienSo = scanner.nextLine();
         try {

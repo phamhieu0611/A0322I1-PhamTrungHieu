@@ -76,6 +76,7 @@ public class EmobileImpl implements Vehicle {
 
     @Override
     public void find() {
+        emobileList = ReadWrite.readEmobileFile(EMOBILE_CSV);
         System.out.println("Nhap vao bien so muon tim kiem: ");
         String bienSo = scanner.nextLine();
         try {
