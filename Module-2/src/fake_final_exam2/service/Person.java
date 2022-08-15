@@ -5,4 +5,5 @@ public interface Person {
     void display();
     void find();
     void delete();
+    void edit();
 }

@@ -27,7 +27,7 @@ public class GiangVien extends Person{
 
     @Override
     public String layThongTin() {
-        return String.format("%s,%s,%s,%s", this.getName()+this.getDate()+this.getGender()+this.getChuyenMon());
+        return String.format("%s,%s,%s,%s", this.getName(),this.getDate(),this.getGender(),this.getChuyenMon());
 
     }
 }

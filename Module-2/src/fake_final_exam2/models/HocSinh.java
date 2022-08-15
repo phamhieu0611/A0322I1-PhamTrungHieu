@@ -4,6 +4,11 @@ public class HocSinh extends Person{
     private String lop;
     private String diem;
 
+    @Override
+    public String layThongTin() {
+        return String.format("%s,%s,%s,%s,%s", this.getName(),this.getDate(),this.getGender(),this.getLop(),this.getDiem());
+    }
+
     public HocSinh() {
     }
 
@@ -36,8 +41,5 @@ public class HocSinh extends Person{
                 ", diem='" + diem + '\'';
     }
 
-    @Override
-    public String layThongTin() {
-        return String.format("%s,%s,%s,%s,%s", this.getName()+this.getDate()+this.getGender()+this.getLop()+this.getDiem());
-    }
+
 }

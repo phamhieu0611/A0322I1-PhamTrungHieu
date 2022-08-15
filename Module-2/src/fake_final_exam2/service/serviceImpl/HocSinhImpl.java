@@ -29,7 +29,8 @@ public class HocSinhImpl implements Person {
             System.out.println("nhap vao diem: ");
             String diem = scanner.nextLine();
             HocSinh hocSinh = new HocSinh(name, date, gender, lop, diem);
-            WriteFile.addHocSinh(hocSinh);
+            listHocSinh.add(hocSinh);
+            WriteFile.ghiFileHocSinh(listHocSinh);
         }catch (Exception e){
             System.err.println("Exception "+e.toString());
         }
@@ -76,9 +77,9 @@ public class HocSinhImpl implements Person {
         try {
             display();
             System.out.println("Nhap vao ten nguoi muon xoa: ");
-            String bienSo = scanner.nextLine();
+            String ten = scanner.nextLine();
             for (HocSinh hocSinh: listHocSinh){
-                if (bienSo.equalsIgnoreCase(hocSinh.getName())){
+                if (ten.equalsIgnoreCase(hocSinh.getName())){
                     int select = 0;
                     System.out.println("Ban co chac chan muon xoa "+hocSinh.toString()+" hay khong?");
                     System.out.println("1. co");
@@ -95,6 +96,38 @@ public class HocSinhImpl implements Person {
                             break;
                     }
                 }
+            }
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
+        }
+    }
+
+    @Override
+    public void edit() {
+        try {
+            display();
+            System.out.println("Nhap vao ten nguoi muon thay doi: ");
+            String bienSo = scanner.nextLine();
+            int count = 0;
+            for (HocSinh hocSinh: listHocSinh){
+                if (bienSo.equalsIgnoreCase(hocSinh.getName())){
+                    System.out.println("nhap vao ten moi: ");
+                    String nameMoi = scanner.nextLine();
+                    System.out.println("nhap vao ngay sinh moi: ");
+                    String dateMoi = scanner.nextLine();
+                    System.out.println("nhap vao gioi tinh moi: ");
+                    String genderMoi = scanner.nextLine();
+                    System.out.println("nhap vao lop hoc moi: ");
+                    String lopMoi = scanner.nextLine();
+                    System.out.println("nhap vao diem moi: ");
+                    String diemMoi = scanner.nextLine();
+                    HocSinh hocSinh1 = new HocSinh(nameMoi, dateMoi, genderMoi, lopMoi, diemMoi);
+                    listHocSinh.set(count, hocSinh1);
+                    WriteFile.writeAfterDeleteHocSinh(listHocSinh);
+                    System.out.println("Done!");
+                    break;
+                }
+                count++;
             }
         }catch (Exception e){
             System.err.println("Exception "+e.toString());

@@ -1,7 +1,9 @@
 package fake_final_exam2.service.serviceImpl;
 
 import fake_final_exam.controller.Maincontroller;
+import fake_final_exam2.controller.QLSVController;
 import fake_final_exam2.models.GiangVien;
+import fake_final_exam2.models.HocSinh;
 import fake_final_exam2.service.Person;
 import fake_final_exam2.utils.ReadFile;
 import fake_final_exam2.utils.WriteFile;
@@ -27,7 +29,8 @@ public class GiangVienImpl implements Person {
             System.out.println("nhap vao chuyen mon: ");
             String chuyenMon = scanner.nextLine();
             GiangVien giangVien = new GiangVien(name, date, gender, chuyenMon);
-            WriteFile.addGiangVien(giangVien);
+            giangVienList.add(giangVien);
+            WriteFile.ghiFileGiangVien(giangVienList);
         }catch (Exception e){
             System.err.println("Exception "+e.toString());
         }
@@ -43,6 +46,7 @@ public class GiangVienImpl implements Person {
                 }
             }if (giangVienList.size() == 0){
                 System.out.println("The list Empty.");
+                QLSVController.QLSVController();
             }
         }catch (Exception e){
             System.err.println("Exception "+e.toString());
@@ -72,26 +76,61 @@ public class GiangVienImpl implements Person {
     @Override
     public void delete() {
         try {
-            display();
-            System.out.println("Nhap vao ten nguoi muon xoa: ");
-            String bienSo = scanner.nextLine();
-            for (GiangVien giangVien: giangVienList){
-                if (bienSo.equalsIgnoreCase(giangVien.getName())){
-                    int select = 0;
-                    System.out.println("Ban co chac chan muon xoa "+giangVien.toString()+" hay khong?");
-                    System.out.println("1. co");
-                    System.out.println("2. khong");
-                    select = Integer.parseInt(scanner.nextLine());
-                    switch (select){
-                        case 1:
-                            giangVienList.remove(giangVien);
-                            WriteFile.writeAfterDeleteGiangVien(giangVienList);
-                            System.out.println("Done!");
-                            break;
-                        case 2:
-                            Maincontroller.mainController();
-                            break;
+                display();
+                System.out.println("Nhap vao ten nguoi muon xoa: ");
+                String bienSo = scanner.nextLine();
+                for (GiangVien giangVien: giangVienList){
+                    if (bienSo.equalsIgnoreCase(giangVien.getName())){
+                        int select = 0;
+                        System.out.println("Ban co chac chan muon xoa "+giangVien.toString()+" hay khong?");
+                        System.out.println("1. co");
+                        System.out.println("2. khong");
+                        select = Integer.parseInt(scanner.nextLine());
+                        switch (select){
+                            case 1:
+                                giangVienList.remove(giangVien);
+                                WriteFile.writeAfterDeleteGiangVien(giangVienList);
+                                System.out.println("Done!");
+                                break;
+                            case 2:
+                                Maincontroller.mainController();
+                                break;
+                        }
                     }
+                }
+            if (giangVienList.size() ==0){
+                System.out.println("danh sach rong!");
+            }
+        }catch (Exception e){
+            System.err.println("Exception "+e.toString());
+        }
+    }
+
+    @Override
+    public void edit() {
+        try {
+            if (giangVienList.size()!=0){
+                display();
+                System.out.println("Nhap vao ten nguoi muon thay doi: ");
+                String ten = scanner.nextLine();
+                int count = 0;
+                for (GiangVien giangVien: giangVienList){
+                    if (ten.equalsIgnoreCase(giangVien.getName())){
+                        System.out.println("nhap vao ten moi: ");
+                        String nameMoi = scanner.nextLine();
+                        System.out.println("nhap vao ngay sinh moi: ");
+                        String dateMoi = scanner.nextLine();
+                        System.out.println("nhap vao gioi tinh moi: ");
+                        String genderMoi = scanner.nextLine();
+                        System.out.println("nhap vao lop hoc moi: ");
+                        String chuyenMon = scanner.nextLine();
+                        GiangVien giangVien1 = new GiangVien(nameMoi, dateMoi, genderMoi, chuyenMon);
+                        giangVienList.set(count, giangVien1);
+                        WriteFile.writeAfterDeleteGiangVien(giangVienList);
+                        System.out.println("Done!");
+                        break;
+                    }
+                    count++;
                 }
             }
         }catch (Exception e){

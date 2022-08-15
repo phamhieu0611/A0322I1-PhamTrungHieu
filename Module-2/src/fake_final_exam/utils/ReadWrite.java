@@ -17,7 +17,7 @@ public class ReadWrite {
         try {
             FileWriter fileWriter = new FileWriter(EMOBILE_CSV, true);
             BufferedWriter buffWrite = new BufferedWriter(fileWriter);
-            buffWrite.write(emobile.getBienKiemSoat() + "," + emobile.getHangSanXuat() + "," + emobile.getNamSanXuat() + "," + emobile.getChuSoHuu() + "," + emobile.getKieuXe() + "," + emobile.getSoChoNgoi());
+                buffWrite.write(emobile.getBienKiemSoat() + "," + emobile.getHangSanXuat() + "," + emobile.getNamSanXuat() + "," + emobile.getChuSoHuu() + "," + emobile.getKieuXe() + "," + emobile.getSoChoNgoi());
             buffWrite.newLine();
             buffWrite.close();
         } catch (IOException e) {

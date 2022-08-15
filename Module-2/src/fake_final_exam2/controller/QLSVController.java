@@ -19,7 +19,8 @@ public class QLSVController {
                 System.out.println("2. Xoa giang vien hoac hoc sinh.");
                 System.out.println("3. Xem danh sach giang vien hoac hoc sinh.");
                 System.out.println("4. Tim gang vien hoac hoc sinh.");
-                System.out.println("5. Exit.");
+                System.out.println("5. chinh sua giang vien hoac hoc sinh.");
+                System.out.println("6. Exit.");
                 System.out.print("Enter your choice: ");
                 select = Integer.parseInt(scanner.nextLine());
                 switch (select){
@@ -33,10 +34,10 @@ public class QLSVController {
                         choose = Integer.parseInt(scanner.nextLine());
                         switch (choose){
                             case 1:
-                                hocSinh.add();
+                                giangVien.add();
                                 break;
                             case 2:
-                                giangVien.add();
+                                hocSinh.add();
                                 break;
                             case 3:
                                 QLSVController();
@@ -104,6 +105,26 @@ public class QLSVController {
                         }
                         break;
                     case 5:
+                        int inputttt = 0;
+                        System.out.println("--------------------------Menu--------------------------");
+                        System.out.println("1. Tim hoc sinh.");
+                        System.out.println("2. Tim giang vien.");
+                        System.out.println("3. Display menu.");
+                        System.out.print("Enter your choice: ");
+                        inputttt = Integer.parseInt(scanner.nextLine());
+                        switch (inputttt){
+                            case 1:
+                                hocSinh.edit();
+                                break;
+                            case 2:
+                                giangVien.edit();
+                                break;
+                            case 3:
+                                QLSVController();
+                                break;
+                        }
+                        break;
+                    case 6:
                         System.exit(0);
                 }
             }catch (Exception e){
