@@ -15,7 +15,7 @@ CREATE TABLE Student(
     ClassID INT NOT NULL,
     FOREIGN KEY (ClassID) REFERENCES Class (ClassID) 
 );
-CREATE TABLE Subject(
+CREATE TABLE `Subject`(
 	SubID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     SubName VARCHAR(30) NOT NULL,
     Credit TINYINT NOT NULL DEFAULT 1 CHECK (Credit >=1),
@@ -68,3 +68,30 @@ WHERE C.ClassName = 'A1';
 SELECT S.StudentID, S.StudentName, Sub.SubName, M.Mark
 FROM Student S join Mark M on S.StudentID = M.StudentID join Subject Sub on M.SubID = Sub.SubID
 WHERE (Sub.SubName = 'CF');
+
+USE QuanLySinhVien;
+
+SELECT Address, COUNT(StudentId) AS 'Số lượng học viên'
+FROM Student
+GROUP BY Address;
+
+SELECT S.StudentId,S.StudentName, AVG(Mark)
+FROM Student S join Mark M on S.StudentId = M.StudentId
+GROUP BY S.StudentId, S.StudentName
+HAVING AVG(Mark) > 15;
+
+SELECT S.StudentId, S.StudentName, AVG(Mark)
+FROM Student S join Mark M on S.StudentId = M.StudentId
+GROUP BY S.StudentId, S.StudentName
+HAVING AVG(Mark) >= ALL (SELECT AVG(Mark) FROM Mark GROUP BY Mark.StudentId);
+
+SELECT * FROM `Subject`
+WHERE Credit = (SELECT MAX(Credit) FROM `Subject`);
+
+SELECT s.subID, s.subName, MAX(m.Mark) 
+FROM `Subject` s JOIN Mark m on s.SubID = m.SubID;
+
+SELECT s.StudentID, s.StudentName, s.Address, s.Phone, AVG(m.Mark) AS dtb
+FROM Student s JOIN Mark m ON s.StudentID = m.StudentID
+GROUP BY s.StudentID
+ORDER BY dtb, s.StudentName DESC;  
