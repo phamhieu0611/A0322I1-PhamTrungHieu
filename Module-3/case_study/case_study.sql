@@ -471,14 +471,74 @@ select * from hop_dong;
 -- answer25
 delimiter //
 create trigger tr_xoa_hop_dong
-after delete on hop_dong
-for each row
+after delete on hop_dong for each row
 begin 
-	declare dem_ma_hop_dong int default '0';
-    select count(ma_hop_dong) into dem_ma_hop_dong from hop_dong;
-    signal sqlstate '45001' set message_text = 'khong the xoa';
+	set @c = (select count(*) from hop_dong);
+    signal sqlstate '01000' set message_text = @c;
 end //
 delimiter ;
-SELECT 'Hello World!';
-select count(1) from hop_dong;
+
 delete from hop_dong where ma_hop_dong = 6;
+
+-- answer26
+DELIMITER //
+CREATE trigger tr_cap_nhat_hop_dong
+after UPDATE on hop_dong FOR EACH ROW
+BEGIN
+if new.ngay_lam_hop_dong + 2 > new.ngay_ket_thuc then signal SQLSTATE '02000' set MESSAGE_TEXT = 'Invaild start date';
+end if;
+END
+// DELIMITER ;
+
+-- answer27
+SET GLOBAL log_bin_trust_function_creators = 1;
+
+
+DELIMITER //
+create FUNCTION func_dem_dich_vu()
+RETURNS  int
+BEGIN
+DECLARE res int;
+select count(*) INTO res from (select sum(chi_phi_thue) t from dich_vu
+join hop_dong using(ma_dich_vu)
+group by ma_dich_vu
+having t > 2000000) as tmp;
+return res;
+END
+// DELIMITER ;
+select func_dem_dich_vu();
+
+
+DELIMITER //
+CREATE FUNCTION func_tinh_thoi_gian_hop_dong(p_ma_khach_hang int)
+RETURNS int
+begin
+DECLARE res int;
+select max(tmp.t) into res from (select datediff(ngay_ket_thuc, ngay_lam_hop_dong) t from hop_dong
+WHERE ma_khach_hang= p_ma_khach_hang) as tmp;
+RETURN res;
+end
+// DELIMITER ;
+select func_tinh_thoi_gian_hop_dong(5);
+
+-- answer28
+DELIMITER //
+CREATE PROCEDURE sp_xoa_dich_vu_va_hd_room()
+BEGIN
+SET @myvar := (SELECT GROUP_CONCAT(ma_hop_dong SEPARATOR ',')  from dich_vu
+JOIN loai_dich_vu using(ma_loai_dich_vu)
+JOIN hop_dong using(ma_dich_vu)
+WHERE ten_loai_dich_vu = 'Room' and  year(ngay_lam_hop_dong) BETWEEN 2015 and 2020);
+
+DELETE FROM hop_dong_chi_tiet  WHERE FIND_IN_SET(ma_hop_dong,@myvar);
+DELETE FROM hop_dong  WHERE FIND_IN_SET(ma_hop_dong,@myvar);
+DELETE from dich_vu
+WHERE ma_dich_vu in ( SELECT DISTINCT
+			ma_dich_vu
+		FROM
+			hop_dong
+		WHERE
+			 FIND_IN_SET(ma_hop_dong,@myvar));
+END
+// DELIMITER ;
+call sp_xoa_dich_vu_va_hd_room();
