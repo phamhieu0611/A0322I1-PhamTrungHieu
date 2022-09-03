@@ -1,0 +1,52 @@
+body{
+    margin: 0px;
+}
+#header {
+    display: flex;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    justify-content: left;
+    border: 1px solid black;
+    background-color: black;
+    color: #CDCDCD;
+    gap: 20px;
+}
+#center{
+    display: flex;
+    margin-bottom: 10px;
+}
+ul li{
+    list-style: none;
+}
+li{
+    float: left;
+    padding:6px 15px ;
+    font-size: 30px;
+}
+.content {
+    width: 50%;
+    padding: 10px;
+}
+.sidebar {
+    width: 25%;
+    padding: 10px;
+    background-color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.sidebar h2 {
+    border: 1px solid black;
+    padding: 30px 110px;
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
