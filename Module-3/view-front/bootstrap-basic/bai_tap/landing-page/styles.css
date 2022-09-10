@@ -1,0 +1,40 @@
+.navbar-brand:hover{
+    border-bottom: 1px solid black;
+}
+.nav-link:hover{
+    border-bottom: 1px solid black;
+}
+.image{
+    padding: 16px 50px 16px 10px;
+    margin: 1px 50px 0 0;
+    width: 181px;
+    border-right: 2px solid black;
+}
+.icon {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.reponsive{
+    padding: 0 6px;
+    float: left;
+    width: 50%;
+}
+.text-right-img{
+    text-decoration: none;
+    color: blue;
+    margin-right: 12px;
+}
+
+@media only screen and (max-width: 700px) {
+    .reponsive{
+        float: left;
+        width: 100%;
+    }
+}
