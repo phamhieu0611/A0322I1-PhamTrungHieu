@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:3336/demo?useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "123456789";
+        private String jdbcURL = "jdbc:mysql://localhost:3336/demo?useSSL=false";
+        private String jdbcUsername = "root";
+        private String jdbcPassword = "123456789";
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
             " (?, ?, ?);";
-
+    private static final String FIND_BY_COUNTRY = "select id, name, email, country from users where country = ?;";
     private static final String SELECT_USER_BY_ID = "select id,name,email,country from users where id =?";
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
@@ -73,6 +73,24 @@ public class UserDAO {
             printSQLException(e);
         }
         return user;
+    }
+
+    public List<User> selectUserByCountry() throws SQLException {
+        List<User> users = new ArrayList<>();
+        try (
+                Connection connection = getConnection();
+                PreparedStatement preparedStatement = connection.prepareStatement(FIND_BY_COUNTRY);
+        ){
+            System.out.println(preparedStatement);
+            ResultSet rs =preparedStatement.executeQuery();
+            if (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                users.add(new User(id, name, email, country));
+            }
+        }return users;
     }
 
     public List<User> selectAllUsers() {

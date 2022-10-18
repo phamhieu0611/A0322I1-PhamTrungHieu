@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="966c0d4d-6914-4a3b-8cd9-202cf59ee5e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/WEB-INF/views/layout/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/WEB-INF/views/layout/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/WEB-INF/views/layout/navbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/WEB-INF/views/layout/page-loader.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/WEB-INF/views/layout/script.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/WEB-INF/views/layout/sidebar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/img/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/img/codegym-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/js/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/bootstrap-datepicker/moment-with-locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/bootstrap-datepicker/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/datatables/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/datatables/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/plugins/animate-css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/finalExam/src/main/webapp/assets/vendor/plugins/animate-css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/java/mvc/repository/CRUDRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/java/mvc/repository/PhongTroRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/java/mvc/repository/impl/PhongTroRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/img/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/img/codegym-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/js/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/bootstrap-datepicker/moment-with-locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/bootstrap-datepicker/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/datatables/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/datatables/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/plugins/animate-css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/assets/vendor/plugins/animate-css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/layout/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/layout/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/layout/navbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/layout/page-loader.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/layout/script.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/layout/sidebar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/thi_lai/src/main/webapp/exam/product/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/css/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/animated.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/core.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/icons.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/larger.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/list.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/path.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/less/variables.less" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/img/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/img/codegym-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/img/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/js/jquery.validate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/bootstrap-datepicker/moment-with-locales.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/bootstrap-datepicker/moment.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/datatables/dataTables.bootstrap4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/datatables/jquery.dataTables.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/datatables/jquery.dataTables.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/plugins/animate-css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/assets/vendor/plugins/animate-css/animate.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/layout/footer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/layout/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/layout/navbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/layout/page-loader.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/layout/script.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/layout/sidebar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/bai_tap/src/main/webapp/user/views/product/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/build/classes/java/main/DAO/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/build/classes/java/main/DAO/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/build/classes/java/main/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/build/classes/java/main/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/build/libs/thuc_hanh_1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/build/libs/thuc_hanh_1-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/src/main/java/DAO/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/src/main/java/DAO/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/src/main/java/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/src/main/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/jdbc/thuc_hanh_1/src/main/webapp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Module-3/view-front/mvc/bai_tap/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module-3/view-front/mvc/bai_tap/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Readme.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2G2PGIKTG0pIENacYoUkaCTTZYg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../customer-management" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="966c0d4d-6914-4a3b-8cd9-202cf59ee5e5" name="Default Changelist" comment="" />
+      <created>1665583607330</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665583607330</updated>
+      <workItem from="1665583614320" duration="242000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="139" key="FileChooserDialogImpl" timestamp="1665583856083">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="139" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1665583856083" />
+  </component>
+</project>

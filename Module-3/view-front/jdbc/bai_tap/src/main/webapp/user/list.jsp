@@ -1,0 +1,58 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: User
+  Date: 23/09/2022
+  Time: 2:30 CH
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html>
+<head>
+    <title>List</title>
+</head>
+<body>
+<center>
+<h1>User Management</h1>
+<h2>
+    <a href="/users?action=create">Add new User</a>
+</h2>
+<h2>
+    Search by Country
+    <form action="/users?action=findByCountry" method="post">
+        <input type="text" name="getCountry" placeholder="Country"/>
+        <input type="submit" value="Search">
+    </form>
+</h2>
+    <h2>
+        <a href="/users?action=sortByName">Sort By Name</a>
+    </h2>
+</center>
+<div align="center">
+    <table border="1" cellpadding="5">
+        <caption>
+            <h2>List of Users</h2>
+        </caption>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+        <c:forEach var="user" items="${list}">
+        <tr>
+            <td><c:out value="${user.id}"/></td>
+            <td><c:out value="${user.name}"/></td>
+            <td><c:out value="${user.email}"/></td>
+            <td><c:out value="${user.country}"/></td>
+            <td>
+                <a href="/users?action=edit&id=${user.id}">Edit</a>
+                <a href="/users?action=delete&id=${user.id}">Delete</a>
+            </td>
+        </tr>
+        </c:forEach>
+    </table>
+</div>
+</body>
+</html>

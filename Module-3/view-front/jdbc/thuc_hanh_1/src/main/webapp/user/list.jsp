@@ -16,7 +16,8 @@
 <center>
     <h1>User Management</h1>
     <h2>
-        <a href="user?action=create">Add New User</a>
+        <a href="user?action=create">Add New User</a><br/>
+        <a href="user?action=search">Search by country</a>
     </h2>
 </center>
 <div align="center">
