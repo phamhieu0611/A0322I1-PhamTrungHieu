@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="~{/layout::common}" class="divOut"></div>
+<h1>Create Music</h1>
+<form th:object="${music}" method="post">
+    <table class="table">
+        <input type="number" th:field="*{id}" hidden/>
+        <tr>
+            <td>Music Name</td>
+            <td>
+                <input type="text" th:field="*{name}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Music Singer</td>
+            <td>
+                <input type="text" th:field="*{singer}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Music Kind</td>
+            <td>
+                <input type="text" th:field="*{kind}"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Music URL</td>
+            <td>
+                <input type="text" th:field="*{url}"/>
+            </td>
+        </tr>
+        <tr >
+            <td colspan="2">
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>

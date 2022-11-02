@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:replace="~{/layout::common}" class="divOut"></div>
+<strong style="color: green" th:text="${message}"></strong> <!--text -->
+<p th:if="${musicList.isEmpty()}" style="color:red">List Empty</p>
+
+<form action="/music/search">
+    <input type="text" name="kq">
+</form>
+<a href="/music/create">Create new Music</a>
+<table class="table" border="1" th:unless="${musicList.isEmpty()}">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Music Name</th>
+        <th>Music Singer</th>
+        <th>Music Kind</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="music : ${musicList}">
+        <td th:text="${music.id}">1</td>
+        <td ><a th:href="${music.url}" th:text="${music.name}"></a></td>
+        <td th:text="${music.singer}">Ho Quang Hieu</td>
+        <td th:text="${music.kind}">Ho Quang Hieu</td>
+        <td>
+            <a th:href="@{/music/edit/{id}(id = ${music.id})}">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{/music/delete/{id}(id = ${music.id})}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:replace="~{/layout::abc}" class="divOut"></div>
+
+<!--<div th:with="name='Hoang', age='18'">-->
+<!--    <h3 th:text="${name}"></h3>-->
+<!--</div>-->
+</body>
+</html>
