@@ -27,7 +27,7 @@ import java.util.List;
 @ComponentScan("com.example.music")
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
-    ApplicationContext context;
+    private ApplicationContext context;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

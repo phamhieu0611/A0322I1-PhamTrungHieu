@@ -9,12 +9,6 @@
 <h1>Create Music</h1>
 <form th:object="${music}" method="post">
     <table class="table">
-        <!--        <tr>-->
-        <!--            <th>ID</th>-->
-        <!--            <th>-->
-        <!--                <input type="number" th:field="*{id}"/>-->
-        <!--            </th>-->
-        <!--        </tr>-->
         <tr>
             <td>Music Name</td>
             <td>
@@ -39,16 +33,6 @@
                 <input type="text" th:field="*{url}"/>
             </td>
         </tr>
-        <!--        <tr>-->
-        <!--            <th>Languages</th>-->
-        <!--            <th>-->
-        <!--&lt;!&ndash;                <form:checkboxes path="languages" items="${languageList}" />&ndash;&gt;-->
-        <!--                <input type="checkbox" th:each="lang: ${languageList}"-->
-        <!--                       th:text="${lang + 'LG'}"-->
-        <!--                       th:field="*{languages}" th:value="${lang}">-->
-        <!--            </th>-->
-        <!--        </tr>-->
-        <!---->
         <tr >
             <td colspan="2">
                 <button type="submit">Create</button>
