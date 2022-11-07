@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<div th:replace="~{/layout::common}" class="divOut"></div>
 <strong style="color: green" th:text="${message}"></strong> <!--text -->
 <p th:if="${musics.isEmpty()}" style="color:red">List Empty</p>
 
@@ -31,7 +30,7 @@
         <td th:text="${music.singer}">Ho Quang Hieu</td>
         <td th:text="${music.kind}">Ho Quang Hieu</td>
         <td>
-            <a th:href="@{/music/edit/{id}(id = ${music.id})}">Edit</a>
+            <a th:href="@{/music/update/{id}(id = ${music.id})}">Edit</a>
         </td>
         <td>
             <a th:href="@{/music/delete/{id}(id = ${music.id})}">Delete</a>
@@ -39,7 +38,5 @@
     </tr>
     </tbody>
 </table>
-
-<div th:replace="~{/layout::abc}" class="divOut"></div>
 </body>
 </html>

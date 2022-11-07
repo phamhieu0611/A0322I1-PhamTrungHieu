@@ -1,6 +1,7 @@
 package com.example.music.config;
 
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.MessageCodesResolver;
 import org.springframework.validation.Validator;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -25,6 +27,7 @@ import java.util.List;
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.example.music")
+//@EnableTransactionManagement
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private ApplicationContext context;
@@ -146,5 +149,10 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     @Override
     public MessageCodesResolver getMessageCodesResolver() {
         return null;
+    }
+
+    @Bean
+    public SessionFactory getSessionFactory() {
+        return new org.hibernate.cfg.Configuration().configure("hibernate.conf.xml").buildSessionFactory();
     }
 }
