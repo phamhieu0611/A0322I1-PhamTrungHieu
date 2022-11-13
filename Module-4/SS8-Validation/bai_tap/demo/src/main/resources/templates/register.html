@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/book/book.css">
+</head>
+<body>
+<form method="post" action="/register/register" th:object="${user}">
+    <table border="1">
+        <tr>
+            <td th:text="#{firstName}">First Name</td>
+            <td> <input th:field="*{firstName}"/></td>
+            <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" class="error">Name Error</td>
+        </tr>
+        <tr>
+            <td th:text="#{lastName}">Last Name</td>
+            <td> <input th:field="*{lastName}"/></td>
+            <td th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" class="error">Name Error</td>
+        </tr>
+        <tr>
+            <td th:text="#{age}">Age</td>
+            <td> <input th:field="*{age}"/></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}" class="error">Age Error</td>
+        </tr>
+        <tr>
+            <td th:text="#{phoneNumber}">First Name</td>
+            <td> <input th:field="*{phoneNumber}"/></td>
+            <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error">Phone number Error</td>
+        </tr>
+        <tr>
+            <td><input type="reset" value="Reset"></td>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
