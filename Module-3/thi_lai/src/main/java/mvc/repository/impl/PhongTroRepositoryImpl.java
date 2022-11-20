@@ -83,7 +83,6 @@ public class PhongTroRepositoryImpl implements PhongTroRepository {
         }
         return phongTros;
     }
-
     public List<LoaiThanhToan> displayPaymanet(){
         List<LoaiThanhToan> loaiThanhToans =new ArrayList<>();
         try (

@@ -8,24 +8,29 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
     private int bookId;
     private String name;
-    private String quantity;
+    private int quantity;
     private String author;
     private String price;
     private String description;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "code_book_id",referencedColumnName = "inventoryId")
+    private InventoryBook inventoryBook;
+
+
     public Book() {
     }
 
-    public Book(int bookId, String name, String quantity, String author, String price, String description) {
+    public Book(int bookId, String name, int quantity, String author, String price, String description, InventoryBook inventoryBook) {
         this.bookId = bookId;
         this.name = name;
         this.quantity = quantity;
         this.author = author;
         this.price = price;
         this.description = description;
+        this.inventoryBook = inventoryBook;
     }
 
     public int getBookId() {
@@ -44,11 +49,11 @@ public class Book {
         this.name = name;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
@@ -74,5 +79,13 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public InventoryBook getInventoryBook() {
+        return inventoryBook;
+    }
+
+    public void setInventoryBook(InventoryBook inventoryBook) {
+        this.inventoryBook = inventoryBook;
     }
 }

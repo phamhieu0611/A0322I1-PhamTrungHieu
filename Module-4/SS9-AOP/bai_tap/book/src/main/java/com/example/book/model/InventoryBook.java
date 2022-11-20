@@ -1,7 +1,5 @@
 package com.example.book.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -9,12 +7,9 @@ import javax.persistence.*;
 public class InventoryBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "inventory_id")
     private int inventoryId;
     private String codeRent;
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "book_id")
+    @OneToOne(mappedBy = "inventoryBook")
     private Book book;
 
     public InventoryBook() {
