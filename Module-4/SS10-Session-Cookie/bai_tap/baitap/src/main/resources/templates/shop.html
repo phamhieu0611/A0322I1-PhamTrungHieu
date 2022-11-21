@@ -9,20 +9,27 @@
     <a href="/shopping-cart">Your Cart</a>
 </p>
 <table border="1">
+    <tr>
+        <td></td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Detail</td>
+        <td>Add to cart</td>
+    </tr>
     <th:block th:each="product:${products}">
-        <a th:href="@{product/detail/{id}(id = product.id)}">
         <tr>
             <td>
                 <img th:src="${product.image}" th:width="200" th:height="200">
             </td>
-        </tr>
-        <tr>
             <td th:text="${product.name}"></td>
-        </tr>
-        <tr>
             <td th:text="${product.price}"></td>
+            <td>
+                <a th:href="@{/detail/__${product.id}__}">Detail</a>
+            </td>
+            <td>
+                <a th:href="@{/add/__${product.id}__(action='list')}">Add To Cart</a>
+            </td>
         </tr>
-        </a>
     </th:block>
 </table>
 </body>

@@ -43,11 +43,12 @@ public class ProductController {
     }
 
     @GetMapping("/des/{id}")
-    public String desOutCart(@PathVariable Long id, @ModelAttribute Cart cart, @RequestParam("action") String acyion){
+    public String desOutCart(@PathVariable Long id, @ModelAttribute Cart cart,
+                             @RequestParam("action") String action){
         Optional<Product> productOptional = iServicel.findById(id);
         if (!productOptional.isPresent()){
             return "/error.404";
-        }if (acyion.equals("show")){
+        }if (action.equals("show")){
             cart.desProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }

@@ -12,50 +12,55 @@ import java.util.Optional;
 
 @Controller
 @SessionAttributes("cart")
-@RequestMapping("/home")
+//@RequestMapping("/home")
 public class ProductController {
     @Autowired
     IServiceImpl iService;
     @ModelAttribute("cart")
-    public Product setUpProduct(){
-        return new Product();
+    public Cart setUpProduct(){
+        return new Cart();
     }
 
-    @GetMapping("shop")
+    @GetMapping("/shop")
     public ModelAndView showShop(){
         return new ModelAndView("shop", "products", iService.findAll());
     }
 
-    @GetMapping("detail/{id}")
+    @GetMapping("/detail/{id}")
     public ModelAndView showDetail(@PathVariable("id") Product product) {
         return new ModelAndView("detail", "product", product);
     }
 
-    @GetMapping("add/{id}")
-    public String addToCart(@PathVariable long id, @ModelAttribute Cart cart,
+    @GetMapping("/add/{id}")
+    public String addToCart(@PathVariable long id, @SessionAttribute("cart") Cart cart,
                             @RequestParam("action") String action){
         Optional<Product> productOptional =iService.findById(id);
         if (!productOptional.isPresent()){
             return "error.404";
-        }if (action.equals("show")){
+        }
+        if (action.equals("show")){
             cart.addProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
         cart.addProduct(productOptional.get());
-        return "redirect:/home/shop";
+        return "redirect:/shop";
     }
 
-    @GetMapping("add/{id}")
+    @GetMapping("/des/{id}")
     public String desOutCart(@PathVariable long id, @ModelAttribute Cart cart,
                              @RequestParam("action") String action){
         Optional<Product> productOptional = iService.findById(id);
         if (!productOptional.isPresent()){
             return "error.404";
         }if (action.equals("show")){
-            cart.addProduct(productOptional.get());
+            cart.desProduct(productOptional.get());
             return "redirect:/shopping-cart";
         }
-        cart.addProduct(productOptional.get());
-        return "redirect:/home/shop";
+        cart.desProduct(productOptional.get());
+        return "redirect:/shop";
     }
+
+//    @GetMapping("delete/{id}")
+//    public String deleteProduct(@PathVariable("id") Product product){
+//    }
 }

@@ -1,6 +1,7 @@
 package com.example.baitap.model;
 
 import javax.persistence.*;
+import java.util.Map;
 
 @Entity
 @Table(name = "hoa")
