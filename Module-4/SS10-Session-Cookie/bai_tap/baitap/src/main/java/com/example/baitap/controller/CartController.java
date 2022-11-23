@@ -15,7 +15,7 @@ public class CartController {
     }
 
     @GetMapping("shopping-cart")
-    public ModelAndView showCart(@SessionAttribute("cart") Cart cart){
+    public ModelAndView showCart(@SessionAttribute(value = "cart", required = false) Cart cart){
         return new ModelAndView("cart", "cart", cart);
     }
 }
