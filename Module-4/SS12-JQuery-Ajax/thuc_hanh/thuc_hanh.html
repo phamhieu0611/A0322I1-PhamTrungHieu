@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuc_hanh</title>
+</head>
+<body>
+<script src="jquery-3.6.1.min.js"></script>
+<p>If you click on the "Hide" button, I will disappear.</p>
+<button id="hide">Hide</button>
+<button id="show">show</button>
+<script>
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            $("p").hide();
+        });
+        $("#show").click(function () {
+            $("p").show();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuc_hanh1</title>
+</head>
+<body>
+<script src="jquery-3.6.1.min.js"></script>
+<button>Start Animation</button>
+<p>By default, all Html element have a static position, and cannot be moved...........</p>
+<div style="background: #98bf21;height:100px;width:200px;position:absolute;"> HELLO!</div>
+<script>
+    $("button").ready(function () {
+        $("button").click(function () {
+            var div = $("div");
+            div.animate({left: '100px'}, "slow");
+            div.animate({fontSize: '70px'}, "slow");
+        })
+    })
+</script>
+</body>
+</html>

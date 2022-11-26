@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4d2e43c2-83dd-4edd-9aa1-ec3552ad8b02" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/thuc_hanh1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/thuc_hanhPhone/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS1-Spring-MVC/thuc-hanh/bai-2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS1-Spring-MVC/thuc-hanh/bai-2/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS5-ORM/thuc-hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS5-ORM/thuc-hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS7-Spring Data Repository/thuc_hanh/spring-customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS7-Spring Data Repository/thuc_hanh/spring-customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS9-AOP/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS9-AOP/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SS9-AOP/thuc_hanh/customer-managementt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS9-AOP/thuc_hanh/customer-managementt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss4-Form-DataBlinding/thuc-hanh/spring_mvc_form_tutorial" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss4-Form-DataBlinding/thuc-hanh/spring_mvc_form_tutorial" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2I3AtLRGhvc3tX5CODdhKO47m7W" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/User/OneDrive/Desktop/Codegym/A0322I1-PhamTrungHieu/Module-4/SS12-JQuery-Ajax/bai_tap/blog_update",
+    "spring.configuration.checksum": "9c382e7cc69b810e0b213708957a8eaa"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Bai1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="bai1.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.bai1.Bai1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4d2e43c2-83dd-4edd-9aa1-ec3552ad8b02" name="Changes" comment="" />
+      <created>1669400114731</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669400114731</updated>
+      <workItem from="1669400116336" duration="202000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
