@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -52,6 +53,16 @@
     </script>
 </head>
 <body>
+<h2>Spring Security Example</h2>
+<hr/>
+<h3>User dashboard</h3>
+<div sec:authorize="isAuthenticated()">
+    <b>Welcome!<span sec:authentication="principal.username"></span></b>
+</div>
+<br/>
+<div sec:authorize="isAuthenticated()">
+    <a th:href="@{/blog/list}">Home</a> | <a th:href="@{/logout}">Logout</a>
+</div>
 <strong style="color: green" th:text="${message}"></strong> <!--text -->
 <p th:if="${blogs.isEmpty()}" style="color:red">List Empty</p>
 <input type="text" name="inputId" id="inId">

@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 import java.util.logging.Logger;
@@ -32,14 +33,19 @@ public class BlogController {
 
     private Logger logger = Logger.getLogger(BlogController.class.getName());
 
+    @GetMapping("")
+    public ModelAndView index() {
+        return new ModelAndView("/index");
+    }
+
     @GetMapping("list")
-    public String showListBook(@RequestParam(name = "blogName", required = false) String name, Model model) {
+    public String showListBook(@RequestParam(name = "blogName", required = false) String name, Model model, Principal principal) {
         if (name != null && !name.isEmpty()) {
             model.addAttribute("blogs", blogService.findByName(name));
         } else {
             model.addAttribute("blogs", blogService.getList());
         }
-
+        System.out.println(principal.getName());
         return "blog";
     }
 
@@ -48,6 +54,8 @@ public class BlogController {
         ModelAndView modelAndView = new ModelAndView("create");
         modelAndView.addObject("blog", new Blog());
         modelAndView.addObject("categories", categoryRepository.findAll());
+        SecurityContext context = SecurityContextHolder.getContext();
+        System.out.println(context.getAuthentication().getName());
         return modelAndView;
     }
 
