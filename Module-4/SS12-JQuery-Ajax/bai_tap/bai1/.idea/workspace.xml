@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d2e43c2-83dd-4edd-9aa1-ec3552ad8b02" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/thuc_hanh1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/thuc_hanhPhone/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../SS1-Spring-MVC/thuc-hanh/bai-2/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS1-Spring-MVC/thuc-hanh/bai-2/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog_update/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../blog_update/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../thuc_hanh/thuc_hanhPhone/spring-phone-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../thuc_hanh/thuc_hanhPhone/spring-phone-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../SS5-ORM/thuc-hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS5-ORM/thuc-hanh/customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../SS7-Spring Data Repository/thuc_hanh/spring-customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS7-Spring Data Repository/thuc_hanh/spring-customer-management" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../SS9-AOP/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../SS9-AOP/thuc_hanh/customer-management" afterDir="false" />
@@ -33,15 +33,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/User/OneDrive/Desktop/Codegym/A0322I1-PhamTrungHieu/Module-4/SS12-JQuery-Ajax/bai_tap/blog_update",
-    "spring.configuration.checksum": "9c382e7cc69b810e0b213708957a8eaa"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/OneDrive/Desktop/Codegym/A0322I1-PhamTrungHieu/Module-4/SS12-JQuery-Ajax/bai_tap/blog_update&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;9c382e7cc69b810e0b213708957a8eaa&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Bai1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="bai1.main" />
@@ -60,6 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669400114731</updated>
       <workItem from="1669400116336" duration="202000" />
+      <workItem from="1670953422604" duration="271000" />
     </task>
     <servers />
   </component>

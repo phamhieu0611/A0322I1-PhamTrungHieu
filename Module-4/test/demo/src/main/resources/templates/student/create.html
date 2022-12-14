@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Icon -->
+    <link rel="shortcut icon" type="image/png" href="/assets/img/favicon.ico"/>
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <!-- DataTables -->
+    <link href="/assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <!-- Bootstrap Date picker -->
+    <link href="/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="/assets/vendor/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<!--<div th:replace="~{/layout/footer::navbar_layout}"></div>-->
+<!--<div th:replace="~{/layout/footer::slide_bar}"></div>-->
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Vertical Layout -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Add new Student
+                        </h2>
+                        <a href="/student/list">Return List</a>
+                        <th:if test="${error != null}">
+                            <h2 style="color: red" th:text="${error}"></h2>
+                        </th:if>
+                        <div class="body">
+                            <form th:action="@{/student/create}" th:object="${student}" method="post">
+
+                                <label for="student_name">Student Name: <span style="color: red;"> *</span></label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="name" class="form-control"
+                                               placeholder="Student Name" tabindex="3" id="student_name"
+                                               th:field="*{studentName}"/>
+                                        <p th:if="${#fields.hasErrors('studentName')}" th:errors="*{studentName}" class="error" style="color: red">name error</p>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                                    <div class="col-sm-10">
+                                        <div class="form-check">
+                                            <td>
+                                                <input type="radio" th:field="*{gender}" th:value="1" tabindex="4"/>
+                                                <label th:text="male"/>
+                                                <input type="radio" th:field="*{gender}" th:value="0" />
+                                                <label th:text="female"/>
+                                            </td>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <label for="student_birthday">Birthday: <span style="color: red;"> *</span></label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="date" name="birthday" class="form-control" placeholder="Birthday"
+                                               tabindex="5" id="student_birthday" th:field="*{birthday}"/>
+                                        <p th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" class="error" style="color: red">date error</p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="student_class" class="col-sm-2 col-form-label">ClassName</label>
+                                    <select th:field="*{classroom}">
+                                        <option id="student_class" th:each="className: ${classroom}"
+                                                th:text="${className.classroomName}" th:value="${className.cClassroomId}">
+                                        </option>
+                                    </select>
+                                </div>
+
+                                <label for="student_point">Point: <span style="color: red;"> *</span></label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="number" name="salary" class="form-control" placeholder="Point"
+                                               tabindex="6" id="student_point"  th:field="*{point}"/>
+                                        <p th:if="${#fields.hasErrors('point')}" th:errors="*{point}" class="error" style="color: red">point error</p>
+                                    </div>
+                                </div>
+
+                                <label for="student_phone">Phone: <span style="color: red;"> *</span></label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone"
+                                               tabindex="7" id="student_phone"  th:field="*{phoneNumber}" />
+                                        <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" class="error" style="color: red">phone error</p>
+                                    </div>
+                                </div>
+                                <button type="reset" class="btn btn-primary btn-custom" tabindex="8"><i class="fa fa-check" aria-hidden="true"></i> Reset</button>
+                                <button type="submit" class="btn btn-primary btn-custom" tabindex="9"><i class="fa fa-check" aria-hidden="true"></i> Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--<div th:replace="~{/layout/footer::script_layout}"></div>-->
+</body>
+</html>
