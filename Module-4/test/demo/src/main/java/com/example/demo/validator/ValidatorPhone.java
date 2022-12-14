@@ -3,7 +3,6 @@ package com.example.demo.validator;
 import com.example.demo.model.Student;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import java.util.Date;

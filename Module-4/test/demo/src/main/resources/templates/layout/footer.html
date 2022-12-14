@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="header_layout">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" type="image/png" href="/static/assets/img/favicon.ico"/>
+
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="/static/assets/css/bootstrap.min.css" />
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="/static/assets/font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <!-- DataTables -->
+    <link href="/static/assets/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    <!-- Bootstrap Date picker -->
+    <link href="/static/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="/static/assets/vendor/plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/assets/css/style.css" />
+
+</head>
+<body>
+<!-- Navbar  -->
+<div th:fragment="navbar_layout">
+    <nav class="navbar-top navbar-default navbar-fixed-top nav-custom">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="${contextPath}"><img src="/assets/img/codegym-logo.png" alt=""></a>
+            </div>
+
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="margin-left: 270px">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Home
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${contextPath}/product?action=list">List products</a></li>
+                            <li><a href="${contextPath}/product?action=create">Create product</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Employee
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${contextPath}/employee?action=list">List employees</a></li>
+                            <li><a href="${contextPath}/employee?action=create">Create employees</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Customer
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${contextPath}/customer?action=list">List products</a></li>
+                            <li><a href="${contextPath}/customer?action=create">Create product</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Service
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="${contextPath}/service?action=list">List service</a></li>
+                            <li><a href="${contextPath}/service?action=create">Create service</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Contract
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/static/customer?action=list">List products</a></li>
+                            <li><a href="${contextPath}/customer?action=create">Create product</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!-- Sidebar  -->
+<section th:fragment="slide_bar">
+    <!-- Left Sidebar -->
+    <aside id="leftsidebar" class="sidebar">
+        <!-- Menu -->
+        <div class="menu" id="sidebarAdmin">
+            <ul class="list">
+                <li class="header">
+                    <a href="${contextPath}/customer?action=list"><span>Customer management</span></a>
+                </li>
+                <li class="header">
+                    <a href="${contextPath}/service?action=list"><span>Service management</span></a>
+                </li>
+                <li class="header">
+                    <a href="${contextPath}/employee?action=list"><span>Employee management</span></a>
+                </li>
+            </ul>
+        </div>
+        <!-- #Menu -->
+    </aside>
+    <!-- #END# Left Sidebar -->
+</section>
+
+
+<div th:fragment="script_layout">
+    <!-- Jquery 3.2.1  -->
+    <script src="/assets/js/jquery-3.2.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="/assets/js/bootstrap.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="/assets/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="/assets/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Moment js -->
+    <script src="/assets/vendor/bootstrap-datepicker/moment.js"></script>
+
+    <!-- Date picker -->
+    <script src="/assets/vendor/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
+
+    <!-- Main JS -->
+    <script src="/assets/js/app.js"></script>
+</div>
+
+<footer class="footer" th:fragment="layout_footer">
+    <div class="container">
+        <span class="text-muted">&copy; <script>document.write(new Date().getFullYear())</script> Codegym</span>
+    </div>
+</footer>
+</body>
+</html>
