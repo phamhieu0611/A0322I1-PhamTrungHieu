@@ -19,7 +19,8 @@
       <div class="form-group row">
         <label class="col-sm-2 col-form-label">Customer Name</label>
         <select th:field="*{customer}">
-          <option th:each="customer: ${customers}" th:text="${customer.customerName}" th:value="${customer.customerId}">
+          <option th:each="c: ${customers}"
+                  th:text="${c.customerName}" th:value="${c.customerId}">
           </option>
         </select>
       </div>

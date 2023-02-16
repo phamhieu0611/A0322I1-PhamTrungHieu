@@ -37,9 +37,9 @@ public class LoiController {
     @GetMapping("/list")
     public ModelAndView findAll(Pageable pageable,
                                 @ModelAttribute(name = "searchSession") SearchSession searchSession,
-                                @RequestParam(required = false) String search){
-        if (search != null){
-            searchSession.setValue(search);
+                                @RequestParam(required = false) String searchVal){
+        if (searchVal != null){
+            searchSession.setValue(searchVal);
         }
         return new ModelAndView("home123", "contracts",
                 contactService.search(pageable, searchSession.getValue()));
@@ -49,7 +49,7 @@ public class LoiController {
     public ModelAndView createform(){
         ModelAndView modelAndView = new ModelAndView("create123");
         modelAndView.addObject("contract", new Contract());
-        modelAndView.addObject("customer", customerService.listAll());
+        modelAndView.addObject("customers", customerService.listAll());
         return modelAndView;
     }
 

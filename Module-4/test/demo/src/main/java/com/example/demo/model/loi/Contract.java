@@ -17,7 +17,7 @@ public class Contract {
     @JoinColumn(name = "customer_customerId")
     private Customer customer;
     private boolean contractType;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date contractTime;
     @Min(value = 500000, message = "Price least must be bigger than 500000")
     private double price;

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Student</title>
+</head>
+<body>
+<form th:action="@{'/bill/update/' + ${bills.billId}}" method="post" th:object="${bills}">
+
+  <div class="col-sm-8">
+    <h2>Chỉnh sửa cho đơn hàng mã số <b><span th:text="${bills.billId}"></span></b></h2></div>
+  <fieldset class="form-group">
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Loại sản phẩm</label>
+      <select th:field="*{product}">
+        <option th:each="c: ${products}"
+                th:text="${c.productName}" th:value="${c.productId}">
+        </option>
+      </select>
+    </div><br/>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Sản phẩm</label>
+      <select th:field="*{product.typeProduct}">
+        <option th:each="c: ${typeProducts}"
+                th:text="${c.typeProduct}" th:value="${c.id}">
+        </option>
+      </select>
+    </div><br/>
+
+      <div class="form-group row">
+        <label for="date" class="col-sm-2 col-form-label">Ngày mua</label>
+          <input type="date" class="form-control" id="date" th:field="*{publishDate}">
+          <p th:if="${#fields.hasErrors('publishDate')}" th:errors="*{publishDate}" class="text-danger" style="color: red"></p>
+      </div><br/>
+
+    <div class="form-group row">
+      <label for="area" class="col-sm-2 col-form-label">Số lượng</label>
+        <input type="number" class="form-control" id="area" placeholder="Số lượng sản phẩm" th:field="*{quantity}">
+        <p th:if="${#fields.hasErrors('quantity')}" th:errors="*{quantity}" class="text-danger" style="color: red"></p>
+    </div><br/>
+
+  </fieldset>
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>
+</body>
+</html>

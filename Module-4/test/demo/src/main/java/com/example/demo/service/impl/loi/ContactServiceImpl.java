@@ -20,7 +20,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     public Page<Contract> search(Pageable pageable, String searchVal) {
-        return contactRepo.findByCustomer_CustomerNameContaining(pageable, searchVal);
+        return contactRepo.findByContractIdContainingOrCustomer_CustomerNameContaining(pageable, searchVal, searchVal);
     }
 
     @Override

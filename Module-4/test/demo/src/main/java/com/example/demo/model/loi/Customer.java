@@ -16,7 +16,6 @@ public class Customer {
     @OneToMany(mappedBy = "customer")
     @JsonBackReference
     private Set<Contract> set;
-
     public Customer() {
     }
 

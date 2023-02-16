@@ -166,7 +166,7 @@
           <td th:text="${contract.contractId}"></td>
           <td th:text="${contract.customer.customerName}"></td>
           <td th:text="${contract.contractType}?'Ground':'House'"></td>
-          <td th:text="*{#dates.format(contract.contractTime, 'yyyy-MM-dd')}"></td>
+          <td th:text="*{#dates.format(contract.contractTime, 'dd-MM-yyyy')}"></td>
           <td th:text="${contract.price}"></td>
           <td th:text="${contract.area}"></td>
           <td>
@@ -175,10 +175,12 @@
                th:data-id="${contract.id}"
                th:data-name="${contract.contractId}"
                th:data-cus="${contract.customer.customerName}"
-               th:data-type="${contract.contractType}"
-            th:data-date="${contract.contractTime}"
-            th:data-price="${contract.price}"
-            th:data-area="${contract.area}">
+               th:data-email="${contract.customer.email}"
+               th:data-phone="${contract.customer.customerPhone}"
+               th:data-type="${contract.contractType}?'Ground':'House'"
+               th:data-date="${contract.contractTime}"
+               th:data-price="${contract.price}"
+               th:data-area="${contract.area}">
               <i class="material-icons">&#xE254;</i>
             </a>
             <a type="button" class="delete" title="Delete"
@@ -186,7 +188,9 @@
                th:data-id="${contract.id}"
                th:data-name="${contract.contractId}"
                th:data-cus="${contract.customer.customerName}"
-               th:data-type="${contract.contractType}"
+               th:data-email="${contract.customer.email}"
+               th:data-phone="${contract.customer.customerPhone}"
+               th:data-type="${contract.contractType}?'Ground':'House'"
                th:data-date="${contract.contractTime}"
                th:data-price="${contract.price}"
                th:data-area="${contract.area}">
@@ -239,6 +243,8 @@
             <p class="index"></p>
             <p class="id"></p>
             <p class="name"></p>
+            <p class="email"></p>
+            <p class="phone"></p>
             <p class="type"></p>
             <p class="date"></p>
             <p class="price"></p>
@@ -266,6 +272,8 @@
             <p class="index"></p>
             <p class="id"></p>
             <p class="name"></p>
+            <p class="email"></p>
+            <p class="phone"></p>
             <p class="type"></p>
             <p class="date"></p>
             <p class="price"></p>
@@ -297,10 +305,12 @@
     modal.find('.index').text('Index:' + button.data('id'));
     modal.find('.id').text('Contract ID:' + button.data('name'));
     modal.find('.name').text('Customer Name:' + button.data('cus'));
+    modal.find('.email').text('Customer Email:' + button.data('email'));
+    modal.find('.phone').text('Customer Phone Number:' + button.data('phone'));
     modal.find('.type').text('Contract Type:' + button.data('type'));
-    modal.find('.date').text('Tên học sinh:' + button.data('date'));
-    modal.find('.price').text('Tên học sinh:' + button.data('price'));
-    modal.find('.area').text('Tên học sinh:' + button.data('area'));
+    modal.find('.date').text('Publish Date:' + button.data('date'));
+    modal.find('.price').text('Price:' + button.data('price'));
+    modal.find('.area').text('Area:' + button.data('area'));
     modal.find('.modal-footer a').attr("href", "/contract/delete/" + button.data('id'));
   });
 
@@ -310,10 +320,12 @@
     modal.find('.index').text('Index:' + button.data('id'));
     modal.find('.id').text('Contract ID:' + button.data('name'));
     modal.find('.name').text('Customer Name:' + button.data('cus'));
+    modal.find('.email').text('Customer Email:' + button.data('email'));
+    modal.find('.phone').text('Customer Phone Number:' + button.data('phone'));
     modal.find('.type').text('Contract Type:' + button.data('type'));
-    modal.find('.date').text('Tên học sinh:' + button.data('date'));
-    modal.find('.price').text('Tên học sinh:' + button.data('price'));
-    modal.find('.area').text('Tên học sinh:' + button.data('area'));
+    modal.find('.date').text('Publish Date:' + button.data('date'));
+    modal.find('.price').text('Price:' + button.data('price'));
+    modal.find('.area').text('Area:' + button.data('area'));
     modal.find('.modal-footer a').attr("href", "/contract/delete/" + button.data('id'));
   });
 </script>
