@@ -1,0 +1,4 @@
+<p>color works!</p>
+<p [ngStyle]="{'color': pickColor.theColor}">{{pickColor.textTy}}</p>
+<input type="text" [(ngModel)]="pickColor.theColor" #color>
+<button (click)="pickerColor(color.value)">Change Color</button>
