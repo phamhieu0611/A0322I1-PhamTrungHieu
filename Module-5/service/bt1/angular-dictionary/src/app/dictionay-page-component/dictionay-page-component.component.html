@@ -1,0 +1,19 @@
+<p>dictionay-page-component works!</p>
+<table border="1px">
+  <tr>
+    <td>Word</td>
+    <td>Mean</td>
+    <td>Detail</td>
+    <td>Detail</td>
+  </tr>
+  <tr *ngFor="let item of words">
+    <td>{{item.word}}</td>
+    <td>{{item.mean}}</td>
+    <td>
+      <button [routerLink]="['/detail', item.word]">Detail</button>
+    </td>
+    <td>
+      <button (click)="detail(item.word)">Detail 2</button>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,88 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+  <p>
+    <label for="email">Email </label>
+    <input type="text" id="email" name="email" formControlName="email">
+  </p>
+  <div *ngIf="!email.valid && (email.dirty ||email.touched)">
+    <div [hidden]="!email.errors.required" style="color: red">
+      email is required
+    </div>
+    <div [hidden]="!email.errors.email" style="color: red">
+      invalid email id
+    </div>
+  </div>
+  <p>
+    <label for="password">Password </label>
+    <input type="password" id="password" name="password" formControlName="password">
+  </p>
+  <div *ngIf="!password.valid && (password.dirty ||password.touched)">
+    <div [hidden]="!password.errors.required" style="color: red">
+      Password is required
+    </div>
+    <div [hidden]="!password.errors.email" style="color: red">
+      invalid password
+    </div>
+  </div>
+  <p>
+    <label for="passwordCf">Confirm Password </label>
+    <input type="password" id="passwordCf" name="passwordCf" formControlName="passwordCf">
+  </p>
+  <div *ngIf="!passwordCf.valid && (passwordCf.dirty ||passwordCf.touched)">
+    <div [hidden]="!passwordCf.errors.required" style="color: red">
+      Confirm password is required
+    </div>
+    <div [hidden]="!passwordCf.errors.email" style="color: red">
+      invalid email id
+    </div>
+  </div>
+
+
+  <p>
+    <label for="gender">Gender </label>
+    <input type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+    <input type="radio" value="female" id="gender1" name="gender" formControlName="gender"> Female
+  </p>
+  <div *ngIf="!gender.valid && (gender.dirty ||gender.touched)">
+    <div [hidden]="!gender.errors.required" style="color: red">
+      gender is required
+    </div>
+  </div>
+
+  <p>
+    <label for="country">country </label>
+    <select id="country" name="country" formControlName="country">
+      <option [ngValue]="c.id" *ngFor="let c of countryList">
+
+      </option>
+    </select>
+  </p>
+  <div *ngIf="!country.valid && (country.dirty ||country.touched)">
+    <div [hidden]="!country.errors.required" style="color: red">
+      country is required
+    </div>
+  </div>
+
+  <p>
+    <label for="phone">Phone Number </label>
+    <input type="number" id="phone" name="phone" formControlName="phone">
+  </p>
+
+  <div
+    *ngIf="!phone?.valid && (phone?.dirty ||phone?.touched)">
+    <div [hidden]="!phone.errors.required" style="color: red">
+      Phone Name is required
+    </div>
+    <div [hidden]="!phone.errors.maxLength" style="color: red">
+      Phone always has 10 number
+    </div>
+  </div>
+
+  <p> </p>
+
+  <p>
+    <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+  </p>
+
+
+</form>
