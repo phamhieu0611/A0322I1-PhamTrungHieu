@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <!-- font roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+</head>
+<body onload="getcookiedata()">
+<!-- from login -->
+<div class="login" >
+    <div class="login__container">
+            <h1 style="color: #f26b38">ĐĂNG NHẬP</h1>
+        <form>
+            <input type="text" class="input-login-username" placeholder="Tên đăng nhập"/>
+            <p style="color: red">*Tên đăng nhập không được bỏ trống!</p>
+            <input type="password" class="input-login-password" placeholder="Mật khẩu"/>
+            <p style="color: red">*Mật khẩu không được bỏ trống!</p><br>
+            <span>
+                <input type="checkbox" name="rememberMe" id="rememberMe" onclick="setcookie()">
+                 Nhớ tài khoản
+            </span>
+            <button type="submit" class="login__signInButton">Đăng Nhập</button><br/>
+            <p style="color: red">*Tài khoản hoặc mật khẩu không chính xác, vui lòng thử lại!</p>
+        </form>
+        <table>
+            <tr>
+                <td>
+                    <a href="singup.html" class="login__registerButton" style="color: blue; text-decoration: none">Tạo tài khoản mới</a>
+                </td>
+                <td>
+                    <a href="singup.html" class="login__registerButton" style="color: blue; text-decoration: none">Quên mật khẩu?</a>
+                </td>
+            </tr>
+            <tr>
+                <a href="singup.html" class="login__registerButton" style="text-decoration: none">
+                    <span>Đăng nhập bằng Google </span><i class="fa fa-google-plus" style="color: red"></i>
+                </a>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>
